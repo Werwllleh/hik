@@ -5,20 +5,21 @@ mixin header()
         .header__container.container
             .header__body
                 .header__left
-                    button(type="button", aria-label="Каталог", title="Каталог").burger-btn
+                    button(type="button", aria-label="Меню каталога", title="Меню каталога").burger-btn
                         span
                         span
                         span
 
-                    ul.header-pages
-                        li.header-pages__item
-                            a(href="/") каталог
-                        li.header-pages__item
-                            a(href="/") о бренде
-                        li.header-pages__item
-                            a(href="/") покупателям
-                        li.header-pages__item
-                            a(href="/") контакты
+                    nav.header-nav
+                        ul
+                            li.header-nav__item
+                                a(href="/") каталог
+                            li.header-nav__item
+                                a(href="/") о бренде
+                            li.header-nav__item
+                                a(href="/") покупателям
+                            li.header-nav__item
+                                a(href="/") контакты
                 a(href="/").header__logos
                     span.logo-element.logo-secondary
                         +svg("logo2")
@@ -32,3 +33,23 @@ mixin header()
                         +svg("bookmark")
                     a(href="/", aria-label="Личный кабинет", title="Личный кабинет").user-btn.header-icon-btn
                         +svg("user")
+        .header-catalog
+            .header-catalog__body
+                .header-catalog__head
+                    .header-catalog__button
+                        button(type="button", aria-label="Меню каталога", title="Меню каталога").burger-btn
+                            span
+                            span
+                            span
+                        a(href="/") каталог
+                .header-catalog__list
+                    +catalogCollapse()
+                .header-catalog__nav
+                    ul
+                        li
+                            a(href="/") шоу-рум
+                        li
+                            a(href="/") покупателям
+                        li
+                            a(href="/") контакты
+

@@ -1,0 +1,17 @@
+mixin mainHero()
+
+    //main-hero
+    .main-hero&attributes(attributes)
+        .main-hero-swiper.swiper
+            .swiper-wrapper
+                .swiper-slide
+                    .main-hero-slide
+                        .main-hero-slide__content
+                        .main-hero-slide__image
+                            picture
+                                source(srcset="320.jpg" media="(min-width: 768px)")
+                                source(srcset="320.jpg" media="(min-width: 1280px)")
+                                source(srcset="320.jpg" media="(min-width: 1600px)")
+                                img(src="", alt="")
+
+

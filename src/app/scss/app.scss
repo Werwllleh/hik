@@ -143,7 +143,6 @@ body {
   background: $black;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
   transition: opacity $transition-default, visibility $transition-default;
 
   &.active {

@@ -1,0 +1,189 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// footer-showcase
+.footer-showcase {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+
+
+    @include tablet {
+      grid-template-columns: .49fr 1fr .49fr;
+      gap: 0 2rem;
+    }
+
+    @include w1280 {
+
+    }
+
+    @include w1600 {
+      grid-template-columns: .52fr 1fr .52fr;
+    }
+
+    &.ltr {
+      .footer-showcase__image {
+        &.i1 {
+          img {
+            top: 0;
+            max-height: 28.7rem;
+          }
+        }
+        &.i2 {
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+    &.center {
+      .footer-showcase__image img {
+        max-height: 24.8rem;
+        top: 0;
+        bottom: 0;
+        margin-block: auto;
+      }
+    }
+    &.rtl {
+      .footer-showcase__image {
+        &.i1 {
+          img {
+            height: 100%;
+          }
+        }
+        &.i2 {
+          img {
+            max-height: 28.7rem;
+            bottom: 0;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__image {
+
+    display: none;
+
+    @include tablet {
+      display: flex;
+      position: relative;
+    }
+
+    @include w1280 {
+      min-height: 39.2rem;
+    }
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity $transition-default12, visibility $transition-default12;
+    }
+  }
+
+  &__nav {
+
+    @include w1600 {
+    }
+
+    ul {
+
+      li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1.2rem;
+    padding-block: 1.2rem;
+
+    @include tablet {
+      &:hover,
+      &.active {
+        .line {
+          width: 100%;
+        }
+        p,
+        .counter {
+          color: $black;
+        }
+      }
+    }
+
+
+    @include w1280 {
+      max-width: 61.2rem;
+      padding-block: 1.6rem;
+    }
+
+    @include w1600 {
+      max-width: 50.6rem;
+      padding-block: 2rem;
+    }
+
+    .line {
+      display: none;
+      height: .1rem;
+      width: 0;
+      background-color: $black;
+      transition: width $transition-default12;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    p {
+      flex: 0 0 auto;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.125;
+      text-align: center;
+      color: $black;
+      white-space: nowrap;
+      transition: color $transition-default12;
+
+      @include tablet {
+        color: #929292;
+      }
+
+      @include w1280 {
+        font-size: 3.2rem;
+      }
+    }
+
+    .counter {
+      flex: 0 0 auto;
+      display: block;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.33;
+      text-align: center;
+      color: #929292;
+      transition: color $transition-default12;
+
+      @include w1280 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

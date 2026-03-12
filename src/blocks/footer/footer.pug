@@ -2,6 +2,28 @@ mixin footer()
 
     //footer
     footer.footer&attributes(attributes)
+        .footer__container.container
+            .footer__body
+                .footer__top
+                    +footerShowcase()
+
+                .footer__bottom
+                    nav.footer__nav
+                        span.line.l1
+                        a(href="/") главная
+                        span.line.l2
+                        a(href="/") покупателям
+                        span.line.l3
+                        a(href="/") дизайнерам
+                        span.line.l4
+                        a(href="/") шоу-рум
+                        span.line.l5
+                        a(href="/") контакты
+                        span.line.l6
+                        span.copyright © 2025 
+                            |
+                            span HIK
+                            span FIL INTERIORS
 
     .overlay
     +modal('consultation', 'consultation')

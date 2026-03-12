@@ -1,0 +1,71 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// catalog-collapse
+.catalog-collapse {
+
+
+  .collapse {
+
+    .collapse-header {
+      display: flex;
+      align-items: center;
+      gap: 0 1.2rem;
+      padding-block: 2rem;
+      padding-inline: 3.2rem;
+
+      &__line {
+        display: block;
+        width: 1.6rem;
+        height: 0.1rem;
+        background-color: $black;
+      }
+
+      &__link {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
+      }
+
+      &__separator {
+        flex: 1;
+        height: 0.1rem;
+        width: 100%;
+        background-color: rgba(#272724, .2);
+      }
+
+      &__counter {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
+      }
+    }
+
+    .collapse-data {
+      padding-right: 3.2rem;
+      padding-left: 6rem;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: .8rem 0;
+
+        li {
+
+          a {
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1.33;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+}

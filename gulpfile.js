@@ -90,22 +90,6 @@ export const stylesApp = () =>
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 
-// Стили компонентов
-/*export const stylesComponents = () =>
-  gulp.src('src/app/scss/components.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(rename('components.css'))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
-
-// Стили блоков
-export const stylesBlocks = () =>
-  gulp.src('src/app/scss/blocks.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(rename('blocks.css'))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());*/
-
 // Стили страниц (каждая страница в отдельный файл)
 export const stylesPages = () =>
   gulp.src('src/pages/**/*.scss')

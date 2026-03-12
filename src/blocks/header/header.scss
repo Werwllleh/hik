@@ -7,24 +7,48 @@
   &__container {}
 
   &__body {
-    padding-block: 3.2rem;
-    display: flex;
+    padding-block: 2rem;
+    display: grid;
+    grid-template-columns: .5fr 1fr .5fr;
     align-items: center;
     justify-content: space-between;
-    gap: 0 2rem;
+    gap: 0 1rem;
     border-bottom: 0.1rem solid rgba($black, 0.2);
+
+    @include tablet {
+      padding-block: 2.4rem;
+    }
+
+    @include w1280 {
+      padding-block: 3.2rem;
+      gap: 0 2rem;
+    }
   }
 
   &__left {
+    margin-right: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 0 .5rem;
+
+    @include tablet {
+      margin-right: 0;
+    }
   }
 
-  .header-pages {
-    display: flex;
-    align-items: center;
-    gap: 0 2.4rem;
+  .header-nav {
+    display: none;
+
+    @include w1280 {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 0 2.4rem;
+    }
 
     &__item {
 
@@ -42,8 +66,11 @@
   &__logos {
     display: flex;
     align-items: stretch;
-    gap: 0 1.6rem;
-    height: 3.2rem;
+    justify-content: center;
+    max-width: max-content;
+    margin-inline: auto;
+    gap: 0 .8rem;
+    height: 1.6rem;
 
     .logo-element {
       color: $black;
@@ -55,13 +82,28 @@
       width: 1px;
       background: rgba(39, 39, 36, 0.1);
     }
+
+    @include tablet {
+      //flex: 1;
+    }
+
+    @include w1280 {
+      //flex: none;
+      height: 3.2rem;
+      gap: 0 1.6rem;
+    }
   }
 
   &__right {
-    margin-left: auto;
     display: flex;
     align-items: stretch;
-    gap: 0 1.6rem;
+    justify-content: flex-end;
+    gap: 0 .8rem;
+
+    @include w1280 {
+      //margin-left: auto;
+      gap: 0 1.6rem;
+    }
   }
 
   .header-icon-btn {
@@ -69,9 +111,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
     color: $black;
+
+    @include w1280 {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
 
     svg {
       width: 100%;
@@ -79,10 +126,39 @@
     }
   }
 
+  &.catalog-show {
+    .burger-btn {
+      span {
+        transition: top .3s ease-in-out, transform .3s .15s ease-in-out;
+
+        &:nth-child(1) {
+          top: 50%;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .header-catalog {
+      box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.05);
+      transform: translateX(0);
+    }
+  }
+
 }
 
 .logo-secondary {
-  width: 9rem;
+  width: 4.5rem;
+
+  @include w1280 {
+    width: 9rem;
+  }
 
   svg {
     height: 100%;
@@ -90,7 +166,11 @@
   }
 }
 .logo-main {
-  width: 11.1rem;
+  width: 5.6rem;
+
+  @include w1280 {
+    width: 11.1rem;
+  }
 
   svg {
     height: 100%;
@@ -133,22 +213,95 @@
       top: calc(100% - 0.6rem);
     }
   }
+}
 
-  &.active {
+.header-catalog {
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(4rem);
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(-100%);
+  transition: transform $transition-default6, box-shadow $transition-default12;
 
-    span {
-      transition: top .3s ease-in-out, transform .3s .15s ease-in-out;
+  @include tablet {
+    max-width: 38rem;
+  }
 
-      &:nth-child(1) {
-        top: 50%;
-        transform: rotate(45deg);
+  @include w1280 {
+    max-width: 42.9rem;
+  }
+
+  @include w1600 {
+    max-width: 53.9rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__head {
+    padding-block: 3.2rem;
+    padding-inline: 2.4rem;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0 .5rem;
+
+    .burger-btn {}
+
+    a {
+      display: none;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.33333;
+      color: #272724;
+
+      @include w1280 {
+        display: block;
       }
-      &:nth-child(2) {
-        opacity: 0;
-      }
-      &:nth-child(3) {
-        top: 50%;
-        transform: rotate(-45deg);
+    }
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 8.8rem - 12rem);
+
+    .catalog-collapse,
+    .collapse {
+      height: 100%;
+    }
+  }
+
+  &__nav {
+    margin-top: auto;
+    padding-inline: 4.8rem;
+    padding-bottom: 3.2rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem 0;
+
+      li {
+
+        a {
+          font-family: $font-family;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: $black;
+        }
       }
     }
   }

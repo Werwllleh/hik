@@ -125,7 +125,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  &__content {
+  &__container {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -140,15 +140,14 @@ body {
   position: fixed;
   z-index: 10;
   inset: 0;
-  box-shadow: inset 0 0 60px 8px #a5aec4;
-  background: rgba(217, 217, 217, 0.01);
+  background: $black;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity $transition-default, visibility $transition-default;
 
   &.active {
-    opacity: 0.8;
+    opacity: 0.1;
     visibility: visible;
   }
 }

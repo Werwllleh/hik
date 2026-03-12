@@ -28,17 +28,13 @@ html(lang="ru")
 
         // Базовые стили
         link(rel="stylesheet", href="css/app.css")
-        // Стили компонентов
-        link(rel="stylesheet", href="css/components.css")
-        // Стили блоков
-        link(rel="stylesheet", href="css/blocks.css")
         // Стили страницы (если есть)
         if stylePage
             link(rel="stylesheet", href=`${stylePage}/${stylePage}.css`)
     body
         +header()
         main.page
-            .page__content
+            .page__container.container
                 block content
         +footer()
 
@@ -65,10 +61,6 @@ html(lang="ru")
 
         // Базовые скрипты
         script(src="js/app.js")
-        // Скрипты компонентов
-        script(src="js/components.js")
-        // Скрипты блоков
-        script(src="js/blocks.js")
         // Скрипт страницы (если есть)
         if scriptPage
             script(src=`${scriptPage}/${scriptPage}.js`)

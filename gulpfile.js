@@ -84,14 +84,14 @@ export const html = () =>
 
 // Базовые стили приложения (переменные, шрифты, типографика)
 export const stylesApp = () =>
-  gulp.src('src/app/scss/app.scss')
+  gulp.src('src/app/scss/index.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('app.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 
 // Стили компонентов
-export const stylesComponents = () =>
+/*export const stylesComponents = () =>
   gulp.src('src/app/scss/components.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('components.css'))
@@ -104,7 +104,7 @@ export const stylesBlocks = () =>
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('blocks.css'))
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream());*/
 
 // Стили страниц (каждая страница в отдельный файл)
 export const stylesPages = () =>
@@ -114,34 +114,18 @@ export const stylesPages = () =>
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
-export const styles = gulp.parallel(stylesApp, stylesComponents, stylesBlocks, stylesPages);
+export const styles = gulp.parallel(stylesApp, stylesPages);
 
 /* ================= scripts ================= */
 
 // Базовые скрипты приложения
 export const scriptsApp = () =>
-  gulp.src('src/app/js/common.js')
-    .pipe(rename('app.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream());
-
-// Скрипты компонентов
-export const scriptsComponents = () =>
-  gulp.src('src/components/**/*.js')
-    .pipe(concat('components.js'))
-    .pipe(insert.prepend(
-      `document.addEventListener('DOMContentLoaded', function () {\n`
-    ))
-    .pipe(insert.append(
-      `\n});`
-    ))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream());
-
-// Скрипты блоков
-export const scriptsBlocks = () =>
-  gulp.src('src/blocks/**/*.js')
-    .pipe(concat('blocks.js'))
+  gulp.src([
+    'src/app/js/common.js',
+    'src/blocks/**/*.js',
+    'src/components/**/*.js',
+  ])
+    .pipe(concat('app.js'))
     .pipe(insert.prepend(
       `document.addEventListener('DOMContentLoaded', function () {\n`
     ))
@@ -164,7 +148,7 @@ export const scriptsPages = () =>
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
-export const scripts = gulp.parallel(scriptsApp, scriptsComponents, scriptsBlocks, scriptsPages);
+export const scripts = gulp.parallel(scriptsApp, scriptsPages);
 
 /* ================= serve ================= */
 

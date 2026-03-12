@@ -2,4 +2,33 @@ mixin header()
 
     //header
     header.header&attributes(attributes)
+        .header__container.container
+            .header__body
+                .header__left
+                    button(type="button", aria-label="Каталог", title="Каталог").burger-btn
+                        span
+                        span
+                        span
 
+                    ul.header-pages
+                        li.header-pages__item
+                            a(href="/") каталог
+                        li.header-pages__item
+                            a(href="/") о бренде
+                        li.header-pages__item
+                            a(href="/") покупателям
+                        li.header-pages__item
+                            a(href="/") контакты
+                a(href="/").header__logos
+                    span.logo-element.logo-secondary
+                        +svg("logo2")
+                    span.separator
+                    span.logo-element.logo-main
+                        +svg("logo")
+                .header__right
+                    button(type="button", aria-label="Поиск", title="Поиск").search-btn.header-icon-btn
+                        +svg("search")
+                    a(href="/", aria-label="Избранное", title="Избранное").bookmark-btn.header-icon-btn
+                        +svg("bookmark")
+                    a(href="/", aria-label="Личный кабинет", title="Личный кабинет").user-btn.header-icon-btn
+                        +svg("user")

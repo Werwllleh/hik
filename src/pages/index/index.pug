@@ -1,0 +1,29 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Разводящая страница"
+  - description = ""
+  - stylePage = "index"
+  - scriptPage = "index"
+
+append content
+
+    .page__header
+        .page__breadcrumbs
+            .container
+                +breadcrumbs(['Главная'])
+        .page__title
+            .container
+                p Главная
+        .page__header--bg
+            img(src="./images/header-bg.webp", alt="")
+    .page__content
+        .page-index
+            .page__container.container
+                .page__content
+                    h1.h1 Список страниц
+                    ul.page-index__list
+                        li
+                            a(href="./ui.html", target="_blank") UI
+                        li
+                            a(href="./main.html", target="_blank") Главная

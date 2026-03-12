@@ -1,0 +1,108 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// modal
+.modal {
+	display: none;
+	opacity: 0;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	background: linear-gradient(225deg, rgba(122, 139, 180, 0.3) 0%, rgba(139, 154, 187, 0.3) 17.66%, rgba(143, 158, 189, 0.3) 28.04%, rgba(80, 104, 142, 0.3) 100%), rgba(0, 0, 0, 0.3);
+	transition: opacity $transition-default;
+
+	@include mobile {
+		overflow-y: auto;
+	}
+
+	&--show {
+		opacity: 1;
+	}
+
+	&__window {
+		opacity: 0;
+		transform: translateX(20%);
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		overflow-y: auto;
+		margin-left: auto;
+		transition: opacity $transition-default, transform $transition-default, border-radius $transition-default;
+
+		@include mobile {
+			max-width: 44.5rem;
+			border-radius: 2rem 0 0 2rem;
+			overflow-y: hidden;
+		}
+
+		.modal--show & {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		padding-right: 10px;
+		font-size: 24px;
+		line-height: 1.1;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		color: $black;
+
+		@include desktop {
+			margin-bottom: 20px;
+			padding-right: 0;
+			font-size: 40px;
+			line-height: 1;
+		}
+	}
+
+	&__text {
+		margin-bottom: 30px;
+		font-size: 15px;
+		line-height: 1.36;
+		letter-spacing: -0.01em;
+		color: #000;
+
+		@include desktop {
+			margin-bottom: 40px;
+			font-size: 18px;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 22.5px;
+		right: 22.5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.6rem;
+		height: 1.6rem;
+		background-color: transparent;
+
+		&:hover {
+			svg {
+				color: #5f9ce4;
+			}
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+			color: #B7CDE7;
+		}
+	}
+
+	.modal-consultation {
+
+	}
+}

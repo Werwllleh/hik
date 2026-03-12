@@ -1,0 +1,14 @@
+mixin collapse(data)
+
+    //collapse
+    .collapse&attributes(attributes)
+        if data && data.length
+          each item in data
+              .collapse-item
+                  .collapse-header
+                      p= item.title
+                      span
+                          +svg("arrow-collapse")
+                  .collapse-wrap
+                      .collapse-data
+                          p= item.text

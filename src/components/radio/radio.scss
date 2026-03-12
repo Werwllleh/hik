@@ -1,0 +1,55 @@
+@use '../../app/scss/variables.scss' as *;
+
+// radio
+.radio {
+    display: inline-flex;
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        position: relative;
+        padding-left: 28px;
+        font-size: 15px;
+        line-height: 22px;
+        color: #626A76;
+        cursor: pointer;
+        user-select: none;
+        transition: color $transition-default;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 20px;
+            height: 20px;
+            display: block;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.401 2.9996L12.9861 4.58475L5.57126 11.9996L1 7.42844L2.58509 5.8433L5.57126 8.82937L11.401 2.9996Z' fill='white'/%3E%3C/svg%3E");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 14px 14px;
+            border: 1px solid rgba(#626A76, .24);
+            border-radius: 20px;
+            content: "";
+            transition: border-color $transition-default, background-color $transition-default;
+        }
+
+        &:hover {
+            color: $primary;
+
+            &::before {
+                border-color: $primary;
+            }
+        }
+
+        .radio__input:checked+&,
+        .radio__input:checked+&:hover {
+            &::before {
+                background-color: $primary;
+                color: $primary;
+            }
+        }
+    }
+}

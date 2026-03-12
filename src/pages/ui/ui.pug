@@ -1,0 +1,15 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Ui"
+  - description = "Описание Ui"
+  - stylePage = "ui"
+  - scriptPage = "ui"
+
+append content
+
+    .page-ui
+        .page-ui__elements
+            button(type="button", data-modal="consultation").btn.primary Открыть модалку
+            +checkbox()
+

@@ -1,0 +1,6 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+button, input, textarea {
+  font-family: inherit;
+}

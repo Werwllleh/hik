@@ -1,0 +1,9 @@
+mixin radio(name, label, value, checked)  
+  //- регистрация
+  //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+  //- +regComponent('component-name', true, true)
+
+  //radio
+  label.radio&attributes(attributes)    
+    input.radio__input(type="radio", name=name, value=value, checked=checked)
+    span.radio__label= label

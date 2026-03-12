@@ -1,0 +1,7 @@
+mixin input(name, placeholder, className, inputMode, type, required, error)
+
+    //input
+    label.input-field&attributes(attributes)
+        input(name=name, class=className ? className : '', type=type ? type : 'text', inputmode=inputMode ? inputMode : '', autocomplete="on", required=required, data-input=name)
+        span.input-field__placeholder= placeholder
+        span(data-input-error=name).input-field__error= error

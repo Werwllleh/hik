@@ -1,0 +1,95 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// collapse
+.collapse {
+
+  .collapse-item {
+    padding-block: 2.4rem;
+    padding-inline: 2rem;
+    border-radius: 1.8rem;
+    background-color: $white;
+    border: 2px solid rgba(181, 214, 255, 0.2);
+    backdrop-filter: blur(1.2rem);
+    cursor: pointer;
+
+    @include tablet {
+      padding-block: 3rem;
+      padding-inline: 2.8rem;
+      border-radius: 2.4rem;
+    }
+
+    &:hover {
+      .collapse-header svg {
+      }
+    }
+
+    &.active .collapse-wrap {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.active .collapse-header {
+
+      span svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .collapse-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0 3rem;
+
+    p {
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1.22222;
+      letter-spacing: -0.02em;
+
+      @include tablet {
+        font-size: 1.8rem;
+      }
+    }
+
+    span {
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        color: #b7cde7;
+      }
+    }
+  }
+
+  .collapse-wrap {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $transition;
+  }
+
+  .collapse-data {
+    padding-top: 1.5rem;
+
+    @include tablet {
+      padding-top: 2rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: #788492;
+
+      @include tablet {
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}

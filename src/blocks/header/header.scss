@@ -3,6 +3,10 @@
 
 // header
 .header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
 
   &__container {}
 
@@ -126,29 +130,28 @@
     }
   }
 
-  &.catalog-show {
-    .burger-btn {
-      span {
-        transition: top .3s ease-in-out, transform .3s .15s ease-in-out;
+  &.catalog-show .burger-btn,
+  &.catalog-show + .header-catalog .burger-btn {
+    span {
+      transition: top .3s ease-in-out, transform .3s .15s ease-in-out;
 
-        &:nth-child(1) {
-          top: 50%;
-          transform: rotate(45deg);
-        }
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(3) {
-          top: 50%;
-          transform: rotate(-45deg);
-        }
+      &:nth-child(1) {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        top: 50%;
+        transform: rotate(-45deg);
       }
     }
+  }
 
-    .header-catalog {
-      box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.05);
-      transform: translateX(0);
-    }
+  &.catalog-show + .header-catalog {
+    box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.05);
+    transform: translateX(0);
   }
 
 }

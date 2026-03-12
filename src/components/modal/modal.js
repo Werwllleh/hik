@@ -71,14 +71,17 @@ function getScrollbarWidth() {
 
 function blockWrap(status) {
   const wrap = document.querySelector('html');
+  const header = document.querySelector('.header');
 
   if (status) {
     // wrap.style.overflow = 'hidden';
     wrap.classList.add('block');
+    header.style.paddingRight = getScrollbarWidth() + 'px';
     wrap.style.marginRight = getScrollbarWidth() + 'px';
   } else {
     // wrap.style.overflow = '';
     wrap.classList.remove('block');
+    header.style.paddingRight = '';
     wrap.style.marginRight = '';
   }
 }

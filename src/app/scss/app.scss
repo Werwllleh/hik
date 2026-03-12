@@ -125,6 +125,10 @@ body {
   display: flex;
   flex-direction: column;
 
+  /*@include w1600 {
+    margin-top: -9.7rem;
+  }*/
+
   &__container {
     flex: 1;
     display: flex;

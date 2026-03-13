@@ -124,10 +124,15 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-top: -6.5rem;
 
-  /*@include w1600 {
+  @include tablet {
+    margin-top: -7.3rem;
+  }
+
+  @include w1600 {
     margin-top: -9.7rem;
-  }*/
+  }
 
   &__container {
     flex: 1;

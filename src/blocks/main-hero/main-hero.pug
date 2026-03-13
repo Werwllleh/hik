@@ -9,19 +9,31 @@ mixin mainHero()
                         .main-hero-slide
                             .main-hero-slide__content
                                 .main-hero-inform
-                                    h1.main-hero-inform__title Вдохновляющее искусство для жизни
-                                    .main-hero-inform__description
-                                        .main-hero-inform__about
-                                            p.main-hero-inform__category искусство
-                                            .main-hero-inform__text
+                                    .main-hero-inform__top
+                                        h1.title Вдохновляющее искусство для жизни
+                                        span.index 01
+                                    .main-hero-inform__middle
+                                        .description
+                                            p.category искусство
+                                            .text
                                                 p искусство становится частью вашей жизни: изысканные интерьерные решения, которые наполняют дом уютом, теплом и вдохновением
-                                        span.main-hero-inform__index 01
-                                    .main-hero-inform__footer
-                                        .main-hero-inform__pagination
-                                            span
-                                            span
-                                            span
-                                        a(href="/").main-hero-inform__link в каталог
+                                        span.index 01
+                                    .main-hero-inform__bottom
+                                        .pagination
+                                            .pagination__thumb
+                                                span(style="width: 0%;")
+                                        a(href="/").link в каталог
+                                    //.main-hero-inform__description
+                                    //    .main-hero-inform__about
+                                    //        p.main-hero-inform__category искусство
+                                    //        .main-hero-inform__text
+                                    //            p искусство становится частью вашей жизни: изысканные интерьерные решения, которые наполняют дом уютом, теплом и вдохновением
+                                    //    span.main-hero-inform__index 01
+                                    //.main-hero-inform__footer
+                                    //    .main-hero-inform__pagination
+                                    //        .main-hero-thumb
+                                    //            span(style="width: 0%;")
+                                    //    a(href="/").main-hero-inform__link в каталог
                             .main-hero-slide__image
                                 picture
                                     source(srcset="./images/main-hero/1-2x.webp" media="(min-width: 1920px)")

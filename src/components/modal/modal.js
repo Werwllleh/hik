@@ -76,12 +76,12 @@ function blockWrap(status) {
   if (status) {
     // wrap.style.overflow = 'hidden';
     wrap.classList.add('block');
-    header.style.paddingRight = getScrollbarWidth() + 'px';
+    // header.style.paddingRight = getScrollbarWidth() + 'px';
     wrap.style.marginRight = getScrollbarWidth() + 'px';
   } else {
     // wrap.style.overflow = '';
     wrap.classList.remove('block');
-    header.style.paddingRight = '';
+    // header.style.paddingRight = '';
     wrap.style.marginRight = '';
   }
 }

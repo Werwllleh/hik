@@ -3,13 +3,14 @@
 
 // main-hero
 .main-hero {
-  min-height: 100dvh;
+
   display: flex;
   flex-direction: column;
   margin-inline: -1.2rem;
 
   @include tablet {
     margin-inline: -2rem;
+    min-height: 100dvh;
   }
 
   @include w1280 {
@@ -25,6 +26,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   .swiper {
     flex: 1;
@@ -49,6 +51,12 @@
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include w1280 {
+    flex-direction: row;
+  }
 
   &__content {
     position: relative;
@@ -56,24 +64,56 @@
     height: 100%;
     border-right: 1px solid #fff;
     width: 100%;
-    max-width: 66%;
-    backdrop-filter: blur(10rem);
+    backdrop-filter: blur(25px);
     background: rgba(255, 255, 255, 0.6);
-    padding: 18rem 13rem 19rem 16rem;
+    padding: 2rem 1.2rem;
+    margin-top: -4rem;
+
+    @include tablet {
+      padding: 3.2rem 2rem;
+    }
+
+    @include w1280 {
+      margin-top: 0;
+      max-width: 66%;
+      padding: 18rem 3% 18rem 13rem;
+    }
+
+    @include w1600 {
+      padding: 18rem 8% 18rem 16rem;
+    }
+
+    @media (min-width: 2500px){
+      padding: 18rem 12% 18rem 16rem;
+    }
   }
 
   &__image {
-    position: absolute;
-    top: 0;
-    left: 50%;
+    flex: 0 0 50%;
     width: 100%;
     height: 100%;
-    padding-bottom: 10rem;
+
+    @include w1280 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      padding-bottom: 10rem;
+    }
+
+    picture {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
 
     img {
       width: 100%;
       height: 100%;
-      max-height: 100dvh;
+      max-height: 100%;
+      max-width: 100%;
+      //max-height: 100dvh;
       object-fit: cover;
     }
   }
@@ -84,32 +124,37 @@
   flex-direction: column;
   height: 100%;
 
-  &__title {
+  @include w1280 {
+    max-width: 76.5rem;
+    margin-left: auto;
+  }
+
+  .title {
     font-family: $font-family;
     font-weight: 400;
-    font-size: 4.8rem;
-    line-height: 1.25;
+    font-size: 2.4rem;
+    line-height: 1.33;
     text-transform: uppercase;
     color: $black;
-    max-width: 51rem;
-    margin-inline: auto;
+
+    @include tablet {
+      font-size: 3.2rem;
+      line-height: 1.125;
+      max-width: 48rem;
+    }
+
+    @include w1280 {
+      font-size: 4.8rem;
+      line-height: 1.25;
+      max-width: 51rem;
+    }
+
+    @include w1600 {
+
+    }
   }
 
-  &__description {
-    margin-top: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 0 4rem;
-  }
-
-  &__about {
-    display: flex;
-    align-items: flex-start;
-    gap: 0 .8rem;
-  }
-
-  &__category {
+  .category {
     font-family: $font-family;
     font-weight: 600;
     font-size: 1.2rem;
@@ -118,38 +163,114 @@
     min-width: 12rem;
   }
 
-  &__text {
+  .description {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 0 .8rem;
+  }
+
+  .text {
     font-family: $font-family;
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.33;
     color: $black;
-    max-width: 38rem;
+
+    @include w1280 {
+      max-width: 38rem;
+    }
   }
 
-  &__index {
+  .index {
     display: block;
     font-family: $font-family;
     font-weight: 100;
     font-size: 14rem;
-    line-height: 1;
+    line-height: .7;
     text-transform: uppercase;
     text-align: right;
     color: $black;
     opacity: 0.2;
   }
 
-  &__footer {
-    margin-top: 8rem;
+  .pagination {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 0 .4rem;
+
+    &__thumb {
+      background-color: rgba($black, .2);
+      width: 100%;
+      height: 0.1rem;
+    }
   }
 
-  &__pagination {}
-
-  &__link {
+  .link {
+    margin-left: .8rem;
     font-family: $font-family;
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 1.33;
     color: $black;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0 2rem;
+
+    @include tablet {
+      margin-left: 12.8rem;
+    }
+
+    .index {
+      font-size: 2.4rem;
+
+      @include mobile {
+        font-size: 8.6rem;
+      }
+
+      @include w1280 {
+        display: none;
+      }
+    }
+  }
+
+  &__middle {
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include tablet {
+      margin-top: 6rem;
+    }
+
+    @include w1280 {
+      margin-bottom: 0;
+      margin-top: auto;
+    }
+
+    .index {
+      display: none;
+
+      @include w1280 {
+        display: block;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+
+    @include w1280 {
+      margin-top: 8rem;
+      margin-left: 12.8rem;
+    }
   }
 }

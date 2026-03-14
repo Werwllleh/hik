@@ -1,15 +1,6 @@
 const mainHeroSwiper = document.querySelector('.main-hero-swiper__element');
-const mainHeroSwiperThumbs = document.querySelector('.hero-swiper-thumbs');
 
 if (mainHeroSwiper) {
-  const thumbsSwiper = new Swiper(mainHeroSwiperThumbs, {
-    spaceBetween: 4,
-    slidesPerView: "auto",
-    watchSlidesProgress: true,
-  });
-
-  console.log(thumbsSwiper);
-
   const heroSwiper = new Swiper(mainHeroSwiper, {
     slidesPerView: 1,
     speed: 1500,
@@ -28,43 +19,79 @@ if (mainHeroSwiper) {
     watchOverflow: true,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
-    thumbs: {
-      swiper: thumbsSwiper,
-    },
-    /*effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },*/
-    /*creativeEffect: {
-      prev: {
-        opacity: 0,
-        translate: [0, 0, -400],
-      },
-      next: {
-        opacity: 1,
-        translate: ['100%', 0, 0],
-      },
-    },*/
   });
 
-  console.log(heroSwiper);
+  // Динамическая генерация thumbs для каждого слайда
+  const allThumbsContainers = document.querySelectorAll('.hero-swiper-thumbs');
+  const totalSlides = heroSwiper.slides.length;
 
+  allThumbsContainers.forEach(container => {
+    const wrapper = container.querySelector('.swiper-wrapper');
+
+    // Создаем thumbs по количеству слайдов
+    for (let i = 0; i < totalSlides; i++) {
+      const thumb = document.createElement('div');
+      thumb.className = 'swiper-slide';
+      thumb.innerHTML = `
+        <div class="pagination__thumb">
+          <span></span>
+        </div>
+      `;
+      wrapper.appendChild(thumb);
+    }
+  });
+
+  const thumbsSwipers = [];
+
+  allThumbsContainers.forEach((container, index) => {
+    const thumbsSwiper = new Swiper(container, {
+      spaceBetween: 4,
+      slidesPerView: 'auto',
+      watchSlidesProgress: true,
+    });
+    thumbsSwipers.push(thumbsSwiper);
+  });
+
+  // Клик по thumb переключает основной слайдер
+  allThumbsContainers.forEach(container => {
+    container.addEventListener('click', function(e) {
+      const thumb = e.target.closest('.pagination__thumb');
+      if (!thumb) return;
+
+      const thumbIndex = Array.from(container.querySelectorAll('.pagination__thumb')).indexOf(thumb);
+      if (thumbIndex !== -1) {
+        heroSwiper.slideTo(thumbIndex);
+      }
+    });
+  });
+
+  // Обновление прогрессбаров при смене слайда
   heroSwiper.on('autoplayTimeLeft', function (s, time, progress) {
-
-    // const swiperThumbs = mainThumbsSwiperElem.el.swiper;
-    const thumbsActiveSlide = thumbsSwiper.slides[heroSwiper.realIndex];
-
-    const allProgressBars = Array.from(heroSwiper.el.querySelectorAll('.pagination__thumb span'));
-
-    allProgressBars.forEach(bar => {
-
-      bar.style.width = '0';
-
+    // Сбрасываем все прогрессбары
+    allThumbsContainers.forEach(container => {
+      const progressBars = container.querySelectorAll('.pagination__thumb span');
+      progressBars.forEach(bar => {
+        bar.style.width = '0';
+      });
     });
 
-    const activeBar = thumbsActiveSlide.querySelector('.pagination__thumb span');
-    if (activeBar) {
-      activeBar.style.width = `${(1 - progress) * 100}%`;
-    }
-  })
+    // Заполняем прогрессбар только у активного thumb во всех контейнерах
+    const activeIndex = heroSwiper.realIndex;
+    allThumbsContainers.forEach(container => {
+      const activeThumb = container.querySelectorAll('.pagination__thumb span')[activeIndex];
+      if (activeThumb) {
+        activeThumb.style.width = `${(1 - progress) * 100}%`;
+      }
+    });
+  });
+
+  // Синхронизация при ручном переключении (сброс прогресса)
+  heroSwiper.on('slideChange', function () {
+    allThumbsContainers.forEach(container => {
+      const progressBars = container.querySelectorAll('.pagination__thumb span');
+      progressBars.forEach(bar => {
+        bar.style.width = '0';
+      });
+    });
+  });
 }

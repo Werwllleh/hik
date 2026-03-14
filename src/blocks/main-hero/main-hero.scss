@@ -3,14 +3,13 @@
 
 // main-hero
 .main-hero {
-
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   margin-inline: -1.2rem;
 
   @include tablet {
     margin-inline: -2rem;
-    min-height: 100dvh;
   }
 
   @include w1280 {
@@ -54,28 +53,37 @@
   display: flex;
   flex-direction: column-reverse;
 
+  &:hover {
+    .main-hero-slide__prev,
+    .main-hero-slide__next {
+      opacity: 1;
+    }
+  }
+
   @include w1280 {
     flex-direction: row;
   }
 
   &__content {
+    flex: 0 1 45%;
     position: relative;
     z-index: 1;
-    height: 100%;
     border-right: 1px solid #fff;
     width: 100%;
     backdrop-filter: blur(25px);
     background: rgba(255, 255, 255, 0.6);
     padding: 2rem 1.2rem;
     margin-top: -4rem;
+    min-height: 28rem;
 
     @include tablet {
+      height: 100%;
       padding: 3.2rem 2rem;
     }
 
     @include w1280 {
       margin-top: 0;
-      max-width: 66%;
+      flex: 0 1 66%;
       padding: 18rem 3% 18rem 13rem;
     }
 
@@ -89,11 +97,12 @@
   }
 
   &__image {
-    flex: 0 0 50%;
+    flex: 0 1 70%;
     width: 100%;
     height: 100%;
 
     @include w1280 {
+      flex: auto;
       position: absolute;
       top: 0;
       left: 50%;
@@ -116,6 +125,47 @@
       //max-height: 100dvh;
       object-fit: cover;
     }
+  }
+
+  &__prev,
+  &__next {
+    display: none;
+
+    @include w1280 {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.6rem;
+      height: 3.6rem;
+      opacity: 0;
+      transition: opacity $transition-default6;
+    }
+
+    &.swiper-button-disabled {
+      pointer-events: none;
+
+      svg {
+        opacity: 0.4;
+      }
+    }
+
+    svg {
+      height: 1.8rem;
+      width: .9rem;
+      color: $black;
+    }
+  }
+
+  &__prev {
+    left: 5.2rem;
+    transform: rotate(180deg);
+  }
+
+  &__next {
+    right: 5.2rem;
   }
 }
 
@@ -194,10 +244,15 @@
   }
 
   .pagination {
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    gap: 0 .4rem;
+    flex: 0 1 auto;
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .swiper-slide {
+      flex: 0 1 calc(33.3% - 4px);
+    }
 
     &__thumb {
       background-color: rgba($black, .2);
@@ -213,6 +268,7 @@
     font-size: 1.2rem;
     line-height: 1.33;
     color: $black;
+    white-space: nowrap;
   }
 
   &__top {

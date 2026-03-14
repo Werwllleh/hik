@@ -3,10 +3,14 @@ mixin mainHero()
     //main-hero
     .main-hero&attributes(attributes)
         .main-hero-swiper
-            .swiper
+            .swiper.main-hero-swiper__element
                 .swiper-wrapper
                     .swiper-slide
                         .main-hero-slide
+                            button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").main-hero-slide__prev
+                                +svg("hero-arrow")
+                            button(type="button", aria-label="Следующий слайд", title="Следующий слайд").main-hero-slide__next
+                                +svg("hero-arrow")
                             .main-hero-slide__content
                                 .main-hero-inform
                                     .main-hero-inform__top
@@ -19,9 +23,17 @@ mixin mainHero()
                                                 p искусство становится частью вашей жизни: изысканные интерьерные решения, которые наполняют дом уютом, теплом и&nbsp;вдохновением
                                         span.index 01
                                     .main-hero-inform__bottom
-                                        .pagination
-                                            .pagination__thumb
-                                                span(style="width: 0%;")
+                                        .pagination.hero-swiper-thumbs.swiper
+                                            .swiper-wrapper
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
                                         a(href="/").link в каталог
                             .main-hero-slide__image
                                 picture
@@ -31,6 +43,10 @@ mixin mainHero()
                                     img(src="./images/main-hero/1-1000.webp", alt="")
                     .swiper-slide
                         .main-hero-slide
+                            button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").main-hero-slide__prev
+                                +svg("hero-arrow")
+                            button(type="button", aria-label="Следующий слайд", title="Следующий слайд").main-hero-slide__next
+                                +svg("hero-arrow")
                             .main-hero-slide__content
                                 .main-hero-inform
                                     .main-hero-inform__top
@@ -43,9 +59,17 @@ mixin mainHero()
                                                 p красота становится осязаемой, а&nbsp;пространство дышит гармонией: изысканные детали, игра света и&nbsp;фактур, которые трогают не&nbsp;только взгляд, но&nbsp;и&nbsp;сердце
                                         span.index 02
                                     .main-hero-inform__bottom
-                                        .pagination
-                                            .pagination__thumb
-                                                span(style="width: 0%;")
+                                        .pagination.hero-swiper-thumbs.swiper
+                                            .swiper-wrapper
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
                                         a(href="/").link в каталог
                             .main-hero-slide__image
                                 picture
@@ -55,6 +79,10 @@ mixin mainHero()
                                     img(src="./images/main-hero/2-1000.webp", alt="")
                     .swiper-slide
                         .main-hero-slide
+                            button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").main-hero-slide__prev
+                                +svg("hero-arrow")
+                            button(type="button", aria-label="Следующий слайд", title="Следующий слайд").main-hero-slide__next
+                                +svg("hero-arrow")
                             .main-hero-slide__content
                                 .main-hero-inform
                                     .main-hero-inform__top
@@ -67,9 +95,17 @@ mixin mainHero()
                                                 p природные мотивы и&nbsp;высокотехнологичные системы объединяются в&nbsp;едином пространстве, где каждая деталь работает на&nbsp;ваш комфорт
                                         span.index 03
                                     .main-hero-inform__bottom
-                                        .pagination
-                                            .pagination__thumb
-                                                span(style="width: 0%;")
+                                        .pagination.hero-swiper-thumbs.swiper
+                                            .swiper-wrapper
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
+                                                .swiper-slide
+                                                    .pagination__thumb
+                                                        span
                                         a(href="/").link в каталог
                             .main-hero-slide__image
                                 picture

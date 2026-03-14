@@ -19,7 +19,13 @@ function footerShowcaseInit() {
   let debounceTimer = null;
   let activeLink = null;
 
-  links.forEach(link => {
+  links.forEach((link, index) => {
+
+    const realIndex = index + 1;
+
+    const positions = ['rtl', 'ltr', 'center'];
+    let positionValue = positions[realIndex % 3];
+
     link.addEventListener('mouseenter', () => {
       if (link.classList.contains('active')) return;
 
@@ -27,7 +33,7 @@ function footerShowcaseInit() {
 
       debounceTimer = setTimeout(() => {
         const imagesArray = link.dataset.source.split(',');
-        const position = link.dataset.position || 'center';
+        const position = positionValue || 'center';
         const name = link.querySelector('p');
 
         if (!imagesArray.length || !position || !name) return;

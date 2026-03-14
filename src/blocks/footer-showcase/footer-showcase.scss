@@ -3,6 +3,7 @@
 
 // footer-showcase
 .footer-showcase {
+  overflow: hidden;
 
   &__grid {
     display: grid;
@@ -28,7 +29,7 @@
       .footer-showcase__image {
         &.i1 {
           img {
-            top: 0;
+            transform: translateY(0);
             max-height: 28.7rem;
           }
         }
@@ -42,9 +43,8 @@
     &.center {
       .footer-showcase__image img {
         max-height: 24.8rem;
-        top: 0;
-        bottom: 0;
-        margin-block: auto;
+        transform: translateY(-50%);
+        margin-top: 50%;
       }
     }
     &.rtl {
@@ -55,9 +55,11 @@
           }
         }
         &.i2 {
+
           img {
             max-height: 28.7rem;
-            bottom: 0;
+            transform: translateY(-100%);
+            margin-top: 100%;
           }
         }
       }
@@ -87,7 +89,7 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transition: opacity $transition-default12, visibility $transition-default12;
+      transition: opacity $transition-default12, visibility $transition-default12, transform $transition-default12;
     }
   }
 

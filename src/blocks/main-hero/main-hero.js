@@ -9,8 +9,8 @@ if (mainHeroSwiper) {
       prevEl: '.main-hero-slide__prev',
     },
     autoplay: {
-      // enabled: true,
-      enabled: false,
+      enabled: true,
+      // enabled: false,
       delay: 10000,
       disableOnInteraction: false
       // disableOnInteraction: true,

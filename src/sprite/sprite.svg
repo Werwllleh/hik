@@ -20,6 +20,29 @@
               d="M17 6.65882V19.5858L12.5364 16.7487C12.2091 16.5407 11.7909 16.5407 11.4636 16.7487L7 19.5858L7 6.65882C7 5.19039 8.11929 4 9.5 4L14.5 4C15.8807 4 17 5.19039 17 6.65882Z"
               stroke="currentColor" stroke-linecap="round"/>
     </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="bookmark-hover">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17 6.65882V19.5858L12.5364 16.7487C12.2091 16.5407 11.7909 16.5407 11.4636 16.7487L7 19.5858L7 6.65882C7 5.19039 8.11929 4 9.5 4L14.5 4C15.8807 4 17 5.19039 17 6.65882Z"
+              stroke="#fff" stroke-linecap="round"/>
+    </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="bookmark-active">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17 6.65882V19.5858L12.5364 16.7487C12.2091 16.5407 11.7909 16.5407 11.4636 16.7487L7 19.5858L7 6.65882C7 5.19039 8.11929 4 9.5 4L14.5 4C15.8807 4 17 5.19039 17 6.65882Z"
+              fill="currentColor" stroke="currentColor" stroke-linecap="round"/>
+    </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="bookmark-remove">
+        <path d="M7.5 11.1338V18.6748L11.1953 16.3271C11.6863 16.0151 12.3137 16.0151 12.8047 16.3271L16.5 18.6748V16.3301L17.5 16.9072V20.4961L16.7314 20.0078L12.2686 17.1709C12.1049 17.0669 11.8951 17.0669 11.7314 17.1709L7.26855 20.0078L6.5 20.4961V10.5557L7.5 11.1338ZM22.6436 17.5684L22.1436 18.4336L1.35938 6.43359L1.85938 5.56836L22.6436 17.5684ZM14.5 3.5C16.1854 3.5 17.5 4.94407 17.5 6.65918V13.4434L16.5 12.8662V6.65918C16.5 5.43744 15.576 4.5 14.5 4.5H9.5C8.424 4.5 7.5 5.43744 7.5 6.65918V7.66992L6.5 7.09277V6.65918C6.5 4.94407 7.81458 3.5 9.5 3.5H14.5Z"
+              fill="currentColor"/>
+    </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="close">
+        <path d="M17.6574 17.6566L6.34367 6.34285" stroke="#272724" stroke-linecap="round" />
+        <path d="M17.6563 6.34285L6.34262 17.6566" stroke="#272724" stroke-linecap="round" />
+    </symbol>
+    <!--<symbol viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg" id="bookmark-active">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10.5 3.15882V16.0858L6.03642 13.2487C5.70907 13.0407 5.29093 13.0407 4.96359 13.2487L0.5 16.0858L0.5 3.15882C0.5 1.69039 1.61929 0.5 3 0.5L8 0.5C9.38071 0.5 10.5 1.69039 10.5 3.15882Z"
+              fill="currentColor" stroke="currentColor" stroke-linecap="round"/>
+    </symbol>-->
     <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="user">
         <path d="M5.5 19.5C5.5 19.5 9 18 10 17C11 16 8 16 8 11C8 6 12 6 12 6C12 6 16 6 16 11C16 16 13 16 14 17C15 18 18.5 19.5 18.5 19.5"
               stroke="currentColor" stroke-linecap="round"/>
@@ -28,6 +51,6 @@
               stroke="currentColor"/>
     </symbol>
     <symbol viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg" id="hero-arrow">
-        <path d="M0.5 18.5L9.5 9.5L0.499999 0.5" stroke="currentColor" stroke-linecap="round" />
+        <path d="M0.5 18.5L9.5 9.5L0.499999 0.5" stroke="currentColor" stroke-linecap="round"/>
     </symbol>
 </svg>

@@ -1,0 +1,14 @@
+mixin favoriteButton()
+
+    //favorite-button
+    .favorite-button&attributes(attributes)
+        button.favorite-button__button
+            span.favorite-button__icon
+                +svg("bookmark")
+                +svg("bookmark-hover")
+                +svg("bookmark-active")
+        .favorite-button__message
+            .favorite-button__text
+                p добавить в&nbsp;избранное
+
+

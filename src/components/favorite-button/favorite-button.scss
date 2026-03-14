@@ -1,0 +1,161 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// favorite-button
+.favorite-button {
+  position: relative;
+  display: inline-flex;
+
+  &:hover {
+    .favorite-button__message {
+      max-width: 19rem;
+      //transform: translateX(-100%);
+    }
+
+    .favorite-button__icon {
+      svg:nth-child(1) {
+        opacity: 0;
+      }
+      svg:nth-child(2) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:not(:hover).active {
+    .favorite-button__icon {
+      svg:nth-child(1) {
+        opacity: 0;
+      }
+      svg:nth-child(2) {
+        opacity: 0;
+      }
+      svg:nth-child(3) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+
+      &:nth-child(1) {
+
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        position: absolute;
+        inset: 0;
+        color: $black;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__message {
+    position: absolute;
+    right: -2px;
+    width: 19rem;
+    max-width: 0;
+    overflow: hidden;
+    height: 3.2rem;
+    z-index: 1;
+    transition: transform $transition-default, max-width $transition-default;
+    pointer-events: none;
+    background-color: $black;
+  }
+
+  &__text {
+    padding-block: 0.8rem;
+    padding-inline: 1.2rem 3.2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    p {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: $white;
+      white-space: nowrap;
+    }
+  }
+}
+
+.favorite-notify {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  padding-block: 1.6rem;
+  padding-inline: 2rem;
+  backdrop-filter: blur(40px);
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  width: auto;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(2rem);
+  bottom: 0;
+  margin-inline: 0;
+  z-index: 5;
+  transition: transform $transition-default6, opacity $transition-default, visibility $transition-default;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-2rem);
+    transition: transform $transition-default, opacity $transition-default6, visibility $transition-default6;
+  }
+
+  &__icon {
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $black;
+    }
+  }
+
+  &__text {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33;
+    color: #272724;
+  }
+
+  &__close {
+    margin-left: 4rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $black;
+    }
+  }
+}

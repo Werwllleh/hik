@@ -1,0 +1,17 @@
+mixin hoverSlider(images = [])
+
+    //hover-slider
+    .hover-slider&attributes(attributes)
+        a(href="/").hover-slider__link
+            .hover-slider__body
+                .hover-slider__images
+                    .hover-slider__inner
+                        if images.length
+                          each image in images
+                            .hover-slider__column
+                                .hover-slider__image
+                                    img(src=image, alt="image")
+                                .hover-slider__line
+                .hover-slider__information
+                    p.hover-slider__name ХА648#
+                    span.hover-slider__price от 566 900₽

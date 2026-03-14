@@ -26,5 +26,17 @@ mixin footer()
                             span FIL INTERIORS
 
     .overlay
+    .favorite-notify.added
+        span.favorite-notify__icon
+            +svg("bookmark")
+        p.favorite-notify__text Товар добавлен в избранное
+        button.favorite-notify__close(type="button", aria-label="Закрыть сообщение", title="Закрыть сообщение")
+            +svg("close")
+    .favorite-notify.remove
+        span.favorite-notify__icon
+            +svg("bookmark-remove")
+        p.favorite-notify__text Товар удален из избранного
+        button.favorite-notify__close(type="button", aria-label="Закрыть сообщение", title="Закрыть сообщение")
+            +svg("close")
     +modal('consultation', 'consultation')
     +modal('success', 'success')

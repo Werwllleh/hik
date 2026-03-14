@@ -3,6 +3,14 @@
 // ui
 .page-ui {
 
+  &__elements {}
+
+  &__hover-sliders {
+    margin-block: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(55rem, 1fr));
+    gap: 2rem;
+  }
 }
 
 

@@ -8,9 +8,14 @@ append vars
 
 append content
 
-    .page-ui
+    .page-ui.ppt140
         .page-ui__elements
             button(type="button", data-modal="consultation").btn Открыть модалку
             +catalogCollapse()
             +checkbox()
+            +favoriteButton()
+        .page-ui__hover-sliders
+            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
 

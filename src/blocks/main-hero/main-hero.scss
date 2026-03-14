@@ -167,6 +167,41 @@
   &__next {
     right: 5.2rem;
   }
+
+  &.video {
+    .main-hero-slide__content {
+      margin-top: 20%;
+      flex: 0 1 50%;
+
+      @include w1600 {
+        padding-top: 8rem;
+        padding-inline: 3.2rem;
+      }
+    }
+    .main-hero-slide__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        padding-bottom: 10rem;
+      }
+    }
+
+    .title {
+
+      @include w1600 {
+        font-size: 4.8rem;
+        line-height: 1.25;
+      }
+    }
+  }
 }
 
 .main-hero-inform {

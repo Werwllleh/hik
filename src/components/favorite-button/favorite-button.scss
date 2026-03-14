@@ -5,11 +5,13 @@
 .favorite-button {
   position: relative;
   display: inline-flex;
+  transition: opacity $transition-default6, visibility $transition-default, transform $transition-default;
 
   &:hover {
-    .favorite-button__message {
-      max-width: 19rem;
-      //transform: translateX(-100%);
+    &:not(.active) {
+      .favorite-button__message {
+        max-width: 19rem;
+      }
     }
 
     .favorite-button__icon {
@@ -22,7 +24,8 @@
     }
   }
 
-  &:not(:hover).active {
+  &:not(:hover).active,
+  &.active{
     .favorite-button__icon {
       svg:nth-child(1) {
         opacity: 0;

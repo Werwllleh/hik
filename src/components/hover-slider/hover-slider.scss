@@ -3,13 +3,43 @@
 
 // hover-slider
 .hover-slider {
+  position: relative;
   background-color: $white;
 
-  &__link {}
+  &:hover {
+    .favorite-button:not(.active) {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
 
-  &__body {}
+  &__favorite-button {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    z-index: 2;
+
+    .favorite-button:not(.active) {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-5rem);
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
   &__images {
+    flex: 1;
     position: relative;
     display: block;
     overflow: hidden;
@@ -33,7 +63,6 @@
     position: absolute;
     display: flex;
     inset: 0;
-    padding: 2rem;
   }
 
   &__column {
@@ -61,8 +90,8 @@
 
   &__image {
     position: absolute;
-    height: calc(100% - 4rem);
-    width: calc(100% - 4rem);
+    height: 100%;
+    width: 100%;
     inset: 0;
     margin: auto;
     background-color: $white;
@@ -79,7 +108,8 @@
 
     img {
       display: flex;
-      height: 100%;
+      height: calc(100% - 4rem);
+      width: calc(100% - 4rem);
       object-fit: contain;
       position: absolute;
       left: 50%;
@@ -98,6 +128,7 @@
   }
 
   &__information {
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     align-items: center;

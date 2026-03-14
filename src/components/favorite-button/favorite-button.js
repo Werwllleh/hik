@@ -26,6 +26,7 @@ if (favoriteButtons.length && favoriteNotifyAdded && favoriteNotifyRemove) {
   favoriteButtons.forEach((favoriteButton) => {
     favoriteButton.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       favoriteButton.classList.toggle('active');
 
       if (favoriteButton.classList.contains('active')) {

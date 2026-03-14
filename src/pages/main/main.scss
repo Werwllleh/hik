@@ -3,3 +3,45 @@
 
 // main
 
+.page-main {
+
+
+  .section-popular {
+    margin-top: 12rem;
+
+    &__title {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 3.2rem;
+      line-height: 1.125;
+      text-align: center;
+      color: #272724;
+    }
+
+    &__items {
+      margin-top: 4rem;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .hover-slider {
+        height: 45.5rem;
+
+        &:nth-child(1),
+        &:nth-child(3) {
+          flex: 1 1 10%;
+        }
+        &:nth-child(2) {
+          flex: 0 1 50%;
+        }
+        &:nth-child(4),
+        &:nth-child(5) {
+          flex: 0 1 50%;
+        }
+      }
+    }
+  }
+}
+
+

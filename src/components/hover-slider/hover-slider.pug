@@ -2,6 +2,8 @@ mixin hoverSlider(images = [])
 
     //hover-slider
     .hover-slider&attributes(attributes)
+        .hover-slider__favorite-button
+            +favoriteButton()
         a(href="/").hover-slider__link
             .hover-slider__body
                 .hover-slider__images

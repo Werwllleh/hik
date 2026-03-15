@@ -145,6 +145,14 @@ body {
   padding-top: 14rem;
 }
 
+.spt {
+  margin-top: 8rem;
+
+  @include w1280 {
+    margin-top: 12rem;
+  }
+}
+
 .hide {
   display: none !important;
 }

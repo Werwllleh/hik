@@ -38,5 +38,17 @@ mixin footer()
         p.favorite-notify__text Товар удален из избранного
         button.favorite-notify__close(type="button", aria-label="Закрыть сообщение", title="Закрыть сообщение")
             +svg("close")
+    .product-preview-modal
+        .product-preview-modal__overlay
+        .product-preview-modal__container
+            button.product-preview-modal__close(type="button", aria-label="Закрыть", title="Закрыть")
+                +svg("close")
+            .product-preview-modal__swiper.swiper
+                .swiper-wrapper
+                .product-preview-modal__prev.prev
+                    +svg("hero-arrow")
+                .product-preview-modal__next.next
+                    +svg("hero-arrow")
+                .swiper-pagination
     +modal('consultation', 'consultation')
     +modal('success', 'success')

@@ -1,0 +1,18 @@
+mixin productPreview()
+
+    //product-preview
+    .product-preview&attributes(attributes)
+        +favoriteButton()
+        .swiper
+            .swiper-wrapper
+                .swiper-slide
+                    img(src="./images/sofa/1.webp" alt="" data-full="./images/sofa/1.webp")
+                .swiper-slide
+                    img(src="./images/sofa/2.webp" alt="" data-full="./images/sofa/2.webp")
+                .swiper-slide
+                    img(src="./images/sofa/3.webp" alt="" data-full="./images/sofa/3.webp")
+            button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").prev
+                +svg("hero-arrow")
+            button(type="button", aria-label="Следующий слайд", title="Следующий слайд").next
+                +svg("hero-arrow")
+            .swiper-pagination

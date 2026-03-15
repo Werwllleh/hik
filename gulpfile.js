@@ -47,7 +47,7 @@ const splitByPages = (destBase) => {
   return through.obj(function (file, enc, cb) {
     const pageName = getPageName(file.path);
     if (pageName) {
-      file.path = path.join(file.base, destBase, 'pages', pageName, path.basename(file.path));
+      file.path = path.join(file.base, destBase, pageName, path.basename(file.path));
     }
     this.push(file);
     cb();
@@ -94,7 +94,7 @@ export const stylesApp = () =>
 export const stylesPages = () =>
   gulp.src('src/pages/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(splitByPages('css'))
+    .pipe(splitByPages(''))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 
@@ -122,7 +122,7 @@ export const scriptsApp = () =>
 // Скрипты страниц (каждая страница в отдельный файл)
 export const scriptsPages = () =>
   gulp.src('src/pages/**/*.js')
-    .pipe(splitByPages('js'))
+    .pipe(splitByPages(''))
     .pipe(insert.prepend(
       `document.addEventListener('DOMContentLoaded', function () {\n`
     ))

@@ -2,7 +2,7 @@ mixin favoriteButton()
 
     //favorite-button
     .favorite-button&attributes(attributes)
-        button.favorite-button__button
+        button.favorite-button__button(aria-label="Избранное", title="Избранное")
             span.favorite-button__icon
                 +svg("bookmark")
                 +svg("bookmark-hover")

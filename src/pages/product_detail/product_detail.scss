@@ -1,0 +1,163 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// product_detail
+.product-detail {
+  padding-bottom: 12rem;
+}
+
+.product-information {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: .44fr 1fr .44fr;
+    gap: 0 4.8rem;
+    grid-template-areas: "breadcrumbs preview params"
+                          "title preview params"
+                          "price preview params"
+                          "description preview params"
+                          "button preview params";
+    grid-template-rows: auto 1fr auto auto auto;
+  }
+
+  &__breadcrumbs {
+    grid-area: breadcrumbs;
+  }
+
+  &__title {
+    grid-area: title;
+    margin-top: .4rem;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 4.8rem;
+    line-height: 1.25;
+    color: $black;
+  }
+
+  &__price {
+    grid-area: price;
+    margin-top: auto;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: $black;
+  }
+
+  &__description {
+    grid-area: description;
+    margin-top: 2rem;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    color: #272724;
+  }
+
+  &__order-button {
+    grid-area: button;
+    margin-top: 6rem;
+    width: 100%;
+  }
+
+  &__preview {
+    grid-area: preview;
+    height: 100%;
+    max-width: 76.4rem;
+    width: 100%;
+    background-color: #f4f4f4;
+
+    .product-preview {
+      max-height: 76.4rem;
+      width: 100%;
+    }
+  }
+
+  &__params {
+    grid-area: params;
+  }
+}
+
+.product-images {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  @include mobile {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8rem 4rem;
+  }
+
+  @include w1280 {
+    gap: 12rem 4rem;
+  }
+
+  picture {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      background-color: #f4f4f4;
+    }
+
+    &:nth-child(8n + 1),
+    &:nth-child(8n + 5),
+    &:nth-child(8n + 7) {
+      max-height: 33.6rem;
+
+      @include mobile {
+        flex: 1 1 calc(50% - 4rem);
+        max-width: 76.4rem;
+        max-height: 76.4rem;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &:nth-child(8n + 2),
+    &:nth-child(8n + 4),
+    &:nth-child(8n + 8) {
+      max-height: 33.6rem;
+
+      @include mobile {
+        flex: 1 1 calc(41% - 4rem);
+        margin-top: auto;
+        max-width: 63.7rem;
+        max-height: 63.7rem;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &:nth-child(8n + 3),
+    &:nth-child(8n + 6), {
+      flex: 1 1 100%;
+      max-width: none;
+      max-height: 21rem;
+      aspect-ratio: 16 / 9;
+
+      @include tablet {
+        max-height: 45.5rem;
+      }
+
+      @include w1280 {
+        max-height: 77rem;
+      }
+
+      @include w1600 {
+        max-height: 90rem;
+      }
+    }
+
+  }
+}

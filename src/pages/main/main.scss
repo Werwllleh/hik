@@ -2,14 +2,6 @@
 @use '../../app/scss/mixins.scss' as *;
 
 // main
-.spt {
-  margin-top: 8rem;
-
-  @include w1280 {
-    margin-top: 12rem;
-  }
-}
-
 .page-main {
 
 }

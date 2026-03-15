@@ -1,0 +1,49 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Product-detail"
+  - description = "Описание Product-detail"
+  - stylePage = "product_detail"
+  - scriptPage = "product_detail"
+
+append content
+
+    .product-detail.ppt140
+        .product-information
+            .product-information__inner
+                .product-information__breadcrumbs
+                    +breadcrumbs(['каталог', 'интерьерная мебель', 'диваны'])
+                h1.product-information__title ХА648#
+                span.product-information__price от 566 900₽
+                .product-information__description
+                    p элегантный модульный диван с&nbsp;каркасом из&nbsp;массива дерева. сиденье с&nbsp;губкой высокой плотности обеспечивает упругую поддержку, а&nbsp;спинка и&nbsp;подушки с&nbsp;гусиным пухом дарят мягкость и&nbsp;комфорт. позволяет создавать различные конфигурации под ваше пространство.
+                button(data-modal="order").product-information__order-button.btn.primary заказать
+                .product-information__preview
+                    +productPreview(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp"])
+                .product-information__params
+
+        .product-images.spt
+            picture
+                source(srcset="./images/sofa/2-full.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/2.webp", alt="")
+            picture
+                source(srcset="./images/sofa/3-full.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/3.webp", alt="")
+            picture
+                source(srcset="./images/sofa/detailed/1-2x.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/detailed/1-1000.webp", alt="")
+            picture
+                source(srcset="./images/sofa/detailed/2-2x.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/detailed/2-1000.webp", alt="")
+            picture
+                source(srcset="./images/sofa/detailed/3-2x.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/detailed/3-1000.webp", alt="")
+            picture
+                source(srcset="./images/sofa/detailed/4-2x.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/detailed/4-1000.webp", alt="")
+            picture
+                source(srcset="./images/sofa/detailed/5-2x.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/detailed/5-1000.webp", alt="")
+            picture
+                source(srcset="./images/sofa/detailed/6-2x.webp" media="(min-width: 1400px)")
+                img(src="./images/sofa/detailed/6-1000.webp", alt="")

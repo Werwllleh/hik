@@ -17,6 +17,17 @@ append content
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+        section.page-main-form.spt
+            .main-form
+                .main-form__inner
+                    h2.main-form__title подпишитесь, чтобы узнавать о&nbsp;новинках раньше всех
+                    form(data-form="subscribe", novalidate).main-form__form.form
+                        fieldset
+                            label.form__field
+                                input(name="email", type="email", inputmode="email", placeholder="", required).form__input
+                                span.form__label ваш e-mail
+                                span.form__error
+                            button(type="submit").form__submit подписаться
         section.page-main-video.spt
             .main-video
                 .main-video__inner

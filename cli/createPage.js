@@ -36,7 +36,7 @@ const createPage = (pageName) => {
   fs.writeFileSync(path.join(dir, `${pageName}.scss`), scssContent);
   fs.writeFileSync(path.join(dir, `${pageName}.js`), '');
 
-  fs.appendFileSync(path.join(indexPagesScss), `\n@use "../../pages/${pageName}/${pageName}";`);
+  // fs.appendFileSync(path.join(indexPagesScss), `\n@use "../../pages/${pageName}/${pageName}";`);
 
   console.log(`Страница "${pageName}" успешно создана!`);
 };

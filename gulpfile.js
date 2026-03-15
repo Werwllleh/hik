@@ -105,7 +105,7 @@ export const styles = gulp.parallel(stylesApp, stylesPages);
 // Базовые скрипты приложения
 export const scriptsApp = () =>
   gulp.src([
-    'src/app/js/common.js',
+    'src/app/js/*.js',
     'src/blocks/**/*.js',
     'src/components/**/*.js',
   ])

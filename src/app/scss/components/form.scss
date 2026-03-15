@@ -1,0 +1,103 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+
+.form {
+
+  &__field {
+    position: relative;
+    display: flex;
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: rgba(39, 39, 36, 0.6);
+    transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease, font-size 0.2s ease;
+
+    // Поднятый label (при фокусе или заполненном поле)
+    &--floating,
+    .form__input:focus + &,
+    .form__input:not(:placeholder-shown) + & {
+      top: 0;
+      transform: translateY(0);
+      font-size: 1rem;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__input {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33;
+    color: $black;
+    width: 100%;
+    padding-block: 2.2rem 1rem;
+    padding-inline: 0;
+    border-bottom: 1px solid rgba(39, 39, 36, 0.2);
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: $black;
+    }
+
+    &--error {
+      border-bottom-color: #ea3323;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: 0;
+    bottom: -2rem;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #ea3323;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    text-align: center;
+    color: #fff;
+    padding-block: 1.2rem;
+    padding-inline: 1.6rem;
+    background-color: $black;
+    transition: opacity 0.2s ease, cursor 0.2s ease;
+
+    &:disabled,
+    &.button-inactive {
+      //opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

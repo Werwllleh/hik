@@ -2,6 +2,13 @@
 @use '../../app/scss/mixins.scss' as *;
 
 // main
+.spt {
+  margin-top: 8rem;
+
+  @include w1280 {
+    margin-top: 12rem;
+  }
+}
 
 .page-main {
 
@@ -190,10 +197,43 @@
   }
 }
 
-.spt {
-  margin-top: 8rem;
+.main-form {
 
-  @include w1280 {
-    margin-top: 12rem;
+  &__inner {}
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.33;
+    text-align: center;
+    color: #272724;
+    max-width: 50rem;
+    margin-inline: auto;
+
+    @include w1280 {
+      font-size: 3.2rem;
+      line-height: 1.125;
+    }
+  }
+
+  &__form {
+    margin-top: 4rem;
+    max-width: 76.4rem;
+    margin-inline: auto;
+
+    fieldset {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .form__field {
+      width: 100%;
+    }
+
+    button {
+      max-width: 24.9rem;
+      width: 100%;
+    }
   }
 }

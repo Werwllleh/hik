@@ -5,43 +5,195 @@
 
 .page-main {
 
+}
 
-  .section-popular {
-    margin-top: 12rem;
+.section-popular {
 
-    &__title {
-      font-family: $font-family;
-      font-weight: 400;
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.33;
+    text-align: center;
+    color: #272724;
+
+    @include w1280 {
       font-size: 3.2rem;
       line-height: 1.125;
-      text-align: center;
-      color: #272724;
     }
+  }
 
-    &__items {
-      margin-top: 4rem;
-      display: flex;
+  &__items {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+    @include tablet {
+      flex-direction: row;
       align-items: stretch;
       justify-content: center;
       flex-wrap: wrap;
+    }
 
-      .hover-slider {
-        height: 45.5rem;
+    .hover-slider {
+      height: 30.6rem;
+
+      @include tablet {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(4),
+        &:nth-child(5) {
+          flex: 0 1 calc(50% - .8rem);
+        }
+
+        &:nth-child(3) {
+          flex: 0 1 100%;
+        }
+      }
+
+      @include w1280 {
+        height: 37.8rem;
 
         &:nth-child(1),
         &:nth-child(3) {
-          flex: 1 1 10%;
+          flex: 0 1 calc(25% - .8rem);
         }
-        &:nth-child(2) {
-          flex: 0 1 50%;
-        }
+
+        &:nth-child(2),
         &:nth-child(4),
         &:nth-child(5) {
-          flex: 0 1 50%;
+          flex: 0 1 calc(50% - .8rem);
+          max-width: 61.2rem;
+        }
+      }
+
+      @include w1600 {
+        height: 45.5rem;
+
+        &:nth-child(2),
+        &:nth-child(4),
+        &:nth-child(5) {
+          max-width: 76.4rem;
         }
       }
     }
   }
 }
 
+.main-video {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 6rem;
+  padding-inline: 4rem;
+  background-color: #101010;
 
+  @include w1280 {
+    padding-block: 12rem;
+    padding-inline: 10.3rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    @include w1280 {
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
+  &__info {
+
+    @include w1280 {
+      flex: 0 1 auto;
+      max-width: 47.4rem;
+    }
+
+    &--inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem 0;
+      height: 100%;
+      width: 100%;
+      min-height: 32rem;
+
+      @include tablet {
+        min-height: 36rem;
+      }
+
+      @include w1280 {
+        min-height: auto;
+      }
+    }
+
+    &--invite {
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.33333;
+      color: #909090;
+    }
+
+    &--address {
+      margin-top: auto;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 1.33;
+      text-transform: uppercase;
+      color: #fff;
+
+      @include w1280 {
+        font-size: 3.2rem;
+        line-height: 1.125;
+      }
+    }
+
+    &--detailed {
+      display: flex;
+      align-items: center;
+      gap: 0 .8rem;
+
+      span {
+        flex: 1;
+        height: .1rem;
+        width: 100%;
+        background-color: $white;
+      }
+
+      p {
+        flex: 0 0 auto;
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.33333;
+        color: #fff;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 20rem;
+
+    @include tablet {
+      height: 41.9rem;
+    }
+
+    @include w1280 {
+      flex: 1;
+      height: 48rem;
+    }
+  }
+}
+
+.spt {
+  margin-top: 8rem;
+
+  @include w1280 {
+    margin-top: 12rem;
+  }
+}

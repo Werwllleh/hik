@@ -9,7 +9,7 @@ append vars
 append content
     .page-main
         +mainHero()
-        section.section-popular
+        section.section-popular.spt
             h2.section-popular__title популярно сейчас
             .section-popular__items
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
@@ -17,3 +17,15 @@ append content
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
                 +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+        section.page-main-video.spt
+            .main-video
+                .main-video__inner
+                    .main-video__info
+                        .main-video__info--inner
+                            span.main-video__info--invite посетите наш шоу-рум
+                            a(href="https://yandex.ru/maps/-/CPFY7JoG" target="_blank" rel="noreferrer noopener" aria-label="Адрес" title="Адрес шоу-рума").main-video__info--address Москва, ул.&nbsp;Нижняя Сыромятническая,&nbsp;10, стр.&nbsp;7, 3&nbsp;этаж
+                            a(href="https://yandex.ru/maps/-/CPFY7JoG" target="_blank" rel="noreferrer noopener" aria-label="Адрес" title="Адрес шоу-рума").main-video__info--detailed
+                                span
+                                p подробнее
+                    .main-video__video
+                        +videoComponent('./images/main-hero/video.webm', './images/poster1.webp')

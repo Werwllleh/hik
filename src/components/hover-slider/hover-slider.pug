@@ -14,6 +14,13 @@ mixin hoverSlider(images = [])
                                 .hover-slider__image
                                     img(src=image, alt="image")
                                 .hover-slider__line
+                .hover-slider__swiper
+                    .swiper
+                        .swiper-wrapper
+                            if images.length
+                              each image in images
+                                .swiper-slide
+                                    img(src=image, alt="image")
                 .hover-slider__information
                     p.hover-slider__name ХА648#
                     span.hover-slider__price от 566 900₽

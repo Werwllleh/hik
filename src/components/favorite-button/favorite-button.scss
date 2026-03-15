@@ -111,22 +111,29 @@
 .favorite-notify {
   display: flex;
   align-items: center;
-  max-width: max-content;
-  padding-block: 1.6rem;
-  padding-inline: 2rem;
+  justify-content: center;
+  gap: 0 1rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
   backdrop-filter: blur(40px);
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
   background: rgba(255, 255, 255, 0.8);
   position: fixed;
-  width: auto;
+  width: max-content;
   left: 50%;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(2rem);
   bottom: 0;
-  margin-inline: 0;
   z-index: 5;
   transition: transform $transition-default6, opacity $transition-default, visibility $transition-default;
+
+  @include tablet {
+    gap: 0 1.5rem;
+    padding-block: 1.6rem;
+    padding-inline: 2rem;
+    max-width: max-content;
+  }
 
   &.show {
     opacity: 1;
@@ -136,6 +143,7 @@
   }
 
   &__icon {
+    flex: 0 0 auto;
 
     svg {
       width: 2.4rem;
@@ -147,13 +155,25 @@
   &__text {
     font-family: $font-family;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.33;
     color: #272724;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: 1.2rem;
+    }
   }
 
   &__close {
-    margin-left: 4rem;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      margin-left: 2rem;
+    }
 
     svg {
       width: 2.4rem;

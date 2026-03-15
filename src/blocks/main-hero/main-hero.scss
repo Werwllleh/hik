@@ -6,19 +6,6 @@
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  margin-inline: -1.2rem;
-
-  @include tablet {
-    margin-inline: -2rem;
-  }
-
-  @include w1280 {
-    margin-inline: -2.4rem;
-  }
-
-  @include w1600 {
-    margin-inline: -3.2rem;
-  }
 }
 
 .main-hero-swiper {
@@ -52,6 +39,7 @@
   height: 100%;
   display: flex;
   flex-direction: column-reverse;
+  justify-content: flex-end;
 
   &:hover {
     .main-hero-slide__prev,
@@ -61,27 +49,29 @@
   }
 
   @include w1280 {
+    justify-content: flex-start;
     flex-direction: row;
   }
 
   &__content {
     position: relative;
     z-index: 1;
-    border-right: 1px solid #fff;
     width: 100%;
     backdrop-filter: blur(25px);
     background: rgba(255, 255, 255, 0.6);
     padding: 2rem 1.2rem;
     margin-top: -4rem;
-    min-height: 28rem;
+    height: 100%;
+    max-height: calc(30% + 4rem);
 
     @include tablet {
-      flex: 0 1 45%;
-      height: 100%;
       padding: 3.2rem 2rem;
     }
 
     @include w1280 {
+      max-height: none;
+      border-right: 1px solid #fff;
+      height: 100%;
       margin-top: 0;
       flex: 0 1 66%;
       padding: 18rem 3% 18rem 13rem;
@@ -98,13 +88,12 @@
 
   &__image {
     width: 100%;
+    max-height: 70%;
     height: 100%;
-
-    @include tablet {
-      flex: 0 1 70%;
-    }
+    flex: 1;
 
     @include w1280 {
+      max-height: none;
       flex: auto;
       position: absolute;
       top: 0;
@@ -180,6 +169,7 @@
         height: auto;
         flex: 0 1 50%;
         border-color: transparent;
+        padding-inline: 3.2rem 10rem;
       }
 
       @include w1600 {
@@ -190,12 +180,11 @@
     .main-hero-slide__video {
       width: 100%;
       height: 100%;
-
-      @include tablet {
-        flex: 0 1 70%;
-      }
+      max-height: 70%;
 
       @include w1280 {
+        max-height: none;
+        flex: 0 1 70%;
         flex: none;
         position: absolute;
         top: 0;
@@ -219,7 +208,7 @@
       max-width: none;
     }
     .main-hero-inform__middle {
-      margin-top: 4rem;
+
 
       @include w1280 {
         margin-top: 8rem;
@@ -227,6 +216,12 @@
 
       @include w1600 {
         margin-top: 12rem;
+      }
+    }
+    .main-hero-inform__bottom {
+
+      @include w1280 {
+        margin-top: 4rem;
       }
     }
     .title {
@@ -251,7 +246,6 @@
     .main-hero-slide__prev,
     .main-hero-slide__next {
       top: auto;
-
       bottom: 18rem;
     }
 
@@ -279,10 +273,15 @@
   .title {
     font-family: $font-family;
     font-weight: 400;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     line-height: 1.33;
     text-transform: uppercase;
     color: $black;
+    min-height: 6.5rem;
+
+    @include small {
+      font-size: 2.4rem;
+    }
 
     @include tablet {
       font-size: 3.2rem;
@@ -322,6 +321,10 @@
     font-size: 1.2rem;
     line-height: 1.33;
     color: $black;
+
+    @include tablet {
+      max-width: 60rem;
+    }
 
     @include w1280 {
       max-width: 38rem;
@@ -406,7 +409,8 @@
     justify-content: space-between;
 
     @include tablet {
-      margin-top: 6rem;
+      margin-top: auto;
+      //margin-top: 6rem;
     }
 
     @include w1280 {
@@ -424,9 +428,9 @@
   }
 
   &__bottom {
-    margin-top: auto;
     display: flex;
     align-items: center;
+    margin-top: auto;
 
     @include w1280 {
       margin-top: 8rem;

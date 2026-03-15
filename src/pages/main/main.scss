@@ -218,13 +218,28 @@
   }
 
   &__form {
-    margin-top: 4rem;
-    max-width: 76.4rem;
+    margin-top: 3.2rem;
+    width: 100%;
     margin-inline: auto;
+
+    @include w1280 {
+      margin-top: 4rem;
+      max-width: 61.2rem;
+    }
+
+    @include w1600 {
+      max-width: 76.4rem;
+    }
 
     fieldset {
       display: flex;
-      align-items: stretch;
+      flex-direction: column;
+      gap: 3.2rem 0;
+
+      @include tablet {
+        align-items: stretch;
+        flex-direction: row;
+      }
     }
 
     .form__field {
@@ -232,8 +247,11 @@
     }
 
     button {
-      max-width: 24.9rem;
       width: 100%;
+
+      @include tablet {
+        max-width: 24.9rem;
+      }
     }
   }
 }

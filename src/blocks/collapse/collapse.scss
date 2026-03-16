@@ -20,11 +20,11 @@
   }
 
   .collapse-wrap {
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transition: all $transition;
+    transition: height $transition-default6, opacity $transition-default, visibility $transition-default;
   }
 
   .collapse-data {

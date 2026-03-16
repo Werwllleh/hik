@@ -6,17 +6,21 @@
   overflow: hidden;
 
   .collapse {
+    display: flex;
+    flex-direction: column;
   }
 
   .collapse-wrap {
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
     .collapse-data {
-      padding-top: 2rem;
+      margin-top: 2rem;
+      //padding-top: 2rem;
+      overflow-y: auto;
+      max-height: calc(100% - 2rem);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 

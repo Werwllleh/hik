@@ -2,6 +2,9 @@ const collapseBlocks = document.querySelectorAll('.collapse');
 if (collapseBlocks.length) {
   collapseBlocks.forEach(collapseBlock => {
 
+    let collapseBlockConfiguratorHeight = document.querySelector('.product-configurator .collapse').offsetHeight;
+    console.log(collapseBlockConfiguratorHeight)
+
     const items = collapseBlock.querySelectorAll('.collapse-item');
     if (!items.length) return;
 
@@ -35,22 +38,15 @@ if (collapseBlocks.length) {
 
         if (!isActive) {
           if (collapseBlock.closest('.product-configurator')) {
-            const productConfiguratorHeight = collapseBlock.closest('.product-configurator').offsetHeight;
-            const collapseBlockHeight =  collapseBlock.offsetHeight;
 
-            collapseBlockWrap.style.height = `${productConfiguratorHeight - collapseBlockHeight}px`;
+            const productConfiguratorHeight = collapseBlock.closest('.product-configurator').offsetHeight;
+
+            collapseBlockWrap.style.height = `${productConfiguratorHeight - collapseBlockConfiguratorHeight}px`;
           } else {
             collapseBlockWrap.style.height = getElementHeight(collapseBlockData);
           }
 
-          collapseBlockWrap.addEventListener('transitionend', function handler() {
-            collapseBlockWrap.style.height = 'auto';
-
-            collapseBlockWrap.removeEventListener('transitionend', handler);
-          }, { once: true });
-
           item.classList.add('active');
-
         }
       })
     })

@@ -6,7 +6,13 @@
   position: relative;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__back-link {
     position: absolute;

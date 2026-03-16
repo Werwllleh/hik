@@ -49,6 +49,7 @@ if (collapseBlocks.length) {
         collapseStageInfo.style.maxHeight = getElementHeight(collapseStageList);
       }
     })
+
   })
 }
 

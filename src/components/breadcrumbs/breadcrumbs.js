@@ -12,6 +12,16 @@ if (breadcrumbs) {
     breadcrumbs.classList.toggle('breadcrumbs--has-left-overflow', hasLeftOverflow);
   };
 
+  // Прокрутка колесиком мыши
+  breadcrumbs.addEventListener('wheel', (event) => {
+    if (list.scrollWidth <= list.clientWidth) return;
+
+    if (event.deltaY === 0) return;
+
+    event.preventDefault();
+    list.scrollLeft += event.deltaY;
+  }, { passive: false });
+
   // Первоначальная проверка
   checkOverflow();
 

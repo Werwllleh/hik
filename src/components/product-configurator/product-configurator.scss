@@ -3,22 +3,37 @@
 
 // product-configurator
 .product-configurator {
+  overflow: hidden;
 
   .collapse {
+  }
 
+  .collapse-wrap {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .collapse-data {
+      padding-top: 2rem;
+    }
   }
 
   .collapse-item {
     display: flex;
     flex-direction: column;
-    transition: flex $transition-default;
 
     &.active {
+
       .collapse-header__icon svg {
         transform: rotate(180deg);
       }
+
       .collapse-wrap {
-        //max-height: 65rem !important;
+      }
+
+      .product-configurator-materials {
       }
     }
   }
@@ -64,7 +79,6 @@
   }
 
   .product-configurator-materials {
-    padding-block: 2rem 0;
 
     &__inner {
       padding-block: 1.6rem;

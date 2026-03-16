@@ -5,8 +5,6 @@ mixin breadcrumbs(items=[])
 
     //breadcrumbs
     ul.breadcrumbs&attributes(attributes)
-        a.breadcrumbs__back-link(href="./main.html", title="Назад")
-            +svg("arrow")(class="breadcrumbs__back-link-icon")
         .breadcrumbs__list-box
             ul.breadcrumbs__list
               each item, index in items

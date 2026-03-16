@@ -1,0 +1,167 @@
+mixin productConfigurator()
+
+    //product-configurator
+    .product-configurator&attributes(attributes)
+        .collapse
+            .collapse-item
+                .collapse-header
+                    p.collapse-header__name конфигурации
+                    span.collapse-header__line
+                    span.collapse-header__icon
+                        +svg("configurator_arrow")
+                .collapse-wrap
+                    .collapse-data
+                        .product-configurator-configurations
+            .collapse-item
+                .collapse-header
+                    p.collapse-header__name материалы
+                    span.collapse-header__line
+                    span.collapse-header__icon
+                        +svg("configurator_arrow")
+                .collapse-wrap
+                    .collapse-data
+                        .product-configurator-materials
+                            .product-configurator-materials__inner
+                                .group
+                                    span.group__name корпус:
+                                    ul.group__list
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/1.webp", alt="")
+                                            p WALNUT VENEER
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/2.webp", alt="")
+                                            p WHITE OAK
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/3.webp", alt="")
+                                            p WHITE EUCALYPTUS
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/4.webp", alt="")
+                                            p DEEP WALNUT
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/5.webp", alt="")
+                                            p WALNUT GRAIN ASH
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/6.webp", alt="")
+                                            p GRAY OAK
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/7.webp", alt="")
+                                            p DUSTY EUCALYPTUS
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/8.webp", alt="")
+                                            p SMOKED OAK
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/9.webp", alt="")
+                                            p SAND OAK
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/10.webp", alt="")
+                                            p MISTY GRAY OAK
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/11.webp", alt="")
+                                            p COFFEE OAK
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/12.webp", alt="")
+                                            p DEEP GRAY OAK
+                                            span KY0029
+                                .group
+                                    span.group__name обивка (кожа)
+                                    ul.group__list
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/13.webp", alt="")
+                                            p CLOUD RIVER GRAY
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/14.webp", alt="")
+                                            p MOONLIT WHITE
+                                            span KY0029
+                                        li.group__item
+                                            .group__material
+                                                img(src="./images/configurator/materials/15.webp", alt="")
+                                            p DAWN WHITE
+                                            span KY0029
+                                .group
+                                    span.group__name обивка (премиум-текстиль)
+                                    ul.group__list
+                                        li.group__item
+                                            .group__material(style="background-color: #807772;")
+                                            p CLOUD RIVER GRAY
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #FFFBF4;")
+                                            p MOONLIT WHITE
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #FDF4E7;")
+                                            p DAWN WHITE
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #B7AB9F;")
+                                            p WARM APRICOT
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #384229;")
+                                            p EMERALD GREEN
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #464648;")
+                                            p EARL GRAY
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #d5cbbf;")
+                                            p PALE SAND GRAY
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #aa6c34;")
+                                            p BONFIRE ORANGE
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #59513f;")
+                                            p SPRING DAWN GREEN
+                                            span KY0029
+                                        li.group__item
+                                            .group__material(style="background-color: #622c2a;")
+                                            p WINE RED
+                                            span KY0029
+
+            .collapse-item
+                .collapse-header
+                    p.collapse-header__name спецификация и 2d/3d-модели
+                    span.collapse-header__line
+                    span.collapse-header__icon
+                        +svg("configurator_arrow")
+                .collapse-wrap
+                    .collapse-data
+                        .product-configurator-docs
+            .collapse-item
+                .collapse-header
+                    p.collapse-header__name как заказать?
+                    span.collapse-header__line
+                    span.collapse-header__icon
+                        +svg("configurator_arrow")
+                .collapse-wrap
+                    .collapse-data
+                        .product-configurator-order

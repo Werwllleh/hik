@@ -58,4 +58,7 @@
               d="M14.0708 7.87883C14.7182 8.26724 14.7182 9.20542 14.0708 9.59382L2.0145 16.8276C1.34797 17.2275 0.5 16.7474 0.5 15.9701L0.5 1.50252C0.5 0.725223 1.34797 0.245111 2.0145 0.645026L14.0708 7.87883Z"
               stroke="currentColor" stroke-linejoin="round"/>
     </symbol>
+    <symbol viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" id="configurator_arrow">
+        <path d="M0.5 0.5L4.5 4.5L8.5 0.5" stroke="currentColor" stroke-linecap="round" />
+    </symbol>
 </svg>

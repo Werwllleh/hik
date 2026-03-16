@@ -171,3 +171,11 @@ body {
     visibility: visible;
   }
 }
+
+.lazy-image {
+  width: auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+}

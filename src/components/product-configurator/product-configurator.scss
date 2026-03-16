@@ -1,0 +1,136 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// product-configurator
+.product-configurator {
+
+  .collapse {
+
+  }
+
+  .collapse-item {
+    display: flex;
+    flex-direction: column;
+    transition: flex $transition-default;
+
+    &.active {
+      .collapse-header__icon svg {
+        transform: rotate(180deg);
+      }
+      .collapse-wrap {
+        //max-height: 65rem !important;
+      }
+    }
+  }
+
+  .collapse-item + .collapse-item {
+    margin-top: 2rem;
+  }
+
+  .collapse-header {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    &__name {
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.33;
+      color: $black;
+      white-space: nowrap;
+    }
+
+    &__line {
+      flex: 1;
+      height: 0.1rem;
+      background-color: #d4d4d4;
+      margin-block: auto;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.6rem;
+      height: 1.6rem;
+
+      svg {
+        width: 1rem;
+        height: .7rem;
+        color: $black;
+      }
+    }
+  }
+
+  .product-configurator-materials {
+    padding-block: 2rem 0;
+
+    &__inner {
+      padding-block: 1.6rem;
+      padding-inline: 2rem;
+      background-color: #f4f4f4;
+    }
+
+    .group {
+
+      &__name {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
+      }
+
+      &__list {
+        margin-top: 1.6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.6rem .8rem;
+      }
+
+      &__item {
+
+        p {
+          margin-top: .8rem;
+          font-family: $font-family;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: $black;
+        }
+
+        span {
+          display: block;
+          margin-top: .4rem;
+          font-family: $font-family;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: #909090;
+        }
+      }
+
+      &__material {
+        width: 100%;
+        height: 5rem;
+
+        @include w1600 {
+          height: 6rem;
+        }
+
+        img {
+          border: 2px solid #fff;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    .group + .group {
+      margin-top: 3.2rem;
+    }
+  }
+}

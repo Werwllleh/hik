@@ -68,8 +68,11 @@ if (productPreviewSlider) {
   const closeModal = () => {
     if (!modal) return;
 
-    blockWrap(false)
     modal.classList.remove('active');
+
+    setTimeout(() => {
+      blockWrap(false)
+    }, 300)
   };
 
   // Клик по слайду открывает модальное окно

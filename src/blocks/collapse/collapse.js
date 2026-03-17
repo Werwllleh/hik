@@ -3,7 +3,6 @@ if (collapseBlocks.length) {
   collapseBlocks.forEach(collapseBlock => {
 
     let collapseBlockConfiguratorHeight = document.querySelector('.product-configurator .collapse').offsetHeight;
-    console.log(collapseBlockConfiguratorHeight)
 
     const items = collapseBlock.querySelectorAll('.collapse-item');
     if (!items.length) return;
@@ -39,9 +38,16 @@ if (collapseBlocks.length) {
         if (!isActive) {
           if (collapseBlock.closest('.product-configurator')) {
 
-            const productConfiguratorHeight = collapseBlock.closest('.product-configurator').offsetHeight;
-
-            collapseBlockWrap.style.height = `${productConfiguratorHeight - collapseBlockConfiguratorHeight}px`;
+            if (window.innerWidth >= 1280) {
+              const productConfiguratorHeight = collapseBlock.closest('.product-configurator').offsetHeight;
+              collapseBlockWrap.style.height = `${productConfiguratorHeight - collapseBlockConfiguratorHeight}px`;
+            } else {
+              if (collapseBlockData.querySelector('div').offsetHeight < 620) {
+                collapseBlockWrap.style.height = getElementHeight(collapseBlockData.querySelector('div'));
+              } else {
+                collapseBlockWrap.style.height = `62rem`;
+              }
+            }
           } else {
             collapseBlockWrap.style.height = getElementHeight(collapseBlockData);
           }

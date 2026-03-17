@@ -12,6 +12,50 @@ mixin productConfigurator()
                 .collapse-wrap
                     .collapse-data
                         .product-configurator-configurations
+                            .product-configurator-configurations__inner
+                                ul
+                                    li
+                                        p 2 модуля
+                                        span 2160 × 1100
+                                        img(src="./images/sofa/modules/1.webp", alt="")
+                                    li
+                                        p 3 модуля
+                                        span 3020 × 1100
+                                        img(src="./images/sofa/modules/2.webp", alt="")
+                                    li
+                                        p 3 модуля
+                                        span 3450 × 1100
+                                        img(src="./images/sofa/modules/3.webp", alt="")
+                                    li
+                                        p 3 модуля
+                                        span 3470 × 1100
+                                        img(src="./images/sofa/modules/4.webp", alt="")
+                                    li
+                                        p 3 модуля
+                                        span 3320 × 1400
+                                        img(src="./images/sofa/modules/5.webp", alt="")
+                                    li
+                                        p 3 модуля
+                                        span 2970 × 1750
+                                        img(src="./images/sofa/modules/6.webp", alt="")
+                                    li
+                                        p 4 модуля
+                                        span 2160 × 1100
+                                        img(src="./images/sofa/modules/7.webp", alt="")
+                                    li
+                                        p 5 модулей
+                                        span 4510 × 2800
+                                        img(src="./images/sofa/modules/8.webp", alt="")
+                                    li
+                                        p 5 модулей
+                                        span 4510 × 3010
+                                        img(src="./images/sofa/modules/9.webp", alt="")
+                                    li
+                                        p 6 модулей
+                                        span 4070 × 3210
+                                        img(src="./images/sofa/modules/10.webp", alt="")
+
+
             .collapse-item
                 .collapse-header
                     p.collapse-header__name материалы
@@ -156,6 +200,30 @@ mixin productConfigurator()
                 .collapse-wrap
                     .collapse-data
                         .product-configurator-docs
+                            .product-configurator-docs__inner
+                                .product-configurator-docs__top
+                                    .product-configurator-docs__title
+                                        p Нажмите на&nbsp;файл для скачивания
+                                    .product-configurator-docs__list
+                                        ul
+                                            li
+                                                a(href="", download)
+                                                    +svg("download")
+                                                    p спецификация ХА648.DXF
+                                                    span 32,2 Мб
+                                            li
+                                                a(href="", download)
+                                                    +svg("download")
+                                                    p 2d-модели ХА648.RAR
+                                                    span 10,0 Мб
+                                            li
+                                                a(href="", download)
+                                                    +svg("download")
+                                                    p 3d-модели ХА648.RAR
+                                                    span 6,8 Мб
+                                .product-configurator-docs__bottom
+                                    p предоставленные материалы могут быть использованы только для визуализации дизайна интерьера. они не&nbsp;могут быть использованы в&nbsp;других коммерческих целях
+
             .collapse-item
                 .collapse-header
                     p.collapse-header__name как заказать?
@@ -165,3 +233,30 @@ mixin productConfigurator()
                 .collapse-wrap
                     .collapse-data
                         .product-configurator-order
+                            .product-configurator-order__inner
+                                .product-configurator-order__description
+                                    p свяжитесь с&nbsp;нами любым удобным для вас способом и&nbsp;персональный консультант поможет выбрать товары под ваши желания и&nbsp;вкус, а&nbsp;так&nbsp;же оформит заказ:
+                                .product-configurator-order__contacts
+                                    ul
+                                        li
+                                            p по&nbsp;телефону (10:00&nbsp;&mdash; 20:00&nbsp;МСК)
+                                            a(href="tel:+78005553535") 8 800 555-35-35
+                                        li
+                                            p по&nbsp;почте
+                                            a(href="mailto:order@hik.ru") order@hik.ru
+                                        li
+                                            p через любой мессенджер
+                                            a(href="#" target="_blank" rel="noopener noreferrer")
+                                                +svg("wa")
+                                                | HIK WA
+                                            a(href="#" target="_blank" rel="noopener noreferrer")
+                                                +svg("telegram")
+                                                | @hikoficialrus
+                                .product-configurator-order__address
+                                    span в нашем шоу-руме
+                                    a(href="https://yandex.com/maps/-/CPFKbMPY", target="_blank", rel="noopener noreferrer") Москва, ул. Рождественский бульвар, 12а, 2&nbsp;этаж, павильон&nbsp;22
+                                .product-configurator-order__map
+                                    img(src="./images/map.webp", alt="Карта")
+                                    a(href="https://yandex.com/maps/-/CPFKbMPY", target="_blank", rel="noopener noreferrer").btn.secondary
+                                        +svg("location")
+                                        | смотреть на карте

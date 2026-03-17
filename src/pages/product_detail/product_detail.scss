@@ -150,6 +150,16 @@
     }
 
   }
+
+  &.discontinued {
+    .product-information__preview .swiper-wrapper {
+      opacity: .3;
+    }
+  }
+}
+
+.product-video {
+  max-height: 90rem;
 }
 
 .product-images {

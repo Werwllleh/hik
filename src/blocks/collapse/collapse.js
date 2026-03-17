@@ -2,7 +2,7 @@ const collapseBlocks = document.querySelectorAll('.collapse');
 if (collapseBlocks.length) {
   collapseBlocks.forEach(collapseBlock => {
 
-    let collapseBlockConfiguratorHeight = document.querySelector('.product-configurator .collapse').offsetHeight;
+    let collapseBlockConfiguratorHeight = document.querySelector('.product-configurator .collapse')?.offsetHeight;
 
     const items = collapseBlock.querySelectorAll('.collapse-item');
     if (!items.length) return;

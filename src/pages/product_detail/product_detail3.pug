@@ -10,17 +10,21 @@ append content
 
     .product-detail.ppt140
         .product-information.discontinued
-            .product-information__inner
-                .product-information__breadcrumbs
-                    +breadcrumbs(['каталог', 'интерьерная мебель', 'диваны'])
-                .product-information__title
-                    h1 ХА648#
-                .product-information__price
-                    p товар снят с&nbsp;производства
-                .product-information__description
-                    p элегантный модульный диван с&nbsp;каркасом из&nbsp;массива дерева. сиденье с&nbsp;губкой высокой плотности обеспечивает упругую поддержку, а&nbsp;спинка и&nbsp;подушки с&nbsp;гусиным пухом дарят мягкость и&nbsp;комфорт. позволяет создавать различные конфигурации под ваше пространство.
-                button(data-modal="order").product-information__order-button.btn.primary заказать
-                .product-information__preview
-                    +productPreview(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp"])
-                .product-information__params
-                    +productConfigurator()
+            .container
+                .product-information__inner
+                    .product-information__breadcrumbs
+                        +breadcrumbs(['каталог', 'интерьерная мебель', 'диваны'])
+                    .product-information__title
+                        h1 ХА648#
+                    .product-information__price
+                        p товар снят с&nbsp;производства
+                    .product-information__description
+                        p элегантный модульный диван с&nbsp;каркасом из&nbsp;массива дерева. сиденье с&nbsp;губкой высокой плотности обеспечивает упругую поддержку, а&nbsp;спинка и&nbsp;подушки с&nbsp;гусиным пухом дарят мягкость и&nbsp;комфорт. позволяет создавать различные конфигурации под ваше пространство.
+                    button(data-modal="order").product-information__order-button.btn.primary заказать
+                    .product-information__preview
+                        +productPreview(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp"])
+                    .product-information__params
+                        +productConfigurator()
+        .container
+            .products-list.spt
+                +productsSlider('похожие товары')

@@ -9,16 +9,17 @@ append vars
 append content
 
     .page-ui.ppt140
-        img(src="./images/sofa/2.webp", alt="", data-image="progressive", data-src="./images/sofa/2-full.webp")
-        .page-ui__elements
-            button(type="button", data-modal="consultation").btn Открыть модалку
-            +catalogCollapse()
-            +checkbox()
-            +favoriteButton()
-        .page-ui__video
-            +videoComponent('./images/main-hero/video.webm', './images/main-hero/v-2x.webp')
-        .page-ui__hover-sliders
-            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
-            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
-            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+        .container
+            img(src="./images/sofa/2.webp", alt="", data-image="progressive", data-src="./images/sofa/2-full.webp")
+            .page-ui__elements
+                button(type="button", data-modal="consultation").btn Открыть модалку
+                +catalogCollapse()
+                +checkbox()
+                +favoriteButton()
+            .page-ui__video
+                +videoComponent('./images/main-hero/video.webm', './images/main-hero/v-2x.webp')
+            .page-ui__hover-sliders
+                +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
 

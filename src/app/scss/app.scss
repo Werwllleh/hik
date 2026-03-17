@@ -125,13 +125,15 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: -6.5rem;
+  padding-bottom: 8rem;
 
   @include tablet {
     margin-top: -7.3rem;
   }
 
-  @include w1600 {
+  @include w1280 {
     margin-top: -9.7rem;
+    padding-bottom: 12rem;
   }
 
   &__container {
@@ -142,7 +144,15 @@ body {
 }
 
 .ppt140 {
-  padding-top: 14rem;
+  padding-top: 10rem;
+
+  @include w1280 {
+    padding-top: 13rem;
+  }
+
+  @include w1600 {
+    padding-top: 14rem;
+  }
 }
 
 .spt {

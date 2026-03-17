@@ -5,7 +5,21 @@
 .footer {
   padding-bottom: 3.2rem;
 
-  &__container {}
+  &__container {
+    padding-inline: 1.2rem;
+
+    @include tablet {
+      padding-inline: 2rem;
+    }
+
+    @include w1280 {
+      padding-inline: 2.4rem;
+    }
+
+    @include w1600 {
+      padding-inline: 3.2rem;
+    }
+  }
 
   &__body {}
 

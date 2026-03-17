@@ -1,0 +1,63 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Product-detail"
+  - description = "Описание Product-detail"
+  - stylePage = "product_detail"
+  - scriptPage = "product_detail"
+
+append content
+
+    .product-detail
+        .product-detail-hero
+            .product-kitchen
+                .product-kitchen__info.ppt140
+                    .container
+                        .product-kitchen__info--inner
+                            .product-detail__breadcrumbs
+                                +breadcrumbs(['каталог', 'кухни'])
+                            .product-detail__title
+                                h1 оливер стоун
+                            .product-detail__price
+                                p от 566 900₽
+                            .product-detail__description
+                                p элегантный модульный диван с&nbsp;каркасом из&nbsp;массива дерева. сиденье с&nbsp;губкой высокой плотности обеспечивает упругую поддержку, а&nbsp;спинка и&nbsp;подушки с&nbsp;гусиным пухом дарят мягкость и&nbsp;комфорт. позволяет создавать различные конфигурации под ваше пространство.
+                            button(data-modal="order").product-detail__order-button.btn.primary заказать
+                .product-kitchen__image
+                    .product-kitchen__image--info
+                        .container
+                            .product-detail__breadcrumbs
+                                +breadcrumbs(['каталог', 'кухни'])
+                            .product-detail__title
+                                h1 оливер стоун
+                    picture
+                        source(srcset="./images/kitchen/m1.webp" media="(min-width: 550px)")
+                        img(src="./images/kitchen/m1-m.webp", alt="")
+        .container
+            .product-video.spt
+                +videoComponent('./images/main-hero/video.webm', './images/poster3.webp')
+            .product-images.spt
+                .row.ltr
+                    picture
+                        source(srcset="./images/kitchen/1.webp" media="(min-width: 1400px)")
+                        img(src="./images/kitchen/1.webp", alt="")
+                    picture
+                        source(srcset="./images/kitchen/2.webp" media="(min-width: 1400px)")
+                        img(src="./images/kitchen/2.webp", alt="")
+                .row
+                    picture
+                        source(srcset="./images/kitchen/3.webp" media="(min-width: 1400px)")
+                        img(src="./images/kitchen/3.webp", alt="")
+                .row
+                    picture
+                        source(srcset="./images/kitchen/4.webp" media="(min-width: 1400px)")
+                        img(src="./images/kitchen/4.webp", alt="")
+                .row.rtl
+                    picture
+                        source(srcset="./images/kitchen/5.webp" media="(min-width: 1400px)")
+                        img(src="./images/kitchen/5.webp", alt="")
+                    picture
+                        source(srcset="./images/kitchen/6.webp" media="(min-width: 1400px)")
+                        img(src="./images/kitchen/6.webp", alt="")
+            .products-list.spt
+                +productsSlider('покупают вместе')

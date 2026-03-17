@@ -1,4 +1,4 @@
-mixin hoverSlider(images = [])
+mixin hoverSlider(images = [], name = '', price = '')
 
     //hover-slider
     .hover-slider&attributes(attributes)
@@ -22,5 +22,7 @@ mixin hoverSlider(images = [])
                                 .swiper-slide
                                     img(src=image, alt="image")
                 .hover-slider__information
-                    p.hover-slider__name ХА648#
-                    span.hover-slider__price от 566 900₽
+                    .hover-slider__name
+                        p= name ? name : 'ХА648#'
+                    .hover-slider__price
+                        span= price ? price : 'от 566 900₽'

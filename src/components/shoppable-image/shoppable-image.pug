@@ -1,0 +1,20 @@
+mixin shoppableImage(image, hotspots = [])
+
+  //shoppable-image
+  .shoppable-image&attributes(attributes)
+    img.shoppable-image__src(src=image, alt="Shoppable image")
+
+    if hotspots.length
+      each hotspot in hotspots
+        .shoppable-image__poppoer
+          +hoverSlider(hotspot.images || [], hotspot.name, hotspot.price)
+        button.shoppable-image__hotspot(
+          type="button"
+          style=`top: ${hotspot.top}%; left: ${hotspot.left}%;`
+          data-images=hotspot.images
+          data-name=hotspot.name
+          data-price=hotspot.price
+        )
+          span.shoppable-image__icon
+            +svg("plus")
+

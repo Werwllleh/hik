@@ -82,4 +82,8 @@
               d="M12 10C12.5523 10 13 9.55228 13 9C13 8.44772 12.5523 8 12 8C11.4477 8 11 8.44772 11 9C11 9.55228 11.4477 10 12 10Z"
               stroke="currentColor"/>
     </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="plus">
+        <path d="M20 12H4" stroke="#272724" stroke-linecap="round"/>
+        <path d="M12 4V20" stroke="#272724" stroke-linecap="round"/>
+    </symbol>
 </svg>

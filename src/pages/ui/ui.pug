@@ -11,6 +11,23 @@ append content
     .page-ui.ppt140
         .container
             img(src="./images/sofa/2.webp", alt="", data-image="progressive", data-src="./images/sofa/2-full.webp")
+            div(style="width: 500px; height: 500px;")
+                +shoppableImage('./images/shoppable-image/1.webp', [
+                  {
+                    top: 30,
+                    left: 25,
+                    images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                    name: 'Диван',
+                    price: 'от 56 900₽'
+                  },
+                  {
+                    top: 60,
+                    left: 70,
+                    images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                    name: 'Кресло',
+                    price: 'от 32 900₽'
+                  }
+                ])
             .page-ui__elements
                 button(type="button", data-modal="consultation").btn Открыть модалку
                 +catalogCollapse()

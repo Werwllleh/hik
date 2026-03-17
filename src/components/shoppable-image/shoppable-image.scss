@@ -1,0 +1,90 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// shoppable-image
+.shoppable-image {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &__src {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__hotspot {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.4rem;
+    height: 6.4rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: $white;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: background-color $transition-default, transform $transition-default;
+    z-index: 1;
+
+    &:hover {
+      background-color: $black;
+
+      .shoppable-image__icon {
+        color: $white;
+      }
+    }
+
+    &.active {
+      .shoppable-image__icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: $white;
+    transition: color $transition-default, transform $transition-default;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $black;
+    }
+  }
+}
+
+.tippy-box[data-theme="shoppable-tippy"] {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(40px);
+  box-shadow: 40px 0 40px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+
+  .tippy-arrow {
+    display: none;
+  }
+
+  .tippy-content {
+    padding: 0;
+
+  }
+}
+
+.shoppable-image__poppoer {
+  .hover-slider,
+  .hover-slider__image {
+    background: none;
+  }
+}
+
+

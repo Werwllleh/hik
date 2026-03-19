@@ -83,7 +83,7 @@
               stroke="currentColor"/>
     </symbol>
     <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="plus">
-        <path d="M20 12H4" stroke="#272724" stroke-linecap="round"/>
-        <path d="M12 4V20" stroke="#272724" stroke-linecap="round"/>
+        <path d="M20 12H4" stroke="currentColor" stroke-linecap="round"/>
+        <path d="M12 4V20" stroke="currentColor" stroke-linecap="round"/>
     </symbol>
 </svg>

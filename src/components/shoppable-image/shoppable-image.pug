@@ -6,15 +6,13 @@ mixin shoppableImage(image, hotspots = [])
 
     if hotspots.length
       each hotspot in hotspots
-        .shoppable-image__poppoer
-          +hoverSlider(hotspot.images || [], hotspot.name, hotspot.price)
         button.shoppable-image__hotspot(
           type="button"
           style=`top: ${hotspot.top}%; left: ${hotspot.left}%;`
-          data-images=hotspot.images
+          data-images=`${hotspot.images.map(i => i)}`
           data-name=hotspot.name
           data-price=hotspot.price
+          data-link="./product_detail.html"
         )
           span.shoppable-image__icon
             +svg("plus")
-

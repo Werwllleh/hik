@@ -50,5 +50,7 @@ mixin footer()
                 .product-preview-modal__next.next
                     +svg("hero-arrow")
                 .swiper-pagination
+    .shoppable-image__poppoer(style="display: none;")
+        +hoverSlider(false, false, false, 'tippy')
     +modal('consultation', 'consultation')
     +modal('success', 'success')

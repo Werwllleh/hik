@@ -1,10 +1,10 @@
-mixin hoverSlider(images = [], name = '', price = '')
+mixin hoverSlider(images = [], name = '', price = '', type)
 
     //hover-slider
     .hover-slider&attributes(attributes)
         .hover-slider__favorite-button
             +favoriteButton()
-        a(href="/").hover-slider__link
+        a(href="/", data-link="/").hover-slider__link
             .hover-slider__body
                 .hover-slider__images
                     .hover-slider__inner
@@ -14,15 +14,16 @@ mixin hoverSlider(images = [], name = '', price = '')
                                 .hover-slider__image
                                     img(src=image, alt="image")
                                 .hover-slider__line
-                .hover-slider__swiper
-                    .swiper
-                        .swiper-wrapper
-                            if images.length
-                              each image in images
-                                .swiper-slide
-                                    img(src=image, alt="image")
+                if type !== 'tippy'
+                    .hover-slider__swiper
+                        .swiper
+                            .swiper-wrapper
+                                if images.length
+                                  each image in images
+                                    .swiper-slide
+                                        img(src=image, alt="image", data-image)
                 .hover-slider__information
-                    .hover-slider__name
+                    .hover-slider__name(data-name)
                         p= name ? name : 'ХА648#'
-                    .hover-slider__price
+                    .hover-slider__price(data-price)
                         span= price ? price : 'от 566 900₽'

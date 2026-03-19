@@ -10,6 +10,151 @@ append content
     .page-main
         +mainHero()
         .page-main__container.container
+            section.shoppable-images.spt
+                .row.type1
+                    +shoppableImage('./images/shoppable-image/1.webp', [
+                      {
+                        top: 30,
+                        left: 25,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Диван',
+                        price: 'от 56 900₽'
+                      },
+                      {
+                        top: 60,
+                        left: 70,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Кресло',
+                        price: 'от 32 900₽'
+                      }
+                    ])
+                    +shoppableImage('./images/shoppable-image/2.webp', [
+                      {
+                        top: 30,
+                        left: 25,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Диван',
+                        price: 'от 56 900₽'
+                      },
+                      {
+                        top: 75,
+                        left: 61,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Кресло',
+                        price: 'от 32 900₽'
+                      },
+                      {
+                        top: 55,
+                        left: 90,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Стул',
+                        price: 'от 32 900₽'
+                      }
+                    ])
+                    .row__text
+                        h3 новинки каталога
+                        p лаконичные силуэты, благородные оттенки теплой палитры в&nbsp;сочетании с&nbsp;природными текстурами и&nbsp;безупречная эргономика в&nbsp;каждой детали
+                    .row-mobile-items
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                .row.type2
+                    +shoppableImage('./images/shoppable-image/3.webp', [
+                      {
+                        top: 49,
+                        left: 9,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Собака',
+                        price: 'Не продается'
+                      },
+                      {
+                        top: 38,
+                        left: 79,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Тумба',
+                        price: 'от 342 900₽'
+                      },
+                      {
+                        top: 58,
+                        left: 49,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp', './images/sofa/3.webp'],
+                        name: 'Стол',
+                        price: 'Дорого'
+                      }
+                    ])
+
+                    .row-mobile-items
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                .row.type3
+                    +shoppableImage('./images/shoppable-image/4.webp', [
+                      {
+                        top: 48,
+                        left: 66,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Шкаф',
+                        price: 'от 323 900₽'
+                      }
+                    ])
+                    +shoppableImage('./images/shoppable-image/5.webp', [
+                      {
+                        top: 30,
+                        left: 25,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Диван',
+                        price: 'от 56 900₽'
+                      },
+                      {
+                        top: 75,
+                        left: 61,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Кресло',
+                        price: 'от 32 900₽'
+                      },
+                      {
+                        top: 55,
+                        left: 90,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Стул',
+                        price: 'от 32 900₽'
+                      }
+                    ])
+                    .row-mobile-items
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                .row.type2
+                    +shoppableImage('./images/shoppable-image/6.webp', [
+                      {
+                        top: 58,
+                        left: 17,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Кресло',
+                        price: 'бесценно'
+                      },
+                      {
+                        top: 74,
+                        left: 80,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp'],
+                        name: 'Кровать',
+                        price: 'от 377 400₽'
+                      },
+                      {
+                        top: 26,
+                        left: 58,
+                        images: ['./images/sofa/1.webp', './images/sofa/2.webp', './images/sofa/3.webp'],
+                        name: 'Шкаф',
+                        price: 'от 999 999₽'
+                      }
+                    ])
+
+                    .row-mobile-items
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
             section.section-popular.spt
                 h2.section-popular__title популярно сейчас
                 .section-popular__items

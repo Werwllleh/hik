@@ -1,0 +1,84 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Products-listing"
+  - description = "Описание Products-listing"
+  - stylePage = "products-listing"
+  - scriptPage = "products-listing"
+
+append content
+
+    .products-listing.ppt140
+        .products-listing__container.container
+            .products-listing__header
+                .products-listing__breadcrumbs
+                    +breadcrumbs(['каталог', 'интерьерная мебель'])
+                .products-listing__title
+                    h1 диваны
+            .products-listing__filters
+            .products-listing__content
+                .products-furniture
+                    .products-furniture__list
+                        .row
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp", "./images/sofa/2.webp"])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        .row2
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            .row2__bg
+                                img(src="./images/furniture/1.webp", alt="")
+                                img(src="./images/furniture/2.webp", alt="")
+                        .row
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        .row2
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            .row2__bg
+                                img(src="./images/furniture/2.webp", alt="")
+                                img(src="./images/furniture/3.webp", alt="")
+                        .row
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                        .row2
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            .row2__bg
+                                img(src="./images/furniture/4.webp", alt="")
+                                img(src="./images/furniture/5.webp", alt="")
+                        .row
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+                            +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
+            .products-listing__pagination.spt
+                .pagination
+                    .pagination__inner
+                        a(href="#").pagination__button.prev.disabled
+                            span
+                                +svg("hero-arrow")
+                            p назад
+                        ul.pagination__list
+                            li.active
+                                a(href="#") 1
+                            li
+                                a(href="#") 2
+                            li
+                                a(href="#") 3
+                            li
+                                a(href="#") 4
+                            li
+                                span ...
+                            li
+                                a(href="#") 15
+                        a(href="#").pagination__button.next
+                            span
+                                +svg("hero-arrow")
+                            p вперед
+
+
+

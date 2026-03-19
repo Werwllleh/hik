@@ -64,6 +64,9 @@ if (shoppableImages.length && shoppableImagePopper) {
 
         onShow(instance) {
           updatePopperContent(popperClone, hotspot);
+
+          const hoverSlider = popperClone.querySelector('.hover-slider');
+          if (hoverSlider) initHoverSlider(hoverSlider)
           hotspot.classList.add('active');
         },
 

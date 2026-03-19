@@ -7,9 +7,14 @@
   background-color: #f4f4f4;
   overflow: hidden;
   min-height: 23.2rem;
+  transition: background-color $transition-default;
 
   @include w1280 {
     background-color: $white;
+  }
+
+  .hover-slider__image {
+    opacity: 0;
   }
 
   &:hover {
@@ -56,21 +61,33 @@
 
   &__images {
     display: none;
-    flex: 1;
     position: relative;
     overflow: hidden;
     bottom: auto;
     z-index: 1;
+    height: 23.8rem;
+    min-width: 23.8rem;
+
+    @include w1280 {
+      height: 30.2rem;
+      min-width: 30.2rem;
+    }
+
+    @include w1600 {
+      height: 37.8rem;
+      min-width: 37.8rem;
+    }
 
     @include w1280 {
       display: block;
     }
 
-    &:after {
+
+    /*&:after {
       content: '';
       padding-top: 100%;
       display: block;
-    }
+    }*/
 
     &:hover {
       .hover-slider__line {
@@ -82,48 +99,59 @@
   &__inner {
     position: absolute;
     display: flex;
+    max-width: 90%;
+    margin: 0 auto;
     inset: 0;
   }
 
   &__column {
     position: static;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
     flex: 1;
     height: 100%;
-  }
+    padding-inline: .5rem;
 
-  &__column {
+    &:hover {
+      .hover-slider__line {
+        background-color: $black;
+      }
+    }
+
     .hover-slider__image {
       opacity: 0;
     }
 
     &:first-child {
+      align-items: flex-end !important;
+      padding-right: .5rem;
+
+      .hover-slider__image {
+        opacity: 1;
+      }
+      .hover-slider__line {
+        width: 90%;
+      }
+    }
+    &:last-child {
+      align-items: flex-start !important;
+      padding-left: .5rem;
+
+      .hover-slider__line {
+        width: 90% !important;
+      }
+    }
+
+    &.active {
       .hover-slider__image {
         opacity: 1;
       }
     }
-  }
-
-  &:hover {
-    .hover-slider__column:first-child {
+    &.disabled {
       .hover-slider__image {
         opacity: 0;
       }
-    }
-
-    .hover-slider__column:hover {
-      .hover-slider__image {
-        opacity: 1;
-      }
-    }
-  }
-
-  &__column:hover {
-    .hover-slider__line {
-      background-color: $black;
     }
   }
 
@@ -157,11 +185,13 @@
   }
 
   &__line {
+    margin-top: auto;
+    flex: 0 0 auto;
     height: .1rem;
     background-color: #d4d4d4;
-    width: 98%;
     overflow: hidden;
     opacity: 0;
+    width: 100%;
     transition: background-color $transition-default, opacity $transition-default;
   }
 

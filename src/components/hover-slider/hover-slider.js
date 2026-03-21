@@ -6,7 +6,6 @@ if (hoverSliders.length) {
     const swiperElement = hoverSlider.querySelector('.hover-slider__swiper .swiper')
 
     new Swiper(swiperElement, {
-      loop: true,
       speed: 800,
       slidesPerView: 1,
     });

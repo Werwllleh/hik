@@ -8,18 +8,19 @@
   transition: opacity $transition-default6, visibility $transition-default, transform $transition-default;
 
   &:hover {
-    &:not(.active) {
-      .favorite-button__message {
-        max-width: 19rem;
+    @include w1280 {
+      &:not(.active) {
+        .favorite-button__message {
+          max-width: 19rem;
+        }
       }
-    }
-
-    .favorite-button__icon {
-      svg:nth-child(1) {
-        opacity: 0;
-      }
-      svg:nth-child(2) {
-        opacity: 1;
+      .favorite-button__icon {
+        svg:nth-child(1) {
+          opacity: 0;
+        }
+        svg:nth-child(2) {
+          opacity: 1;
+        }
       }
     }
   }

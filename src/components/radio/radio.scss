@@ -2,23 +2,57 @@
 
 // radio
 .radio {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    gap: 0 .9rem;
+    max-width: max-content;
 
     &__input {
         display: none;
     }
 
+    &__icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d4d4d4;
+        border-radius: 100%;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: $white;
+        transition: background-color $transition-default, border-color $transition-default;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 100%;
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: $white;
+            opacity: 0;
+            transition: opacity $transition-default;
+        }
+
+    }
+
     &__label {
         position: relative;
-        padding-left: 28px;
-        font-size: 15px;
-        line-height: 22px;
-        color: #626A76;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
         cursor: pointer;
         user-select: none;
         transition: color $transition-default;
 
-        &::before {
+        /*&::before {
             position: absolute;
             left: 0;
             top: 1px;
@@ -34,14 +68,14 @@
             border-radius: 20px;
             content: "";
             transition: border-color $transition-default, background-color $transition-default;
-        }
+        }*/
 
         &:hover {
             color: $primary;
 
-            &::before {
+            /*&::before {
                 border-color: $primary;
-            }
+            }*/
         }
 
         .radio__input:checked+&,
@@ -50,6 +84,21 @@
                 background-color: $primary;
                 color: $primary;
             }
+        }
+    }
+
+    &:hover {
+        .radio__icon {
+            border-color: $black;
+        }
+    }
+
+    .radio__input:checked + .radio__icon {
+        background-color: $black;
+        border-color: $black;
+
+        &::before {
+            opacity: 1;
         }
     }
 }

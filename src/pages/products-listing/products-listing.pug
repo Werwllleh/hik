@@ -16,6 +16,7 @@ append content
                 .products-listing__title
                     h1 диваны
             .products-listing__filters
+                +filters()
             .products-listing__content
                 .products-furniture
                     .products-furniture__list
@@ -55,7 +56,7 @@ append content
                         .row
                             +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
                             +hoverSlider(["./images/sofa/1.webp", "./images/sofa/2.webp", "./images/sofa/3.webp",])
-            .products-listing__pagination.spt
+        .products-listing__pagination.spt.px-wrap
                 .pagination
                     .pagination__inner
                         a(href="#").pagination__button.prev.disabled

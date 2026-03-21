@@ -30,9 +30,17 @@ append content
                 ])
             .page-ui__elements
                 button(type="button", data-modal="consultation").btn Открыть модалку
+                button(type="button", data-modal="consultation").btn.primary Открыть модалку
+                button(type="button", data-modal="consultation").btn.secondary Открыть модалку
                 +catalogCollapse()
-                +checkbox()
                 +favoriteButton()
+            div(style="display:flex; align-items:center; flex-direction; gap: 10px;")
+                div
+                    +checkbox("checkbox", "param1", "value")
+                    +checkbox("checkbox", "param1", "value")
+                div
+                    +radio("radio", "param1", "value")
+                    +radio("radio", "param2", "value")
             .page-ui__video
                 +videoComponent('./images/main-hero/video.webm', './images/main-hero/v-2x.webp')
             .page-ui__hover-sliders

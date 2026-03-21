@@ -38,6 +38,10 @@
         <path d="M17.6574 17.6566L6.34367 6.34285" stroke="#272724" stroke-linecap="round"/>
         <path d="M17.6563 6.34285L6.34262 17.6566" stroke="#272724" stroke-linecap="round"/>
     </symbol>
+    <symbol viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="filter-remove">
+        <path d="M11.7703 11.7717L4.22781 4.22922" stroke="currentColor" stroke-linecap="round" />
+        <path d="M11.7722 4.22922L4.22971 11.7717" stroke="currentColor" stroke-linecap="round" />
+    </symbol>
     <!--<symbol viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg" id="bookmark-active">
         <path fill-rule="evenodd" clip-rule="evenodd"
               d="M10.5 3.15882V16.0858L6.03642 13.2487C5.70907 13.0407 5.29093 13.0407 4.96359 13.2487L0.5 16.0858L0.5 3.15882C0.5 1.69039 1.61929 0.5 3 0.5L8 0.5C9.38071 0.5 10.5 1.69039 10.5 3.15882Z"
@@ -85,5 +89,11 @@
     <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="plus">
         <path d="M20 12H4" stroke="currentColor" stroke-linecap="round"/>
         <path d="M12 4V20" stroke="currentColor" stroke-linecap="round"/>
+    </symbol>
+    <symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="sort">
+        <path d="M4 8L7 5L10 8" stroke="currentColor" stroke-linecap="round" />
+        <path d="M7 20L7 6" stroke="currentColor" stroke-linecap="round" />
+        <path d="M20 17L17 20L14 17" stroke="currentColor" stroke-linecap="round" />
+        <path d="M17 5L17 19" stroke="currentColor" stroke-linecap="round" />
     </symbol>
 </svg>

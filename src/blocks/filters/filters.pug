@@ -1,0 +1,216 @@
+mixin filters()
+
+    //filters
+    .filters&attributes(attributes)
+        .filters__wrap
+            ul.filters__list
+                li
+                    .filter(data-filter="sort", title="Сортировать")
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    span
+                                        +svg("sort")
+                                    .title
+                                        | по популярности
+                                .filter-button-selected
+                                    span.filter-button-selected__param
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            p.filter-data__title сортировать:
+                            .filter-data__content
+                                .filter-sort
+                                    ul.filter-sort__list
+                                        li
+                                            button(type="button", data-sort="default")
+                                                span
+                                                | по умолчанию
+                                        li
+                                            button(type="button", data-sort="popular")
+                                                span
+                                                | по популярности
+                                        li
+                                            button(type="button", data-sort="asc")
+                                                span
+                                                | по возрастанию цены
+                                        li
+                                            button(type="button", data-sort="desc")
+                                                span
+                                                | по убыванию цены
+                                        li
+                                            button(type="button", data-sort="new")
+                                                span
+                                                | сначала новые
+                                        li
+                                            button(type="button", data-sort="old")
+                                                span
+                                                | сначала старые
+                            .filter-data__accept
+                                button(type="button").filter-submit.btn.primary применить
+                li
+                    .filter(data-filter="radio", title="Коллекция")
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    .title
+                                        | коллекция
+                                .filter-button-selected
+                                    span.filter-button-selected__param
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            p.filter-data__title коллекция:
+                            .filter-data__content
+                                .filter-radio
+                                    ul
+                                        li
+                                            +radio("collection", "Norwegian Аncient Forest ‘25", "Norwegian Аncient Forest ‘25")
+                                        li
+                                            +radio("collection", "City Hero Balance ‘25", "City Hero Balance ‘25")
+                                        li
+                                            +radio("collection", "Digital Renaissance ‘25", "Digital Renaissance ‘25")
+                                        li
+                                            +radio("collection", "Eco Innovators ‘24", "Eco Innovators ‘24")
+                                        li
+                                            +radio("collection", "Urban Jungle Symphony ‘24", "Urban Jungle Symphony ‘24")
+                                        li
+                                            +radio("collection", "Futuristic Horizons ‘23", "Futuristic Horizons ‘23")
+                            .filter-data__accept
+                                button(type="button").filter-submit.btn.primary применить
+                li
+                    .filter(data-filter="checkbox", title="Материал")
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    .title
+                                        | материал
+                                .filter-button-selected
+                                    span.filter-button-selected__param
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            p.filter-data__title материал:
+                            .filter-data__content
+                                .filter-checkbox
+                                    ul
+                                        li
+                                            +checkbox("material", "микрофибра", "")
+                                        li
+                                            +checkbox("material", "полиэстер", "")
+                                        li
+                                            +checkbox("material", "шенилл", "")
+                                        li
+                                            +checkbox("material", "рогожка", "")
+                                        li
+                                            +checkbox("material", "флок", "")
+                                        li
+                                            +checkbox("material", "натуральная кожа", "")
+                                        li
+                                            +checkbox("material", "арпатек", "")
+                                        li
+                                            +checkbox("material", "микрофибра", "")
+                                        li
+                                            +checkbox("material", "полиэстер", "")
+                                        li
+                                            +checkbox("material", "шенилл", "")
+                                        li
+                                            +checkbox("material", "рогожка", "")
+                                        li
+                                            +checkbox("material", "флок", "")
+                                        li
+                                            +checkbox("material", "натуральная кожа", "")
+                                        li
+                                            +checkbox("material", "арпатек", "")
+
+                            .filter-data__accept
+                                button(type="button").filter-submit.btn.primary применить
+                li
+                    .filter(data-filter="checkbox", title="Цвет")
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    .title
+                                        | цвет
+                                .filter-button-selected
+                                    span.filter-button-selected__param
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            p.filter-data__title цвет:
+                            .filter-data__content
+                                .filter-checkbox
+                                    ul
+                                        li
+                                            +checkbox("material", "белый", "")
+                                            span.color(style="background: linear-gradient(315deg, #fff 0%, #e5e5e5 100%);border-color:rgba(39, 39, 36, 0.2)")
+                                        li
+                                            +checkbox("material", "черный", "")
+                                            span.color(style="background: linear-gradient(135deg, #000 0%, #535353 100%);")
+                                        li
+                                            +checkbox("material", "серый", "")
+                                            span.color(style="background: linear-gradient(315deg, #dbdbdb 0%, #8e8e8e 100%);")
+                                        li
+                                            +checkbox("material", "бежевый", "")
+                                            span.color(style="background: linear-gradient(135deg, #e4d5bc 0%, #ece7d1 100%);")
+                                        li
+                                            +checkbox("material", "золотой", "")
+                                            span.color(style="background: linear-gradient(135deg, #ffd900 0%, #ffec83 31.34%, #ffd900 49.92%, #ffec83 66.65%, #ffd900 100%);")
+                                        li
+                                            +checkbox("material", "бронзовый", "")
+                                            span.color(style="background: linear-gradient(135deg, #e28d2d 0%, #f0c58e 31.34%, #e28d2d 49.92%, #f0c58e 66.65%, #e28d2d 100%);")
+                                        li
+                                            +checkbox("material", "серебристый", "")
+                                            span.color(style="background: linear-gradient(135deg, #e28d2d 0%, #f0c58e 31.34%, #e28d2d 49.92%, #f0c58e 66.65%, #e28d2d 100%);")
+                                        li
+                                            +checkbox("material", "красный", "")
+                                            span.color(style="background: linear-gradient(315deg, #ff630f 0%, #f20 100%);")
+                                        li
+                                            +checkbox("material", "коричневый", "")
+                                            span.color(style="background: linear-gradient(315deg, #c05600 0%, #742b00 100%);")
+                                        li
+                                            +checkbox("material", "оранжевый", "")
+                                            span.color(style="background: linear-gradient(315deg, #ff9600 0%, #ffc97d 100%);")
+
+                            .filter-data__accept
+                                button(type="button").filter-submit.btn.primary применить
+                li
+                    .filter(data-filter="between", title="цена")
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    .title
+                                        | цена
+                                .filter-button-selected
+                                    span.filter-button-selected__param
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            p.filter-data__title цена:
+                            .filter-data__content
+                                .filter-checkbox
+                                    .filter-between
+
+                            .filter-data__accept
+                                button(type="button").filter-submit.btn.primary применить
+

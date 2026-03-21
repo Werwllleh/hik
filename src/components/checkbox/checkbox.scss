@@ -3,20 +3,45 @@
 
 // checkbox
 .checkbox {
-    display: inline-flex;
-    min-height: 2.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0 .9rem;
+    max-width: max-content;
 
     &__input {
         display: none;
     }
 
+    &__icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d4d4d4;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-color: $white;
+        transition: background-color $transition-default, border-color $transition-default;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 2.5L3.5 5.5L8.5 0.5' stroke='white' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1rem .8rem;
+            opacity: 0;
+            transition: opacity $transition-default;
+        }
+    }
+
     &__label {
         position: relative;
-        padding-left: 4.2rem;
+        font-family: $font-family;
         font-weight: 400;
         font-size: 1.2rem;
-        line-height: 1.33333;
-        letter-spacing: -0.02em;
+        line-height: 1.33;
         color: $black;
         cursor: pointer;
         user-select: none;
@@ -30,47 +55,20 @@
         a {
             color: inherit;
         }
+    }
+
+    &:hover {
+        .checkbox__icon {
+            border-color: $black;
+        }
+    }
+
+    .checkbox__input:checked + .checkbox__icon {
+        background-color: $black;
+        border-color: $black;
 
         &::before {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto 0;
-            width: 2.6rem;
-            height: 2.6rem;
-            display: block;
-            background-color: #fff;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.46948L5.18818 7.65766L11.8458 1.00007' stroke='white' stroke-width='2' stroke-linecap='round' /%3E%3C/svg%3E");
-            background-position: 50% 60%;
-            background-repeat: no-repeat;
-            background-size: 1.3rem 1rem;
-            border: 2px solid rgba(181, 214, 255, 0.2);
-            border-radius: 0.8rem;
-            content: "";
-            transition: border-color $transition-default, background-color $transition-default;
-        }
-
-        &:hover {
-
-            a {
-                color: $primary;
-            }
-
-            &::before {
-                border-color: rgba(181, 214, 255, 0.5);
-            }
-        }
-
-        .checkbox__input:checked+&,
-        .checkbox__input:checked+&:hover {
-            &::before {
-                background-color: $primary;
-                border-color: $primary;
-            }
-            a {
-                color: $primary;
-            }
+            opacity: 1;
         }
     }
 }

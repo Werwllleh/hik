@@ -18,3 +18,19 @@
         padding-inline: 3.2rem;
     }
 }
+
+.px-wrap {
+    padding-inline: 1.2rem;
+
+    @include tablet {
+        padding-inline: 2rem;
+    }
+
+    @include w1280 {
+        padding-inline: 2.4rem;
+    }
+
+    @include w1600 {
+        padding-inline: 3.2rem;
+    }
+}

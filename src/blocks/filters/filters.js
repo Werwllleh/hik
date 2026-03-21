@@ -105,13 +105,11 @@ if (filterBlocks.length) {
               selectedValueSpan.textContent = '';
               selectedValueSpan.removeAttribute('title');
             }
-            // Сброс заголовков для sort
+
             const defaultTitle = f.querySelector('.filter-button-default .title');
             if (defaultTitle) {
               const originalText = defaultTitle.textContent.trim();
-              // Восстанавливаем оригинальный текст, если он был изменён
               if (!originalText.includes('по ') && !originalText.includes('сначала')) {
-                // это не sort фильтр
               }
             }
           }
@@ -121,7 +119,6 @@ if (filterBlocks.length) {
       });
     }
 
-    // Проверяем состояние фильтров при загрузке
     updateCleanButtonVisibility(filterBlock);
   });
 }
@@ -134,11 +131,13 @@ document.addEventListener('click', (e) => {
 
 function initFilter(filter) {
   const filterForm = filter.querySelector('.filter-form');
-  if (!filterForm) return;
+  const filterDropdown = filter.querySelector('.filter-data');
+  if (!filterForm || !filterDropdown) return;
 
   const filterType = filterForm.dataset.filter;
   const button = filter.querySelector('.filter-button');
   const removeBtn = filter.querySelector('.filter-button-remove');
+  const closeBtn = filter.querySelector('.filter-data-close');
 
 
   if (button) {
@@ -149,10 +148,38 @@ function initFilter(filter) {
 
       if (!filter.classList.contains('active')) {
         closeAllFilters();
-        filter.classList.add('active');
+
+        filterDropdown.style.display = 'flex';
+
+        if (window.innerWidth >= 992) {
+          adjustDropdownPosition(filter);
+        }
+
+        setTimeout(() => {
+          filter.classList.add('active')
+        }, 50);
+
       } else {
         filter.classList.remove('active');
+
+        setTimeout(() => {
+          filterDropdown.style.display = ''
+          filterDropdown.style.transform = ''
+        }, 50);
       }
+    });
+  }
+
+  // Кнопка закрытия дропдауна
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      filter.classList.remove('active');
+
+      setTimeout(() => {
+        filterDropdown.style.display = ''
+        filterDropdown.style.transform = ''
+      }, 50);
     });
   }
 
@@ -181,10 +208,47 @@ function initFilter(filter) {
 
 function closeAllFilters() {
   const filters = document.querySelectorAll('.filter');
-  filters.forEach(f => f.classList.remove('active'));
+  filters.forEach(f => {
+    f.classList.remove('active');
+
+    const dropdown = f.querySelector('.filter-data');
+    if (dropdown) {
+      // Сбрасываем инлайновые стили после завершения анимации
+      setTimeout(() => {
+        if (!f.classList.contains('active')) {
+          dropdown.style.transform = '';
+        }
+      }, 300); // Задержка равна длительности анимации
+    }
+  });
 }
 
-// Обновление видимости кнопки сброса всех фильтров
+// Корректировка позиции dropdown, если он не влезает в экран
+function adjustDropdownPosition(filter) {
+  const dropdown = filter.querySelector('.filter-data');
+  if (!dropdown) return;
+
+  const dropdownRect = dropdown.getBoundingClientRect();
+  const windowWidth = window.innerWidth;
+  let translateX = -50; // Исходное значение translateX(-50%)
+
+  // Проверяем, выходит ли dropdown за правую границу
+  if (dropdownRect.right > windowWidth) {
+    const overflowRight = dropdownRect.right - windowWidth;
+    const offsetPercent = (overflowRight / dropdownRect.width) * 100;
+    translateX = -50 - offsetPercent;
+  }
+
+  // Проверяем, выходит ли dropdown за левую границу
+  if (dropdownRect.left < 0) {
+    const overflowLeft = Math.abs(dropdownRect.left);
+    const offsetPercent = (overflowLeft / dropdownRect.width) * 100;
+    translateX = -50 + offsetPercent;
+  }
+
+  dropdown.style.transform = `translateX(${translateX}%)`;
+}
+
 function updateCleanButtonVisibility(filterBlock) {
   const cleanButton = filterBlock.querySelector('.filter-clean-button');
   if (!cleanButton) return;
@@ -234,34 +298,27 @@ function initSortFilter(filter, form) {
     valueBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
-      // UI обновления
       values.forEach(v => v.classList.remove('active'));
       valueBtn.classList.add('active');
 
-      // Обновляем заголовок кнопки
       const newText = valueBtn.textContent.trim();
       if (defaultTitle) defaultTitle.textContent = newText;
 
-      // Set value
       if (input) input.value = valueBtn.dataset.sort;
 
-      // Обновляем кнопку selected
       if (selectedValueSpan) {
         selectedValueSpan.textContent = '';
         selectedValueSpan.removeAttribute('title');
       }
-      filter.classList.add('selected');
+      // filter.classList.add('selected');
 
-      // Отправляем сразу
       submitFilterData(form);
 
-      // Обновляем видимость кнопки сброса всех фильтров
       const filterBlock = filter.closest('.filters');
       if (filterBlock) {
         updateCleanButtonVisibility(filterBlock);
       }
 
-      // Закрываем дропдаун
       filter.classList.remove('active');
     });
   });
@@ -284,7 +341,6 @@ function initPriceFilter(filter, form) {
     });
   }
 
-  // Клик по пресету
   presets.forEach(preset => {
     preset.addEventListener('click', () => {
       const range = preset.dataset.preset.split(',');
@@ -294,14 +350,12 @@ function initPriceFilter(filter, form) {
     });
   });
 
-  // Валидация при отправке
   form.addEventListener('submit', (e) => {
-    // Валидация уже внутри общего слушателя, но можно добавить проверку мин/макс
     if (inputMin && inputMax) {
       const min = parseFloat(inputMin.value);
       const max = parseFloat(inputMax.value);
       if (!isNaN(min) && !isNaN(max) && min > max) {
-        alert('Минимальная цена не может быть больше максимальной');
+        // alert('Минимальная цена не может быть больше максимальной');
         return;
       }
     }
@@ -316,12 +370,10 @@ function initPriceFilter(filter, form) {
     }
   });
 
-  // Проверяем значения при загрузке
   updateStandardButtonUI(filter, form);
 }
 
 function initStandardFilter(filter, form) {
-  // Проверяем значения при загрузке
   updateStandardButtonUI(filter, form);
 
   form.addEventListener('submit', (e) => {
@@ -330,7 +382,6 @@ function initStandardFilter(filter, form) {
     updateStandardButtonUI(filter, form)
     submitFilterData(form)
 
-    // Обновляем видимость кнопки сброса всех фильтров
     const filterBlock = filter.closest('.filters');
     if (filterBlock) {
       updateCleanButtonVisibility(filterBlock);
@@ -345,14 +396,12 @@ function resetFilter(filter, form) {
   filter.classList.remove('selected');
   form.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
 
-  // Сброс текста в кнопке
   const selectedValueSpan = form.querySelector('.filter-button-selected__value');
   if (selectedValueSpan) {
     selectedValueSpan.textContent = '';
     selectedValueSpan.removeAttribute('title');
   }
 
-  // Обновляем видимость кнопки сброса всех фильтров
   const filterBlock = filter.closest('.filters');
   if (filterBlock) {
     updateCleanButtonVisibility(filterBlock);

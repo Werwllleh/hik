@@ -22,7 +22,10 @@ mixin filters()
                             button.filter-button-remove
                                 +svg("filter-remove")
                     .filter-data
-                        p.filter-data__title сортировать:
+                        .filter-data__title
+                            p сортировать:
+                            button(type="button").filter-data-close
+                                +svg("filter-remove")
                         .filter-data__content
                             .filter-sort
                                 ul.filter-sort__list
@@ -67,7 +70,10 @@ mixin filters()
                             button.filter-button-remove
                                 +svg("filter-remove")
                     .filter-data
-                        p.filter-data__title коллекция:
+                        .filter-data__title
+                            p коллекция:
+                            button(type="button").filter-data-close
+                                +svg("filter-remove")
                         .filter-data__content
                             .filter-radio
                                 ul
@@ -101,7 +107,10 @@ mixin filters()
                             button.filter-button-remove
                                 +svg("filter-remove")
                     .filter-data
-                        p.filter-data__title тип:
+                        .filter-data__title
+                            p тип:
+                            button(type="button").filter-data-close
+                                +svg("filter-remove")
                         .filter-data__content
                             .filter-radio
                                 ul
@@ -129,7 +138,10 @@ mixin filters()
                             button.filter-button-remove
                                 +svg("filter-remove")
                     .filter-data
-                        p.filter-data__title материал:
+                        .filter-data__title
+                            p материал:
+                            button(type="button").filter-data-close
+                                +svg("filter-remove")
                         .filter-data__content
                             .filter-checkbox
                                 ul
@@ -180,7 +192,10 @@ mixin filters()
                             button.filter-button-remove
                                 +svg("filter-remove")
                     .filter-data
-                        p.filter-data__title цвет:
+                        .filter-data__title
+                            p цвет:
+                            button(type="button").filter-data-close
+                                +svg("filter-remove")
                         .filter-data__content
                             .filter-checkbox
                                 ul
@@ -232,7 +247,10 @@ mixin filters()
                             button.filter-button-remove
                                 +svg("filter-remove")
                     .filter-data
-                        p.filter-data__title цена:
+                        .filter-data__title
+                            p цена:
+                            button(type="button").filter-data-close
+                                +svg("filter-remove")
                         .filter-data__content
                             .filter-between
                                 .filter-between__fields

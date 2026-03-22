@@ -7,17 +7,18 @@ mixin modal(id, content)
     //modal
     .modal(class="modal-" + id)&attributes(attributes)
         .modal__window
-            button.modal__close.modal--close(type="button", aria-label="Закрыть")
-                +svg('close').modal__close-icon
+            //button.modal__close.modal--close(type="button", aria-label="Закрыть")
+            //    +svg('close').modal__close-icon
             .modal__content
                 case content
                     when 'modal1'
                         include content/modal1
                     when 'modal2'
                         include content/modal2
-                    when 'consultation'
-                        //- +modalConsultation()
-                        p consultation modal (not implemented)
+                    when 'order'
+                        +orderModal()
+                    when 'order-success'
+                        +orderModalSuccess()
                     when 'success'
                         //- +modalSuccess()
                         p success modal (not implemented)

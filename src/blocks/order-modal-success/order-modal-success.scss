@@ -1,0 +1,73 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// order-modal-success
+.order-modal-success {
+  position: relative;
+  padding: 3.2rem;
+
+  &__close,
+  .modal__close {
+    top: 3.2rem;
+    right: 3.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    background-color: #272724;
+    margin-inline: auto;
+
+    svg {
+      width: 3.2rem;
+      height: 3.2rem;
+      color: $white;
+    }
+  }
+
+  &__text {
+    margin-top: 1.2rem;
+    max-width: 20rem;
+
+    h6 {
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      text-align: center;
+      color: $black;
+
+      @include w1280 {
+        font-size: 2rem;
+        line-height: 1.4;
+      }
+    }
+
+    p {
+      margin-top: 1.2rem;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: center;
+      color: $black;
+    }
+  }
+}

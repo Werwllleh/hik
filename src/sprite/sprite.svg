@@ -96,4 +96,8 @@
         <path d="M20 17L17 20L14 17" stroke="currentColor" stroke-linecap="round"/>
         <path d="M17 5L17 19" stroke="currentColor" stroke-linecap="round"/>
     </symbol>
+    <symbol viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" id="success-check">
+        <rect width="32" height="32" rx="16" fill="#272724" />
+        <path d="M5.33398 17.333L12.0007 23.9997L26.6673 9.33301" stroke="white" stroke-linecap="round" />
+    </symbol>
 </svg>

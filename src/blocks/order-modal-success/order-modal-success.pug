@@ -1,0 +1,12 @@
+mixin orderModalSuccess()
+
+    //order-modal-success
+    .order-modal-success&attributes(attributes)
+        button.order-modal-success__close.modal__close.modal--close(type="button", aria-label="Закрыть")
+            +svg('close').modal__close-icon
+        .order-modal-success__inner
+            span.order-modal-success__icon
+                +svg("success-check")
+            .order-modal-success__text
+                h6 заявка на&nbsp;заказ успешно создана!
+                p ожидайте звонка менеджера в&nbsp;ближайшее время

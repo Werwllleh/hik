@@ -1,0 +1,30 @@
+mixin orderModal()
+
+    //order-modal
+    .order-modal&attributes(attributes)
+        .order-modal__inner
+            .order-modal__header
+                .order-modal__title
+                    p оставить заявку
+                button.order-modal__close.modal__close.modal--close(type="button", aria-label="Закрыть")
+                    +svg('close').modal__close-icon
+            .order-modal__content
+                .order-modal__description
+                    p для уточнения деталей и&nbsp;оформления заказа введите номер телефона и&nbsp;ваше имя. наш консультант свяжется с&nbsp;вами в&nbsp;кратчайшие сроки
+                form(data-form="order", novalidate).order-modal__form.form
+                    fieldset
+                        label.form__field
+                            input(data-name="name", name="name", type="text", inputmode="text", placeholder="", required).form__input
+                            span.form__label ваше имя
+                            span.form__error
+                        label.form__field
+                            input(data-name="phone", name="phone", type="text", inputmode="numeric", placeholder="", required).form__input
+                            span.form__label ваш телефон
+                            span.form__error
+                        button(type="submit").form__submit оставить заявку
+                .order-modal__footer
+                    p Сайт использует reCAPTCHA согласно Политике конфиденциальности и&nbsp;Условиям обслуживания Google
+                    p Нажимая кнопку &laquo;Получить код&raquo; вы&nbsp;соглашаетесь с&nbsp;
+                        |
+                        a(href="#") политикой обработки персональных данных
+

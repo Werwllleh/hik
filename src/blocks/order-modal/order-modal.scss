@@ -1,0 +1,120 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// order-modal
+.order-modal {
+  height: 100%;
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1rem;
+    padding-block: 2.2rem;
+    padding-inline: 1.2rem;
+
+    @include tablet {
+      padding-block: 2.6rem;
+      padding-inline: 2rem;
+    }
+
+    @include w1280 {
+      padding-block: 3.6rem;
+      padding-inline: 3.2rem;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+    padding-inline: 1.2rem;
+    padding-bottom: 3rem;
+
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $black;
+    }
+
+    @include tablet {
+      padding-inline: 2rem;
+      max-height: calc(100% - 6.8rem);
+    }
+
+    @include w1280 {
+      padding-inline: 3.2rem;
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    color: #272724;
+  }
+
+  &__close,
+  .modal__close {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  &__description {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33;
+    color: $black;
+  }
+
+  &__form {
+    margin-top: 2.4rem;
+
+    @include w1280 {
+      margin-top: 3.2rem;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem 0;
+    }
+  }
+
+  &__footer {
+    margin-top: 3.2rem;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33;
+    text-align: center;
+    color: #888;
+
+    p {
+      max-width: 28rem;
+      margin-inline: auto;
+    }
+
+    a {
+      color: #252525;
+    }
+
+    p + p {
+      margin-top: 1.2rem;
+    }
+  }
+}

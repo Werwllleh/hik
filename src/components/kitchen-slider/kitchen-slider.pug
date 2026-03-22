@@ -1,0 +1,27 @@
+mixin kitchenSlider(delay, info = [])
+
+    //kitchen-slider
+    .kitchen-slider(data-delay= delay)&attributes(attributes)
+        .kitchen-slider__swiper
+            .swiper
+                button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").kitchen-slider__prev
+                    +svg("hero-arrow")
+                button(type="button", aria-label="Следующий слайд", title="Следующий слайд").kitchen-slider__next
+                    +svg("hero-arrow")
+                .swiper-wrapper
+                    if info.length
+                      each item in info
+                        .swiper-slide
+                            .kitchen-slider-card
+                                .kitchen-slider-card__inner
+                                    .kitchen-slider-card__info.px-13
+                                        .kitchen-slider-card__title
+                                            h2= item.title
+                                        .kitchen-slider-card__text
+                                            p= item.text
+                                .kitchen-slider-card__img
+                                    img(src=`./images/kitchens/${item.img}`, alt="")
+                .kitchen-slider__footer.px-13
+                    .pagination.kitchen-slider-thumbs.swiper
+                        .swiper-wrapper
+                    a(href="./product_detail_kitchen.html").link подробнее

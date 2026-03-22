@@ -180,6 +180,15 @@
   }
 }
 
+.products-kitchens {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem 0;
+  }
+}
+
 .pagination {
 
   &__inner {

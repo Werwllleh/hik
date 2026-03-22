@@ -337,15 +337,24 @@
     }
 
     picture {
+      overflow: hidden;
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transition: transform $transition-default6;
       }
 
       @include mobile {
         max-height: none;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
       }
     }
 

@@ -7,14 +7,33 @@ if (collapseBlocks.length) {
     const items = collapseBlock.querySelectorAll('.collapse-item');
     if (!items.length) return;
 
+    const setCollapseHeight = (wrap, data) => {
+      if (collapseBlock.closest('.product-configurator')) {
+        if (window.innerWidth >= 1280) {
+          const productConfiguratorHeight = collapseBlock.closest('.product-configurator').offsetHeight;
+          wrap.style.height = `${productConfiguratorHeight - collapseBlockConfiguratorHeight}px`;
+        } else {
+          const innerDiv = data.querySelector('div');
+          wrap.style.height = innerDiv.offsetHeight < 620
+            ? getElementHeight(innerDiv)
+            : `62rem`;
+        }
+      } else {
+        wrap.style.height = getElementHeight(data);
+      }
+    };
+
     items.forEach((item) => {
 
       const collapseBlockWrap = item.querySelector('.collapse-wrap');
       const collapseBlockData = item.querySelector('.collapse-data');
 
       if (item.classList.contains('active')) {
-        collapseBlockWrap.style.height = getElementHeight(collapseBlockData);
-        item.classList.add('active');
+        if (collapseBlockConfiguratorHeight) {
+          setCollapseHeight(collapseBlockWrap, collapseBlockData);
+        } else {
+          collapseBlockWrap.style.height = getElementHeight(collapseBlockData);
+        }
       }
 
       item.addEventListener('click', (e) => {
@@ -36,22 +55,7 @@ if (collapseBlocks.length) {
         });
 
         if (!isActive) {
-          if (collapseBlock.closest('.product-configurator')) {
-
-            if (window.innerWidth >= 1280) {
-              const productConfiguratorHeight = collapseBlock.closest('.product-configurator').offsetHeight;
-              collapseBlockWrap.style.height = `${productConfiguratorHeight - collapseBlockConfiguratorHeight}px`;
-            } else {
-              if (collapseBlockData.querySelector('div').offsetHeight < 620) {
-                collapseBlockWrap.style.height = getElementHeight(collapseBlockData.querySelector('div'));
-              } else {
-                collapseBlockWrap.style.height = `62rem`;
-              }
-            }
-          } else {
-            collapseBlockWrap.style.height = getElementHeight(collapseBlockData);
-          }
-
+          setCollapseHeight(collapseBlockWrap, collapseBlockData);
           item.classList.add('active');
         }
       })

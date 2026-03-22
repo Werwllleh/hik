@@ -38,11 +38,29 @@
   }
 
   &__content {
+    position: relative;
     margin-top: 3.2rem;
 
     @include w1280 {
       margin-top: 4rem;
     }
+  }
+
+  &__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity $transition-default, visibility $transition-default;
   }
 
   &__pagination {}

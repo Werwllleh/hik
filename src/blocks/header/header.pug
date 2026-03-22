@@ -34,22 +34,23 @@ mixin header()
                     a(href="/", aria-label="Личный кабинет", title="Личный кабинет").user-btn.header-icon-btn
                         +svg("user")
     .header-catalog
-        .header-catalog__body
-            .header-catalog__head
-                .header-catalog__button
-                    button(type="button", aria-label="Меню каталога", title="Меню каталога").burger-btn
-                        span
-                        span
-                        span
-                    a(href="/") каталог
-            .header-catalog__list
-                +catalogCollapse()
-            .header-catalog__nav
-                ul
-                    li
-                        a(href="/") шоу-рум
-                    li
-                        a(href="/") покупателям
-                    li
-                        a(href="/") контакты
+        .header-catalog__inner
+            .header-catalog__body
+                .header-catalog__head
+                    .header-catalog__button
+                        button(type="button", aria-label="Меню каталога", title="Меню каталога").burger-btn
+                            span
+                            span
+                            span
+                        a(href="/") каталог
+                .header-catalog__list
+                    +catalogCollapse()
+                .header-catalog__nav
+                    ul
+                        li
+                            a(href="/") шоу-рум
+                        li
+                            a(href="/") покупателям
+                        li
+                            a(href="/") контакты
 

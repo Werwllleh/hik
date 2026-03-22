@@ -1,0 +1,59 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// loader
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px);
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-default, visibility $transition-default;
+
+  @include w1280 {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+
+  span {
+    flex: 0 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotation 1.5s linear infinite;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      @include w1280 {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

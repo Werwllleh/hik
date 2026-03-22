@@ -78,6 +78,7 @@ function closeAllFilters() {
 */
 
 const filterBlocks = document.querySelectorAll('.filters');
+const productsListWrap = document.querySelectorAll('.products-listing__content');
 
 if (filterBlocks.length) {
   filterBlocks.forEach((filterBlock) => {
@@ -153,6 +154,9 @@ function initFilter(filter) {
 
         if (window.innerWidth >= 992) {
           adjustDropdownPosition(filter);
+        } else {
+          blockWrap(true)
+          overlay.classList.add('active');
         }
 
         setTimeout(() => {
@@ -161,6 +165,8 @@ function initFilter(filter) {
 
       } else {
         filter.classList.remove('active');
+        overlay.classList.remove('active');
+        blockWrap(false)
 
         setTimeout(() => {
           filterDropdown.style.display = ''
@@ -175,6 +181,8 @@ function initFilter(filter) {
     closeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       filter.classList.remove('active');
+      overlay.classList.remove('active');
+      blockWrap(false)
 
       setTimeout(() => {
         filterDropdown.style.display = ''
@@ -211,6 +219,7 @@ function closeAllFilters() {
   filters.forEach(f => {
     f.classList.remove('active');
 
+
     const dropdown = f.querySelector('.filter-data');
     if (dropdown) {
       // Сбрасываем инлайновые стили после завершения анимации
@@ -221,9 +230,9 @@ function closeAllFilters() {
       }, 300); // Задержка равна длительности анимации
     }
   });
+  overlay.classList.remove('active');
 }
 
-// Корректировка позиции dropdown, если он не влезает в экран
 function adjustDropdownPosition(filter) {
   const dropdown = filter.querySelector('.filter-data');
   if (!dropdown) return;
@@ -282,6 +291,12 @@ function submitAllFiltersData(filterBlock) {
       Object.assign(allData, data);
     }
   });
+
+  getLoader(true)
+
+  setTimeout(() => {
+    getLoader(false)
+  }, 1500)
 
   console.log('All filters data:', allData);
   // TODO: Здесь fetch/axios запрос
@@ -389,9 +404,14 @@ function initStandardFilter(filter, form) {
   })
 }
 
-
 function resetFilter(filter, form) {
   form.reset();
+
+  getLoader(true)
+
+  setTimeout(() => {
+    getLoader(false)
+  }, 1500)
 
   filter.classList.remove('selected');
   form.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
@@ -409,7 +429,6 @@ function resetFilter(filter, form) {
 
   submitFilterData(form);
 }
-
 
 function updateStandardButtonUI(filter, form, defaultTitle) {
   const formData = new FormData(form);
@@ -498,8 +517,27 @@ function submitFilterData(form) {
 
   const data = Object.fromEntries(formData.entries());
 
+  getLoader(true)
+
   console.log(Array.from(formData));
   console.log(data)
 
+  setTimeout(() => {
+    getLoader(false)
+    overlay.classList.remove('active');
+    blockWrap(false);
+  }, 1500)
+
   // TODO: Здесь fetch/axios запрос
+}
+
+function getLoader(status) {
+  const body = document.querySelector('body');
+  if (!body) return;
+
+  if (status) {
+    body.classList.add('loading');
+  } else {
+    body.classList.remove('loading');
+  }
 }

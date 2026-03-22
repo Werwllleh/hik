@@ -189,3 +189,20 @@ body {
   background-size: cover;
   filter: blur(20px);
 }
+
+body.loading {
+
+  .loader {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .products-listing__loader {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .products-furniture {
+    pointer-events: none;
+  }
+}

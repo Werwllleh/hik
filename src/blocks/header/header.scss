@@ -164,8 +164,13 @@
   }
 
   &.catalog-show + .header-catalog {
-    box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.05);
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+
+    .header-catalog__inner {
+      box-shadow: 4rem 0 4rem 0 rgba(0, 0, 0, 0.05);
+      transform: translateX(0);
+    }
   }
 
 }
@@ -237,24 +242,34 @@
   z-index: 11;
   top: 0;
   left: 0;
-  bottom: 0;
-  height: 100%;
   width: 100%;
-  backdrop-filter: blur(4rem);
-  background: rgba(255, 255, 255, 0.8);
-  transform: translateX(-100%);
-  transition: transform $transition-default6, box-shadow $transition-default12;
+  height: 100%;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background: rgba($black, 0.1);
+  transition: opacity $transition-default, visibility $transition-default;
 
-  @include tablet {
-    max-width: 38rem;
-  }
+  &__inner {
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4rem);
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(-100%);
+    transition: transform $transition-default12, box-shadow $transition-default12;
 
-  @include w1280 {
-    max-width: 42.9rem;
-  }
+    @include tablet {
+      max-width: 38rem;
+    }
 
-  @include w1600 {
-    max-width: 53.9rem;
+    @include w1280 {
+      max-width: 42.9rem;
+    }
+
+    @include w1600 {
+      max-width: 53.9rem;
+    }
   }
 
   &__body {

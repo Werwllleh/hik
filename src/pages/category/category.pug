@@ -1,0 +1,25 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Category"
+  - description = "Описание Category"
+  - stylePage = "category"
+  - scriptPage = "category"
+
+append content
+
+    .page-category.ppt140
+        .page-category__container.container
+            .page-category__list
+                +categoryCard('диваны', ["1","1-2","1-3"])
+                +categoryCard('КРОВАТИ', ["2","2-2","2-3"])
+                +categoryCard('кресла', ["3","3-2","3-3"])
+                +categoryCard('обеденные стулья', ["4","4-2","4-3"])
+                +categoryCard('обеденные столы', ["5","5-2","5-3"])
+                +categoryCard('прикроватные тумбы', ["6","6-2"])
+                +categoryCard('рабочие столы и консоли', ["7","7-2","7-3"])
+                +categoryCard('тв-тумбы', ["7","7-2","7-3"])
+                +categoryCard('хранение', ["7","7-2","7-3"])
+                +categoryCard('кофейные столики', ["7","7-2","7-3"])
+                +categoryCard('банкетки', ["7","7-2","7-3"])
+                +categoryCard('пуфы', ["7","7-2","7-3"])

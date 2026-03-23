@@ -1,0 +1,40 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// category
+.page-category {
+
+  &__container {}
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+    @include semiDesktop {
+      flex-direction: row;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .category-card {
+      //opacity: 0;
+
+      &:nth-child(4n+1) {
+        flex: 1 1 calc(42% - .8rem);
+      }
+
+      &:nth-child(4n+2) {
+        flex: 1 1 calc(58% - .8rem);
+      }
+
+      &:nth-child(4n+3) {
+        flex: 1 1 calc(58% - .8rem);
+      }
+
+      &:nth-child(4n+4) {
+        flex: 1 1 calc(42% - .8rem);
+      }
+    }
+  }
+}

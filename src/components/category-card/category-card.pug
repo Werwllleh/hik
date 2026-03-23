@@ -1,0 +1,13 @@
+mixin categoryCard(title, images = [])
+
+    //category-card
+    a(href='./products-listing.html').category-card&attributes(attributes)
+        .category-card__inner
+            .category-card__title
+                = title
+            .category-card__images
+                each img, index in images
+                  img(src=`./images/category/${img}.webp` alt=`${title}-${index}`)
+            .category-card__link
+                span
+                p в категорию

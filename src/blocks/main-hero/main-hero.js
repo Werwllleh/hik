@@ -21,6 +21,37 @@ if (mainHeroSwiper) {
     watchSlidesVisibility: true,
   });
 
+
+  heroSwiper.on('slideChangeTransitionStart', function () {
+    heroSwiper.slides.forEach(slide => {
+      const title = slide.querySelector('.title');
+      if (title) {
+        title.style.transform = '';
+        title.style.opacity = '';
+      }
+    });
+  });
+
+  heroSwiper.on('slideChangeTransitionEnd', function () {
+    const activeSlide = heroSwiper.slides[heroSwiper.activeIndex];
+    const title = activeSlide.querySelector('.title');
+    if (title) {
+      title.style.transform = 'translateY(0)';
+      title.style.opacity = 1;
+    }
+  });
+
+  const initSlide = heroSwiper.slides[heroSwiper.activeIndex];
+  const initTitle = initSlide.querySelector('.title');
+
+  setTimeout(() => {
+    if (initTitle) {
+      initTitle.style.transform = 'translateY(0)';
+      initTitle.style.opacity = 1;
+    }
+  }, 200)
+
+
   // Динамическая генерация thumbs для каждого слайда
   const allThumbsContainers = document.querySelectorAll('.hero-swiper-thumbs');
   const totalSlides = heroSwiper.slides.length;

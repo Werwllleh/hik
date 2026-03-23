@@ -187,6 +187,18 @@
     flex-direction: column;
     gap: .8rem 0;
   }
+
+  .kitchen-slider {
+    opacity: 0;
+  }
+
+  .kitchen-slider:first-child {
+    transform: scale(.8);
+  }
+
+  .kitchen-slider:not(:first-child) {
+
+  }
 }
 
 .pagination {

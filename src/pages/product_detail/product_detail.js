@@ -1,9 +1,3 @@
-/**
- * Анимация блоков с атрибутом data-anim
- * - Начальное положение: y: '20%', opacity: 0
- * - .ltr - сначала выплывает первый элемент, затем второй
- * - .rtl - сначала выплывает второй элемент, затем первый
- */
 function initProductAnimations() {
   const animBlocks = document.querySelectorAll('[data-anim]');
 
@@ -14,7 +8,7 @@ function initProductAnimations() {
 
     // Начальное состояние для всех детей
     gsap.set(children, {
-      y: '20%',
+      y: '100px',
       opacity: 0,
     });
 
@@ -22,7 +16,7 @@ function initProductAnimations() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: block,
-        start: 'top 80%',
+        start: 'top 90%',
         toggleActions: 'play none none none',
       },
     });
@@ -38,7 +32,7 @@ function initProductAnimations() {
             duration: 1,
             ease: 'none',
           },
-          index * 0.15,
+          index * 0.5,
         );
       });
     } else if (hasRtl) {
@@ -53,7 +47,7 @@ function initProductAnimations() {
             duration: 1,
             ease: 'none',
           },
-          index * 0.15,
+          index * 0.5,
         );
       });
     } else {

@@ -1,0 +1,105 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// category-card
+.category-card {
+  position: relative;
+  background-color: #f4f4f4;
+  padding-block: 4rem;
+  padding-inline: 4rem;
+  min-height: 34rem;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    min-height: 36rem;
+    padding-inline: 6rem;
+  }
+
+  @include w1280 {
+    min-height: 44rem;
+    padding-block: 6rem;
+    padding-inline: 7.5%;
+  }
+
+  @include w1600 {
+    min-height: 64rem;
+    padding-block: 8rem;
+    padding-inline: 8.5%;
+  }
+
+  &__inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $black;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      font-size: 3.2rem;
+    }
+
+    @include w1600 {
+      font-size: 4.8rem;
+    }
+  }
+
+  &__images {
+    margin-top: auto;
+    display: flex;
+    align-items: stretch;
+    gap: 0 .8rem;
+
+    img {
+      flex: 0 1 auto;
+      min-width: 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      pointer-events: none;
+      object-fit: cover;
+      max-width: 8rem;
+      max-height: 8rem;
+
+      @include tablet {
+        max-width: 12rem;
+        max-height: 12rem;
+      }
+    }
+  }
+
+  &__link {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      display: block;
+      height: 0.1rem;
+      width: 0;
+      background-color: #d4d4d4;
+      margin-right: .8rem;
+      //transition: width $transition-default6;
+    }
+
+    p {
+      flex: 0 0 auto;
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.33;
+      color: $black;
+      white-space: nowrap;
+    }
+  }
+}

@@ -23,7 +23,7 @@ if (collapseBlocks.length) {
       }
     };
 
-    items.forEach((item) => {
+    items.forEach((item, index) => {
 
       const collapseBlockWrap = item.querySelector('.collapse-wrap');
       const collapseBlockData = item.querySelector('.collapse-data');
@@ -34,6 +34,11 @@ if (collapseBlocks.length) {
         } else {
           collapseBlockWrap.style.height = getElementHeight(collapseBlockData);
         }
+      }
+
+      if (index === 0 && collapseBlockConfiguratorHeight && window.innerWidth > 768) {
+        item.classList.add('active')
+        setCollapseHeight(collapseBlockWrap, collapseBlockData);
       }
 
       item.addEventListener('click', (e) => {

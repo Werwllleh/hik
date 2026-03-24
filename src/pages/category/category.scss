@@ -18,7 +18,8 @@
     }
 
     .category-card {
-      //opacity: 0;
+      opacity: 0;
+      transform: translateY(100px);
 
       &:nth-child(4n+1) {
         flex: 1 1 calc(42% - .8rem);

@@ -16,13 +16,13 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: 'none',
+            duration: .5,
+            ease: 'power1.inOut',
             // immediateRender: false,
             // stagger: 0.15,
             scrollTrigger: {
               trigger: card,
-              start: 'top 90%',
+              start: 'top 95%',
               toggleActions: 'play none none none',
               // once: true,
             },
@@ -82,7 +82,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
               trigger: trigger,
               start: 'top 90%',
               once: true,
-              // toggleActions: 'play none none none',
             },
           }
         );

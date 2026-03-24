@@ -1,56 +1,63 @@
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
-  const cards = gsap.utils.toArray('.category-card');
-  if (cards.length) {
-    cards.forEach((card, index) => {
-      if (!document.contains(card)) return;
+  let mm = gsap.matchMedia();
 
-      if (index === 0 || index === 1) return;
+  mm.add("(min-width: 768px)", () => {
+    const cards = gsap.utils.toArray('.category-card');
+    if (cards.length) {
+      cards.forEach((card, index) => {
+        if (!document.contains(card)) return;
 
-      gsap.fromTo(card,
-        {
-          opacity: 0,
-          y: '20%'
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: 'none',
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 90%',
-            toggleActions: 'play none none none',
+        gsap.fromTo(card,
+          {
+            opacity: 0,
+            y: '100px'
           },
-        }
-      );
-    });
-  }
-
-  const spans = gsap.utils.toArray('.category-card__link span');
-  if (spans.length) {
-    spans.forEach((span) => {
-      const trigger = span.closest('.category-card');
-
-      if (!trigger) return;
-
-      gsap.fromTo(span,
-        { width: 0 },
-        {
-          width: '100%',
-          delay: 0.2,
-          duration: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: trigger, // Используем проверенный trigger
-            start: 'top 90%',
-            toggleActions: 'play none none none',
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'none',
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 90%',
+              toggleActions: 'play none none none',
+            },
           },
-        }
-      );
-    });
-  }
+          index * 0.15
+        );
+      });
+    }
+
+    const spans = gsap.utils.toArray('.category-card__link span');
+    if (spans.length) {
+      spans.forEach((span) => {
+        const trigger = span.closest('.category-card');
+
+        if (!trigger) return;
+
+        gsap.fromTo(span,
+          {
+            width: '40%',
+          },
+          {
+            width: '100%',
+            delay: 0.6,
+            duration: 1.3,
+            ease: 'power1.out',
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: trigger,
+              start: 'top 90%',
+              once: true,
+            },
+          }
+        );
+      });
+    }
+  })
+
 } else {
   console.warn('GSAP или ScrollTrigger не подключены');
 }

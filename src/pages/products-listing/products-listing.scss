@@ -72,6 +72,22 @@
     display: flex;
     flex-direction: column;
     gap: .8rem 0;
+
+    @include tablet {
+      .hover-slider {
+        opacity: 0;
+        transform: translateY(50px);
+
+        .hover-slider__name {
+          transform: translateY(20px);
+        }
+
+        .hover-slider__price {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+      }
+    }
   }
 
   .row {

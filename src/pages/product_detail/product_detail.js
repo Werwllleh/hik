@@ -65,6 +65,38 @@ function initProductAnimations() {
     }
   });
 }
-
-// Инициализация после загрузки страницы
 initProductAnimations();
+
+const kitchenHero = document.querySelector(".product-kitchen");
+if (kitchenHero) {
+  gsap.fromTo(
+    kitchenHero,
+    {
+      opacity: 0,
+    },
+    {
+      duration: 1,
+      opacity: 1,
+      delay: .25,
+      transform: "scale(1)",
+      ease: 'power2.out',
+    }
+  )
+}
+
+const productPreview = document.querySelector(".product-information__preview");
+if (productPreview) {
+  gsap.fromTo(
+    productPreview,
+    {
+      opacity: 0,
+    },
+    {
+      duration: 1,
+      opacity: 1,
+      delay: .25,
+      transform: "scale(1)",
+      ease: 'power2.out',
+    }
+  )
+}

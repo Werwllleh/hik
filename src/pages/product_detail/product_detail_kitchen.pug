@@ -34,25 +34,25 @@ append content
                         source(srcset="./images/kitchen/m1.webp" media="(min-width: 550px)")
                         img(src="./images/kitchen/m1-m.webp", alt="")
         .container
-            .product-video.spt
+            .product-video(data-anim).spt
                 +videoComponent('./images/main-hero/video.webm', './images/poster3.webp')
             .product-images.spt
-                .row.ltr
+                .row.ltr(data-anim)
                     picture
                         source(srcset="./images/kitchen/1.webp" media="(min-width: 1400px)")
                         img(src="./images/kitchen/1.webp", alt="")
                     picture
                         source(srcset="./images/kitchen/2.webp" media="(min-width: 1400px)")
                         img(src="./images/kitchen/2.webp", alt="")
-                .row
+                .row(data-anim)
                     picture
                         source(srcset="./images/kitchen/3.webp" media="(min-width: 1400px)")
                         img(src="./images/kitchen/3.webp", alt="")
-                .row
+                .row(data-anim)
                     picture
                         source(srcset="./images/kitchen/4.webp" media="(min-width: 1400px)")
                         img(src="./images/kitchen/4.webp", alt="")
-                .row.rtl
+                .row.rtl(data-anim)
                     picture
                         source(srcset="./images/kitchen/5.webp" media="(min-width: 1400px)")
                         img(src="./images/kitchen/5.webp", alt="")

@@ -29,8 +29,10 @@
       .footer-showcase__image {
         &.i1 {
           img {
-            transform: translateY(0);
-            max-height: 28.7rem;
+            //transform: translateY(0);
+            height: 28.7rem;
+            bottom: 100%;
+            transform: translateY(100%);
           }
         }
         &.i2 {
@@ -42,9 +44,10 @@
     }
     &.center {
       .footer-showcase__image img {
-        max-height: 24.8rem;
+        height: 24.8rem;
+        bottom: 50%;
+        top: 50%;
         transform: translateY(-50%);
-        margin-top: 50%;
       }
     }
     &.rtl {
@@ -57,9 +60,9 @@
         &.i2 {
 
           img {
-            max-height: 28.7rem;
-            transform: translateY(-100%);
-            margin-top: 100%;
+            height: 28.7rem;
+            bottom: 0;
+            transform: translateY(0);
           }
         }
       }

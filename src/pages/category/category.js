@@ -22,7 +22,6 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             trigger: card,
             start: 'top 90%',
             toggleActions: 'play none none none',
-            disabled: window.innerWidth < 768
           },
         }
       );
@@ -45,7 +44,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
           ease: 'none',
           scrollTrigger: {
             trigger: trigger, // Используем проверенный trigger
-            start: 'top 85%',
+            start: 'top 90%',
             toggleActions: 'play none none none',
           },
         }

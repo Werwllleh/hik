@@ -1,0 +1,16 @@
+mixin catalogCard(title, text, images = [])
+
+    //catalog-card
+    a(href="./category.html").catalog-card&attributes(attributes)
+        .catalog-card__inner
+            .catalog-card__image
+                each img in images
+                  img(src=`./images/catalog/${img}.webp`, alt="")
+            .catalog-card__info
+                .catalog-card__title
+                    = title
+                .catalog-card__text
+                    = text
+                .catalog-card__link
+                    span
+                    p в категорию

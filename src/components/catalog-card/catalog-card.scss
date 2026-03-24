@@ -1,0 +1,173 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// catalog-card
+.catalog-card {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    padding-block: 6rem;
+    padding-inline: 4rem;
+    min-height: 36.8rem;
+  }
+
+  @include w1280 {
+    padding-block: 8rem;
+    padding-inline: 10rem;
+    min-height: 56.4rem;
+  }
+
+  @include w1600 {
+    padding-inline: 13rem;
+    min-height: 64rem;
+  }
+
+  &__inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 0 3rem;
+    }
+  }
+
+  &.reverse {
+    @include tablet {
+      .catalog-card__inner {
+        flex-direction: row-reverse;
+      }
+
+      .catalog-card__image {
+        flex: 0 1 calc(52.8% - 3rem);
+      }
+
+      .catalog-card__info {
+        flex: 0 1 calc(42% - 3rem);
+      }
+    }
+  }
+
+  &.hs {
+    .catalog-card__image {
+      flex-direction: column;
+
+      img {
+        max-height: 10.8rem;
+
+        @include tablet {
+          max-height: 12rem;
+        }
+
+        @include w1280 {
+          max-height: 20rem;
+        }
+
+        @include w1600 {
+          max-height: 23.6rem;
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-items: stretch;
+    gap: .8rem;
+    height: 22.4rem;
+    overflow: hidden;
+
+    @include tablet {
+      flex: 0 1 calc(42% - 3rem);
+      height: auto;
+    }
+
+    img {
+      flex: 1 1 calc((100% - .8rem) / 2);
+      object-fit: cover;
+      object-position: center center;
+      min-width: 0;
+      overflow: hidden;
+      transition: transform $transition-default;
+    }
+  }
+
+  &__info {
+    flex: 0 1 calc(52.116% - 3rem);
+    display: flex;
+    flex-direction: column;
+    padding-block: 4.8rem 6rem;
+    padding-inline: 2.4rem;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $black;
+    margin-bottom: 2rem;
+
+    @include w1280 {
+      font-size: 3.2rem;
+    }
+
+    @include w1600 {
+      font-size: 4.8rem;
+    }
+  }
+
+  &__text {
+    margin-top: 2.8rem;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33333;
+    color: $black;
+    max-width: 50.7rem;
+
+    @include tablet {
+      margin-top: auto;
+    }
+  }
+
+  &__link {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      display: block;
+      height: 0.1rem;
+      width: 100%;
+      background-color: #d4d4d4;
+    }
+
+    p {
+      flex: 0 0 auto;
+      margin-left: .8rem;
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.33;
+      color: $black;
+      white-space: nowrap;
+    }
+  }
+
+  &:hover {
+    .catalog-card__image img {
+      transform: scale(1.05);
+    }
+  }
+}

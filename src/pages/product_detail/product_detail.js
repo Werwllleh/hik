@@ -6,13 +6,6 @@ function initProductAnimations() {
     const hasLtr = block.classList.contains('ltr');
     const hasRtl = block.classList.contains('rtl');
 
-    // Начальное состояние для всех детей
-    gsap.set(children, {
-      y: '100px',
-      opacity: 0,
-    });
-
-    // Создаем timeline для последовательной анимации
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: block,
@@ -69,34 +62,52 @@ initProductAnimations();
 
 const kitchenHero = document.querySelector(".product-kitchen");
 if (kitchenHero) {
-  gsap.fromTo(
-    kitchenHero,
-    {
-      opacity: 0,
-    },
-    {
-      duration: 1,
-      opacity: 1,
-      delay: .25,
-      transform: "scale(1)",
-      ease: 'power2.out',
-    }
-  )
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    gsap.to(
+      kitchenHero,
+      {
+        duration: 1,
+        delay: .15,
+        opacity: 1,
+        transform: "scale(1)",
+        ease: 'sine.out',
+      }
+    )
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger && trigger.vars.trigger.closest?.('.product-kitchen')) {
+          trigger.kill();
+        }
+      });
+    };
+  })
 }
 
 const productPreview = document.querySelector(".product-information__preview");
 if (productPreview) {
-  gsap.fromTo(
-    productPreview,
-    {
-      opacity: 0,
-    },
-    {
-      duration: 1,
-      opacity: 1,
-      delay: .25,
-      transform: "scale(1)",
-      ease: 'power2.out',
-    }
-  )
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 768px)", () => {
+    gsap.to(
+      productPreview,
+      {
+        duration: 1,
+        opacity: 1,
+        delay: .25,
+        transform: "scale(1)",
+        ease: 'sine.out',
+      }
+    )
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger && trigger.vars.trigger.closest?.('.product-information__preview')) {
+          trigger.kill();
+        }
+      });
+    };
+  })
+
 }

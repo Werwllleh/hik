@@ -1,22 +1,27 @@
 
 const heroSection = document.querySelector(".main-hero");
 if (heroSection) {
-  gsap.fromTo(
-    heroSection,
-    {
-      opacity: 0,
-    },
-    {
-      duration: 1,
-      opacity: 1,
-      delay: .25,
-      transform: "scale(1)",
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: heroSection,
-        start: 'top 90%',
-        toggleActions: 'play none none none',
-      },
-    }
-  )
+
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    gsap.to(
+      heroSection,
+      {
+        duration: 1,
+        delay: .15,
+        opacity: 1,
+        transform: "scale(1)",
+        ease: 'sine.out',
+      }
+    )
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger && trigger.vars.trigger.closest?.('.main-hero')) {
+          trigger.kill();
+        }
+      });
+    };
+  })
 }

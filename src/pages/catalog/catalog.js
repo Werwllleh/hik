@@ -1,94 +1,55 @@
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+
+const cards = document.querySelectorAll('.catalog-card');
+if (cards.length) {
 
   let mm = gsap.matchMedia();
 
   mm.add("(min-width: 768px)", () => {
-    const cards = gsap.utils.toArray('.catalog-card');
-    if (cards.length) {
-      cards.forEach((card, index) => {
-        if (!document.contains(card)) return;
 
-        gsap.fromTo(card,
-          {
-            opacity: 0,
-            y: '100px'
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: .5,
-            ease: 'power1.inOut',
-            // immediateRender: false,
-            // stagger: 0.15,
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 95%',
-              toggleActions: 'play none none none',
-              // once: true,
-            },
-          }
-        );
+    cards.forEach((card, index) => {
+      const title = card.querySelector('.catalog-card__title');
+      const line = card.querySelector('.catalog-card__link span');
+
+      if (line) gsap.set(line, { width: '40%' });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+        }
       });
-    }
 
-    const titleItems = gsap.utils.toArray('.catalog-card__title');
-    if (titleItems.length) {
-      titleItems.forEach((title) => {
-        const trigger = title.closest('.catalog-card');
+      tl.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        ease: 'sine.out'
+      }, 0);
 
-        if (!trigger) return;
+      if (title) {
+        tl.to(title, {
+          opacity: 1,
+          y: 0,
+          duration: 1.3,
+          ease: 'sine.out'
+        }, 0.2);
+      }
 
-        gsap.fromTo(title,
-          {
-            opacity: 0,
-            y: '50px'
-          },
-          {
-            opacity: 1,
-            y: 0,
-            delay: .8,
-            duration: 1,
-            ease: 'power1.out',
-            immediateRender: false,
-            scrollTrigger: {
-              trigger: trigger,
-              start: 'top 90%',
-              once: true,
-              // toggleActions: 'play none none none',
-            },
-          }
-        );
+      if (line) {
+        tl.to(line, {
+          width: '100%',
+          duration: 1.3,
+          ease: 'sine.out'
+        }, 0.2);
+      }
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger && trigger.vars.trigger.closest?.('.catalog-card, .catalog-card__link')) {
+          trigger.kill();
+        }
       });
-    }
-
-    const spans = gsap.utils.toArray('.catalog-card__link span');
-    if (spans.length) {
-      spans.forEach((span) => {
-        const trigger = span.closest('.catalog-card');
-
-        if (!trigger) return;
-
-        gsap.fromTo(span,
-          {
-            width: '40%',
-          },
-          {
-            width: '100%',
-            delay: 0.6,
-            duration: 1.3,
-            ease: 'power1.out',
-            immediateRender: false,
-            scrollTrigger: {
-              trigger: trigger,
-              start: 'top 90%',
-              once: true,
-            },
-          }
-        );
-      });
-    }
-  })
-
-} else {
-  console.warn('GSAP или ScrollTrigger не подключены');
+    };
+  });
 }

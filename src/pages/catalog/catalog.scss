@@ -4,12 +4,15 @@
 // catalog
 .page-catalog {
 
-  &__container {}
+  &__container {
+  }
 
   &__list {
 
-    @include tablet {
-      .catalog-card {
+    .catalog-card {
+      will-change: transform, opacity;
+
+      @include tablet {
         opacity: 0;
         transform: translateY(100px);
 
@@ -25,5 +28,6 @@
     }
   }
 
-  &__others {}
+  &__others {
+  }
 }

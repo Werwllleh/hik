@@ -76,17 +76,21 @@
     @include tablet {
       .hover-slider {
         opacity: 0;
-        transform: translateY(50px);
-
-        .hover-slider__name {
-          transform: translateY(20px);
-        }
-
-        .hover-slider__price {
-          opacity: 0;
-          transform: translateY(30px);
-        }
+        transform: translateY(30px);
       }
+
+      .hover-slider__name,
+      .hover-slider__price {
+        transform: translateY(20px);
+      }
+
+      .hover-slider__price {
+        opacity: 0;
+      }
+    }
+
+    .hover-slider {
+      will-change: transform, opacity;
     }
   }
 

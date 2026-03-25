@@ -18,8 +18,30 @@
     }
 
     .category-card {
-      opacity: 0;
-      transform: translateY(100px);
+      will-change: transform, opacity;
+
+      @include tablet {
+
+        &:not(:nth-child(1)),
+        &:not(:nth-child(2)) {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+
+        .category-card__title {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+
+        .category-card__link span {
+          width: 0;
+        }
+
+        .category-card__images img {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+      }
 
       &:nth-child(4n+1) {
         flex: 1 1 calc(42% - .8rem);

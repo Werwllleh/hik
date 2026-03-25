@@ -235,6 +235,21 @@
       align-items: stretch;
       justify-content: center;
       flex-wrap: wrap;
+
+      .hover-slider {
+        will-change: transform, opacity;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .hover-slider__name,
+      .hover-slider__price {
+        transform: translateY(20px);
+      }
+
+      .hover-slider__price {
+        opacity: 0;
+      }
     }
 
     .hover-slider {

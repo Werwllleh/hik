@@ -1,4 +1,4 @@
-mixin filters()
+mixin filters(type)
 
     //filters
     .filters&attributes(attributes)
@@ -231,57 +231,88 @@ mixin filters()
                                         span.color(style="background: linear-gradient(315deg, #ff9600 0%, #ffc97d 100%);")
                         .filter-data__accept
                             button(type="submit").filter-submit.btn.primary применить
-            .filter
-                form(data-filter="between").filter-form
-                    .filter-button
-                        .filter-button__value
-                            .filter-button-default
-                                .title
-                                    | цена
-                            .filter-button-selected
-                                span.filter-button-selected__param цена:
-                                span.filter-button-selected__value
-                        .filter-button__right
-                            span.filter-button__icon
-                                +svg("configurator_arrow")
-                            button.filter-button-remove
-                                +svg("filter-remove")
-                    .filter-data
-                        .filter-data__title
-                            p цена:
-                            button(type="button").filter-data-close
-                                +svg("filter-remove")
-                        .filter-data__content
-                            .filter-between
-                                .filter-between__fields
-                                    .filter-between__field
-                                        label.form__field
-                                            input(data-name="price-min", name="price-min", type="text", inputmode="numeric", placeholder="").form__input
-                                            span.form__label от
-                                            span.form__error
-                                    .filter-between__field
-                                        label.form__field
-                                            input(data-name="price-max", name="price-max", type="text", inputmode="numeric", placeholder="").form__input
-                                            span.form__label до
-                                            span.form__error
-                                ul.filter-between__list
-                                    li
-                                        span(data-preset="50000,100000").preset
-                                            | 50 000 – 100 000 ₽
-                                    li
-                                        span(data-preset="100000,300000").preset
-                                            | 100 000 – 300 000 ₽
-                                    li
-                                        span(data-preset="300000,500000").preset
-                                            | 300 000 – 500 000 ₽
-                                    li
-                                        span(data-preset="500000,1000000").preset
-                                            | 500 000 – 1 000 000 ₽
-                                    li
-                                        span(data-preset="1000000,5000000").preset
-                                            | 1 000 000 – 5 000 000 ₽
-                        .filter-data__accept
-                            button(type="submit").filter-submit.btn.primary применить
+            if (type !== 2)
+                .filter
+                    form(data-filter="between").filter-form
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    .title
+                                        | цена
+                                .filter-button-selected
+                                    span.filter-button-selected__param цена:
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            .filter-data__title
+                                p цена:
+                                button(type="button").filter-data-close
+                                    +svg("filter-remove")
+                            .filter-data__content
+                                .filter-between
+                                    .filter-between__fields
+                                        .filter-between__field
+                                            label.form__field
+                                                input(data-name="price-min", name="price-min", type="text", inputmode="numeric", placeholder="").form__input
+                                                span.form__label от
+                                                span.form__error
+                                        .filter-between__field
+                                            label.form__field
+                                                input(data-name="price-max", name="price-max", type="text", inputmode="numeric", placeholder="").form__input
+                                                span.form__label до
+                                                span.form__error
+                                    ul.filter-between__list
+                                        li
+                                            span(data-preset="50000,100000").preset
+                                                | 50 000 – 100 000 ₽
+                                        li
+                                            span(data-preset="100000,300000").preset
+                                                | 100 000 – 300 000 ₽
+                                        li
+                                            span(data-preset="300000,500000").preset
+                                                | 300 000 – 500 000 ₽
+                                        li
+                                            span(data-preset="500000,1000000").preset
+                                                | 500 000 – 1 000 000 ₽
+                                        li
+                                            span(data-preset="1000000,5000000").preset
+                                                | 1 000 000 – 5 000 000 ₽
+                            .filter-data__accept
+                                button(type="submit").filter-submit.btn.primary применить
+            if (type === 2)
+                .filter
+                    form(data-filter="radio").filter-form
+                        .filter-button
+                            .filter-button__value
+                                .filter-button-default
+                                    .title
+                                        | наличие файлов
+                                .filter-button-selected
+                                    span.filter-button-selected__param наличие файлов:
+                                    span.filter-button-selected__value
+                            .filter-button__right
+                                span.filter-button__icon
+                                    +svg("configurator_arrow")
+                                button.filter-button-remove
+                                    +svg("filter-remove")
+                        .filter-data
+                            .filter-data__title
+                                p наличие файлов:
+                                button(type="button").filter-data-close
+                                    +svg("filter-remove")
+                            .filter-data__content
+                                .filter-radio
+                                    ul
+                                        li
+                                            +radio("files", "Да", "yes")
+                                        li
+                                            +radio("files", "Нет", "no")
+                            .filter-data__accept
+                                button(type="submit").filter-submit.btn.primary применить
             button(type="submit").filter-clean-button.btn
                 +svg("filter-remove")
                 | сбросить все

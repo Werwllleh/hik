@@ -1,0 +1,239 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// designers
+.designers {
+
+  &__container {
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem 0;
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    text-align: center;
+    color: $black;
+    font-size: 3.2rem;
+    line-height: 1.125;
+
+    @include w1280 {
+      font-size: 4.8rem;
+      line-height: 1.25;
+    }
+  }
+
+  &__about {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.33;
+    text-align: center;
+    color: #909090;
+  }
+
+  &__filters {
+    margin-top: 4rem;
+  }
+
+  &__content {
+
+  }
+
+  &__table {
+    margin-top: 4rem;
+
+    table {
+      width: 100%;
+      border-collapse:collapse;
+      border-spacing:0;
+      height: auto;
+
+      thead {
+
+        th {
+          font-family: $font-family;
+          font-weight: 600;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: #909090;
+          text-align: center;
+          border-bottom: 1px solid rgba(39, 39, 36, 0.2);
+          padding-block: 2rem;
+          width: 25%;
+          vertical-align: middle;
+          white-space: nowrap;
+
+          &:nth-child(1) {
+            text-align: left;
+            padding-inline: 6rem 2rem;
+            width: 75%;
+
+            @include semiDesktop {
+              padding-inline: 8rem 3rem;
+              width: 33%;
+            }
+          }
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+          &:nth-child(6) {
+            text-align: right;
+          }
+
+          @include semiDesktop {
+            width: 13%;
+            padding-inline: 3rem;
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+              display: table-cell;
+            }
+            &:nth-child(6) {
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      tbody {
+
+        tr {
+          background-color: $white;
+          transition: background-color $transition-default;
+
+          &:hover {
+            background-color: #f4f4f4;
+          }
+        }
+        td {
+          font-family: $font-family;
+          font-weight: 600;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: #909090;
+          text-align: center;
+          border-bottom: 1px solid rgba(39, 39, 36, 0.2);
+          padding-block: 1.2rem;
+          width: 13%;
+          vertical-align: middle;
+
+          &:nth-child(1) {
+            width: 75%;
+
+            @include semiDesktop {
+              width: 33%;
+              padding-inline: 1.2rem;
+            }
+          }
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+
+          @include semiDesktop {
+            padding-inline: 1.2rem;
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+              display: table-cell;
+            }
+          }
+        }
+      }
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 0 1.2rem;
+
+      img {
+        width: 4.8rem;
+        height: 4.8rem;
+        object-fit: contain;
+
+        @include semiDesktop {
+          width: 6.4rem;
+          height: 6.4rem;
+        }
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem 0;
+
+        p {
+          font-family: $font-family;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: $black;
+        }
+
+        span {
+          font-family: $font-family;
+          font-weight: 400;
+          font-size: 1.2rem;
+          line-height: 1.33;
+          color: #909090;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .file {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      gap: .4rem 0;
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.33333;
+      color: $black;
+      max-width: max-content;
+      margin-left: auto;
+
+      @include semiDesktop {
+        margin-inline: auto;
+      }
+
+      &__row {
+        display: flex;
+        align-items: center;
+        gap: 0 .4rem;
+        white-space: nowrap;
+      }
+
+      &__size {
+        color: #909090;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      svg {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+}

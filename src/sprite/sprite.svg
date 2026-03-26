@@ -100,4 +100,9 @@
         <rect width="32" height="32" rx="16" fill="#272724" />
         <path d="M5.33398 17.333L12.0007 23.9997L26.6673 9.33301" stroke="white" stroke-linecap="round" />
     </symbol>
+    <symbol viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="download-file">
+        <path d="M8.00065 2V10.6667" stroke="currentColor" stroke-linecap="round" />
+        <path d="M4.66602 8L7.99935 11.3333L11.3327 8" stroke="currentColor" stroke-linecap="round" />
+        <path d="M13.3327 13.9997H2.66602" stroke="currentColor" stroke-linecap="round" />
+    </symbol>
 </svg>

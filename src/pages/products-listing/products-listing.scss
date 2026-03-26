@@ -206,15 +206,15 @@
   }
 
   .kitchen-slider {
-    opacity: 0;
-  }
+    will-change: transform, opacity;
 
-  .kitchen-slider:first-child {
-    transform: scale(.8);
-  }
+    @include tablet {
+      opacity: 0;
 
-  .kitchen-slider:not(:first-child) {
-
+      &:first-child {
+        transform: scale(.8);
+      }
+    }
   }
 }
 

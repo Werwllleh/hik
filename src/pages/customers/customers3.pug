@@ -1,0 +1,53 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Гарантия"
+  - description = ""
+  - stylePage = "customers"
+  - scriptPage = "customers"
+
+append content
+
+    .customers.ppt140
+        .customers__container.container
+            nav.customers-nav.swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers.html") Консультация и&nbsp;подбор мебели
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers2.html") Доставка и&nbsp;сборка
+                    .swiper-slide.swiper-slide-active
+                        .customers-nav__item
+                            a(href="./customers3.html").active гарантия
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers4.html") обмен и&nbsp;возврат
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers5.html") шоу-рум
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers6.html") контакты
+                button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").customers-nav__prev
+                    span
+                        +svg("hero-arrow")
+                button(type="button", aria-label="Следующий слайд", title="Следующий слайд").customers-nav__next
+                    span
+                        +svg("hero-arrow")
+            .customers-wrap
+                .customers-wrap__grid
+                    .customers-wrap__title
+                        h1 гарантия
+                    .customers-wrap__info
+                        .customers-wrap__description
+                            p Премиальная мебель — это инвестиция на долгие годы. Мы полностью уверены в качестве наших материалов и работе мастеров.
+                            ul
+                                li Расширенная гарантия сроком до 5 лет на всю продукцию (точные сроки указаны в гарантийном талоне).
+                                li Пожизненная сервисная поддержка: даже после окончания гарантийного срока вы всегда можете обратиться к нам для решения любых вопросов.
+                                li Оперативное реагирование: собственная сервисная служба оперативно выезжает для диагностики и решения возможных вопросов.
+                                li Услуга по уходу за мебелью: поможем подобрать профессиональные средства для сохранения безупречного вида натуральной кожи, дерева и тканей.
+                            p Ваш покой и долговечность мебели — наш главный приоритет.
+
+

@@ -1,0 +1,53 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Обмен и возврат"
+  - description = ""
+  - stylePage = "customers"
+  - scriptPage = "customers"
+
+append content
+
+    .customers.ppt140
+        .customers__container.container
+            nav.customers-nav.swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers.html") Консультация и&nbsp;подбор мебели
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers2.html") Доставка и&nbsp;сборка
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers3.html") гарантия
+                    .swiper-slide.swiper-slide-active
+                        .customers-nav__item
+                            a(href="./customers4.html").active обмен и&nbsp;возврат
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers5.html") шоу-рум
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers6.html") контакты
+                button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").customers-nav__prev
+                    span
+                        +svg("hero-arrow")
+                button(type="button", aria-label="Следующий слайд", title="Следующий слайд").customers-nav__next
+                    span
+                        +svg("hero-arrow")
+            .customers-wrap
+                .customers-wrap__grid
+                    .customers-wrap__title
+                        h1 обмен и&nbsp;возврат
+                    .customers-wrap__info
+                        .customers-wrap__description
+                            p Мы стремимся к тому, чтобы вы были на 100% довольны своей покупкой. Если возникла необходимость в обмене или возврате, мы сделаем этот процесс максимально простым и понятным.
+                            ul
+                                li Удобный возврат в течение 14 дней для товаров надлежащего качества, не входящих в перечень невозвратных (индивидуальные изделия, матрасы и т.д.).
+                                li Быстрое решение вопросов по браку или несоответствию заказа.
+                                li Помощь в организации возврата крупногабаритных товаров.
+                                li Возможность обмена на другую модель из коллекции с перерасчетом стоимости.
+                            p Все условия подробно изложены в соответствующем разделе договора и соответствуют нормам законодательства РФ.
+
+

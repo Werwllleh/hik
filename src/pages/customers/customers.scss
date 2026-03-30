@@ -1,0 +1,211 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// customers
+.customers {
+
+  &__container {}
+
+  .customers-nav {
+    position: relative;
+
+    &.swiper {
+
+      .swiper-wrapper {
+        align-items: stretch;
+        max-width: max-content;
+        margin-inline: auto;
+      }
+
+      .swiper-slide {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    &__prev,
+    &__next {
+      position: absolute;
+      height: 100%;
+      top: 50%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity $transition-default6;
+
+      @include w1280 {
+        display: none;
+      }
+
+      &.swiper-button-disabled {
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.6rem;
+        height: 3.6rem;
+      }
+
+      svg {
+        height: 1.8rem;
+        width: .9rem;
+        color: $black;
+      }
+    }
+
+    &__prev {
+      left: 0;
+      transform: translateY(-50%) rotate(180deg);
+      background: linear-gradient(270deg, #ffffff 0%, rgb(255 255 255 / 75%) 100%);
+    }
+
+    &__next {
+      right: 0;
+      transform: translateY(-50%);
+      background: linear-gradient(270deg, #ffffff 0%, rgb(255 255 255 / 75%) 100%);
+    }
+
+    &__item {
+      height: 100%;
+
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: 1.6rem;
+        padding-inline: 1.6rem;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        text-transform: lowercase;
+        color: $black;
+        position: relative;
+        max-width: 14.2rem;
+        text-align: center;
+
+        @include semiDesktop {
+          padding-block: 1.6rem;
+          padding-inline: 2rem;
+          max-width: none;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $black;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform $transition-default6;
+        }
+
+        &:hover,
+        &.active {
+          &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+
+  .customers-wrap {
+    z-index: 3;
+    position: relative;
+    margin-top: -0.1rem;
+    border: 1px solid rgba(39, 39, 36, 0.2);
+    padding-block: 3.2rem;
+    padding-inline: 2rem;
+
+    @include semiDesktop {
+      padding: 3.2rem;
+    }
+
+    @include w1280 {
+      padding-block: 12rem;
+      padding-inline: 10.3rem;
+    }
+
+    @include w1600 {
+      padding-inline: 12.9rem;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 3.2rem 0;
+
+      @include semiDesktop {
+        grid-template-columns: 30% 59%;
+        gap: 0 4rem;
+      }
+
+      @include w1280 {
+        grid-template-columns: 30% 59%;
+        gap: 0 6rem;
+      }
+
+      @include w1600 {
+        gap: 0 13.7rem;
+      }
+    }
+
+    &__title {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 1.125;
+      text-transform: uppercase;
+      color: $black;
+
+      @include w1280 {
+        font-size: 3.2rem;
+        max-width: 37rem;
+      }
+    }
+
+    &__info {
+
+    }
+
+    &__description {
+      font-family: $font-family;
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.33;
+      color: $black;
+
+      @include semiDesktop {
+        max-width: 50.6rem;
+      }
+
+      ul {
+        margin-block: 2.5rem;
+        padding-left: 2rem;
+
+        li {
+          list-style-type: disc;
+          list-style-position: outside;
+
+          &::marker {
+            color: $black;
+          }
+        }
+
+        li + li {
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+}

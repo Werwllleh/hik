@@ -1,0 +1,52 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Доставка и сборка"
+  - description = ""
+  - stylePage = "customers"
+  - scriptPage = "customers"
+
+append content
+
+    .customers.ppt140
+        .customers__container.container
+            nav.customers-nav.swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers.html") Консультация и&nbsp;подбор мебели
+                    .swiper-slide.swiper-slide-active
+                        .customers-nav__item
+                            a(href="./customers2.html").active Доставка и&nbsp;сборка
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers3.html") гарантия
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers4.html") обмен и&nbsp;возврат
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers5.html") шоу-рум
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers6.html") контакты
+                button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").customers-nav__prev
+                    span
+                        +svg("hero-arrow")
+                button(type="button", aria-label="Следующий слайд", title="Следующий слайд").customers-nav__next
+                    span
+                        +svg("hero-arrow")
+            .customers-wrap
+                .customers-wrap__grid
+                    .customers-wrap__title
+                        h1 доставка и&nbsp;сборка
+                    .customers-wrap__info
+                        .customers-wrap__description
+                            p Мы понимаем ценность вашего времени и безупречного состояния каждой детали. Наша логистика — это эталон аккуратности и пунктуальности.
+                            ul
+                                li Аккуратная доставка «под ключ»: мы бережно доставим заказ в удобный для вас временной интервал, внесем и разместим мебель в указанной комнате, снимем всю упаковку.
+                                li Сертифицированные сборщики: сборку осуществляют только наши мастера, которые знают каждую конструкцию до мелочей. Они привезут с собой профессиональный инструмент, используют фирменные крепления и оставят после себя идеальный порядок.
+                                li Забота о деталях: мы используем защитные покрытия для полов и стен при перемещении крупных предметов.
+                            p Вы просто наслаждайтесь видом готового интерьера.
+
+

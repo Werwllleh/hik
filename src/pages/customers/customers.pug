@@ -1,0 +1,53 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Консультация и подбор мебели"
+  - description = ""
+  - stylePage = "customers"
+  - scriptPage = "customers"
+
+append content
+
+    .customers.ppt140
+        .customers__container.container
+            nav.customers-nav.swiper
+                    .swiper-wrapper
+                        .swiper-slide.swiper-slide-active
+                            .customers-nav__item
+                                a(href="./customers.html").active Консультация и&nbsp;подбор мебели
+                        .swiper-slide
+                            .customers-nav__item
+                                a(href="./customers2.html") Доставка и&nbsp;сборка
+                        .swiper-slide
+                            .customers-nav__item
+                                a(href="./customers3.html") гарантия
+                        .swiper-slide
+                            .customers-nav__item
+                                a(href="./customers4.html") обмен и&nbsp;возврат
+                        .swiper-slide
+                            .customers-nav__item
+                                a(href="./customers5.html") шоу-рум
+                        .swiper-slide
+                            .customers-nav__item
+                                a(href="./customers6.html") контакты
+                    button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").customers-nav__prev
+                        span
+                            +svg("hero-arrow")
+                    button(type="button", aria-label="Следующий слайд", title="Следующий слайд").customers-nav__next
+                        span
+                            +svg("hero-arrow")
+            .customers-wrap
+                .customers-wrap__grid
+                    .customers-wrap__title
+                        h1 Консультация и&nbsp;подбор мебели
+                    .customers-wrap__info
+                        .customers-wrap__description
+                            p Ваш уникальный интерьер начинается с диалога. Наши эксперты-декораторы не просто продают мебель — они помогают материализовать ваше видение идеального пространства. Мы учтем стилистические предпочтения, особенности планировки, образ жизни и, конечно, бюджет. Вы получите:
+                            ul
+                                li Персональные подборки из нашей коллекции и эксклюзивных каталогов
+                                li 3D-визуализацию будущего интерьера с понравившимися моделями
+                                li Консультации по сочетанию материалов, цветов и фактур
+                                li Работа с индивидуальными проектами при необходимости нестандартных решений
+                            p Наша цель — чтобы вы сделали осознанный и вдохновляющий выбор.
+
+

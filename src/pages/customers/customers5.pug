@@ -1,0 +1,65 @@
+extends ../../app/pug/layouts/base.pug
+
+append vars
+  - title = "Обмен и возврат"
+  - description = ""
+  - stylePage = "customers"
+  - scriptPage = "customers"
+
+append content
+
+    .customers.ppt140
+        .customers__container.container
+            nav.customers-nav.swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers.html") Консультация и&nbsp;подбор мебели
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers2.html") Доставка и&nbsp;сборка
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers3.html") гарантия
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers4.html") обмен и&nbsp;возврат
+                    .swiper-slide.swiper-slide-active
+                        .customers-nav__item
+                            a(href="./customers5.html").active шоу-рум
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers6.html") контакты
+                button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").customers-nav__prev
+                    span
+                        +svg("hero-arrow")
+                button(type="button", aria-label="Следующий слайд", title="Следующий слайд").customers-nav__next
+                    span
+                        +svg("hero-arrow")
+            .customers-wrap
+                .showroom
+                    .showroom-top
+                        .showroom-info__title
+                            h1 шоу-рум
+                        .showroom-info__list
+                            ul
+                                li
+                                    span часы работы
+                                    p 10:00 – 20:00
+                                li
+                                    span телефон
+                                    a(href="tel:+74951234567") +7 (495) 123 45 67
+                                li
+                                    span email
+                                    a(href="mailto:artplay@hik.ru") artplay@hik.ru
+
+                        .showroom-info__link
+                            a(href="https://yandex.com/maps/-/CPbnJRIj", rel="noreferrer noopener", target="_blank").address Москва, ул. Нижняя Сыромятническая, 10, стр. 7, 3 этаж
+                            a(href="https://yandex.com/maps/-/CPbnJRIj", rel="noreferrer noopener", target="_blank").road
+                                span
+                                p построить маршрут
+                        .showroom-info__video
+                            +videoComponent('./images/main-hero/video.webm', './images/main-hero/v-2x.webp')
+
+                    .showroom-map
+                        +map()

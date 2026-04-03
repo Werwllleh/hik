@@ -26,6 +26,10 @@
   &__top {}
 
   &__bottom {
+
+  }
+
+  &__top + &__bottom {
     margin-top: 8rem;
 
     @include tablet {

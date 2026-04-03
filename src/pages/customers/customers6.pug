@@ -1,0 +1,75 @@
+extends ../../app/pug/layouts/base-customers.pug
+
+append vars
+  - title = "Обмен и возврат"
+  - description = ""
+  - stylePage = "customers"
+  - scriptPage = "customers"
+
+append content
+
+    .customers.ppt140
+        .customers__container.container
+            nav.customers-nav.swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers.html") Консультация и&nbsp;подбор мебели
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers2.html") Доставка и&nbsp;сборка
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers3.html") гарантия
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers4.html") обмен и&nbsp;возврат
+                    .swiper-slide
+                        .customers-nav__item
+                            a(href="./customers5.html") шоу-рум
+                    .swiper-slide.swiper-slide-active
+                        .customers-nav__item
+                            a(href="./customers6.html").active контакты
+                button(type="button", aria-label="Предыдущий слайд", title="Предыдущий слайд").customers-nav__prev
+                    span
+                        +svg("hero-arrow")
+                button(type="button", aria-label="Следующий слайд", title="Следующий слайд").customers-nav__next
+                    span
+                        +svg("hero-arrow")
+            .customers-wrap
+                .customers-wrap__grid
+                    .customers-wrap__title
+                        h1 контакты
+                    .customers-wrap__info
+                        .contacts
+                            .contacts__types
+                                .contacts__type
+                                    span.label для клиентов
+                                    ul
+                                        li
+                                            span телефон
+                                            a(href="tel:+74951234567") +7 (495) 123 45 67
+                                        li
+                                            span email
+                                            a(href="mailto:clientservice@hik.ru") clientservice@hik.ru
+                                .contacts__type
+                                    span.label для дизайнеров
+                                    ul
+                                        li
+                                            span телефон
+                                            a(href="tel:+74951234567") +7 (495) 123 45 67
+                                        li
+                                            span email
+                                            a(href="mailto:designservice@hik.ru") designservice@hik.ru
+                            .contacts__questions
+                                p остались вопросы? оставьте заявку и&nbsp;наш менеджер свяжется с&nbsp;вами
+                                button(type="button", data-modal="order").btn.primary оставить заявку
+            .policy
+                .policy__inner
+                    .policy__left
+                    .policy__right
+                        .policy__docs
+                            a(href="#") Оферта для физических лиц
+                            a(href="#") Правила применения рекомендательных технологий
+                            a(href="#") Оферта для юридических лиц и ИП
+                            a(href="#") Политика обработки персональных данных

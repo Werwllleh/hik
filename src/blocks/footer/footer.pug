@@ -1,11 +1,12 @@
-mixin footer()
+mixin footer(template)
 
     //footer
     footer.footer&attributes(attributes)
         .footer__container
             .footer__body
-                .footer__top
-                    +footerShowcase()
+                if template !== 'customers'
+                    .footer__top
+                        +footerShowcase()
 
                 .footer__bottom
                     nav.footer__nav

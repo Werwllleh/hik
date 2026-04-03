@@ -3,8 +3,15 @@
 
 // customers
 .customers {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 
-  &__container {}
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 
   .customers-nav {
     position: relative;
@@ -120,12 +127,15 @@
   }
 
   .customers-wrap {
+    flex: 1;
     z-index: 3;
     position: relative;
     margin-top: -0.1rem;
     border: 1px solid rgba(39, 39, 36, 0.2);
     padding-block: 3.2rem;
     padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
 
     @include semiDesktop {
       padding: 3.2rem;
@@ -141,11 +151,14 @@
     }
 
     &__grid {
+      flex: 1;
       display: grid;
       grid-template-columns: 100%;
+      grid-template-rows: auto 1fr;
       gap: 3.2rem 0;
 
       @include semiDesktop {
+        grid-template-rows: auto;
         grid-template-columns: 30% 59%;
         gap: 0 4rem;
       }
@@ -383,6 +396,142 @@
 
       @include tablet {
         height: 48rem;
+      }
+    }
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0;
+    height: 100%;
+
+    &__types {
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 3.2rem 0;
+
+      @include mobile {
+        grid-template-columns: 1fr 1fr;
+        gap: 0 .8rem;
+      }
+    }
+
+    &__type {
+
+      .label {
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
+      }
+
+      ul {
+        margin-top: 2rem;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          gap: .6rem 0;
+
+          span {
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1.33;
+            color: rgba($black, 0.4);
+          }
+
+          a {
+            font-family: $font-family;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1.33;
+            color: $black;
+          }
+        }
+
+        li + li {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    &__questions {
+      margin-top: auto;
+
+      @include tablet {
+        margin-top: 4rem;
+      }
+
+      p {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
+      }
+
+      button {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .policy {
+    display: none;
+
+    @include tablet {
+      display: block;
+      padding-block: 4rem;
+      padding-inline: 2rem;
+    }
+
+    @include semiDesktop {
+      padding: 3.2rem;
+    }
+
+    @include w1280 {
+      padding-inline: 10.3rem;
+    }
+
+    @include w1600 {
+      padding-inline: 12.9rem;
+    }
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 100%;
+
+      @include semiDesktop {
+        grid-template-columns: 30% 59%;
+        gap: 0 4rem;
+      }
+
+      @include w1280 {
+        grid-template-columns: 30% 59%;
+        gap: 0 6rem;
+      }
+
+      @include w1600 {
+        gap: 0 13.7rem;
+      }
+    }
+
+    &__left {}
+
+    &__right {}
+
+    &__docs {
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      a {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.33;
+        color: $black;
       }
     }
   }

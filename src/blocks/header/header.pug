@@ -1,4 +1,4 @@
-mixin header()
+mixin header(searchType)
 
     //header
     header.header&attributes(attributes)
@@ -67,10 +67,313 @@ mixin header()
                     button(type="submit").header-search-close
                         +svg("close")
                 .header-search__content
-                    .header-search__message
-                        p Введите наименование или артикул товара и&nbsp;мы&nbsp;покажем все, что подходит под ваш запрос
-                        p Ничего не найдено
-                            br
-                            |Попробуйте изменить запрос и мы поищем ещё раз
-                    .header-search__history
+                    if searchType !== 2
+                        .header-search__message
+                            p Введите наименование или артикул товара и&nbsp;мы&nbsp;покажем все, что подходит под ваш запрос
+                            p Ничего не найдено
+                                br
+                                |Попробуйте изменить запрос и мы поищем ещё раз
+                    if searchType === 2
+                        .header-search-history
+                            ul
+                                li
+                                    .search-history-item
+                                        span.search-history-item__icon
+                                            +svg("history")
+                                        .search-history-item__value(data-search-value="кухонный стол")
+                                            | кухонный стол
+                                li
+                                    .search-history-item
+                                        span.search-history-item__icon
+                                            +svg("history")
+                                        .search-history-item__value(data-search-value="кухонный стол2")
+                                            | кухонный стол2
+                        .header-search-hints
+                            ul
+                                li
+                                    .header-search-hint
+                                        span.header-search-hint__icon
+                                            +svg("arrow45")
+                                        .header-search-hint__value(data-hint-value="стулья для кухни")
+                                            | стулья для кухни
+                                li
+                                    .header-search-hint
+                                        span.header-search-hint__icon
+                                            +svg("arrow45")
+                                        .header-search-hint__value(data-hint-value="столы для кухни")
+                                            | столы для кухни
+                                li
+                                    .header-search-hint
+                                        span.header-search-hint__icon
+                                            +svg("arrow45")
+                                        .header-search-hint__value(data-hint-value="столик кофейный")
+                                            | столик кофейный
+                                li
+                                    .header-search-hint
+                                        span.header-search-hint__icon
+                                            +svg("arrow45")
+                                        .header-search-hint__value(data-hint-value="стол для улицы")
+                                            | стол для улицы
+                                li
+                                    .header-search-hint
+                                        span.header-search-hint__icon
+                                            +svg("arrow45")
+                                        .header-search-hint__value(data-hint-value="стул для улицы")
+                                            | стул для улицы
+                        .header-search-products
+                            ul
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                                li
+                                    a(href="./product_detail.html").header-search-product
+                                        .header-search-product__img
+                                            img(src="./images/category/4-2.webp", alt="")
+                                        .header-search-product__info
+                                            .header-search-product__name
+                                                | стул XA649#
+                                            .header-search-product__price
+                                                | от 566 900₽
+                            button(type="button").header-search-products--show-more Все результаты
+
 

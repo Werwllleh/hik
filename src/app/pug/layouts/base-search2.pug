@@ -1,0 +1,72 @@
+include ../../pug/index
+include ../../../components/index
+include ../../../blocks/index
+
+block vars
+    - var stylesLibs = []
+    - var scriptsLibs = []
+    - var stylesComponents = []
+    - var scriptsComponents = []
+    - var stylesBlocks = []
+    - var scriptsBlocks = []
+    - var stylePage = ''
+    - var scriptPage = ''
+
+    - var title = "Document"
+    - var description = "Document description"
+
+block use
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        base(href="./")
+        title= title
+        meta(name="description" content="" + description)
+
+        // Базовые стили
+        link(rel="stylesheet", href="css/app.css")
+        // Стили страницы (если есть)
+        if stylePage
+            link(rel="stylesheet", href=`${stylePage}/${stylePage}.css`)
+    body
+        +header(2)
+        main.page
+            block content
+        +footer()
+
+
+        .styles-libs
+            // Стили библиотек
+            link(rel="stylesheet", href=`libs/lightgallery/lightgallery-bundle.min.css`)
+            link(rel="stylesheet", href=`libs/swiper/swiper-bundle.min.css`)
+            link(rel="stylesheet", href=`libs/tippy/tippy.css`)
+            each style in stylesLibs
+                link(rel="stylesheet", href=`libs/${style}`)
+
+        // Скрипты библиотек
+        script(src=`libs/gsap/gsap.min.js`)
+        script(src=`libs/gsap/ScrollSmoother.min.js`)
+        script(src=`libs/gsap/ScrollTrigger.min.js`)
+        script(src=`libs/tippy/popper.min.js`)
+        script(src=`libs/tippy/tippy-bundle.umd.min.js`)
+        script(src=`libs/lightgallery/lightgallery.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-zoom.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-rotate.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-fullscreen.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-thumbnail.min.js`)
+        script(src=`libs/swiper/swiper-bundle.min.js`)
+        script(src=`libs/input-mask/input-mask.js`)
+        script(src=`https://api-maps.yandex.ru/v3/?apikey=07d9285b-8395-4497-9596-7adf46a6bdea&lang=ru_RU`)
+        each script in scriptsLibs
+            script(src=`libs/${script}`)
+
+        // Базовые скрипты
+        script(src="js/app.js")
+        // Скрипт страницы (если есть)
+        if scriptPage
+            script(src=`${scriptPage}/${scriptPage}.js`)
+
+        include ../../../sprite/sprite.svg

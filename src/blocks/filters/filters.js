@@ -231,6 +231,7 @@ function closeAllFilters() {
     }
   });
   overlay.classList.remove('active');
+  blockWrap(false)
 }
 
 function adjustDropdownPosition(filter) {

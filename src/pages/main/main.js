@@ -72,12 +72,33 @@ if (popularItems.length) {
         }, 0.25);
       }
     });
+  });
+}
 
-    return () => {
-      furnitureCards.forEach(card => {
-        const trigger = ScrollTrigger.getTriggerById(card);
-        trigger?.kill();
+const shoppableItems = document.querySelectorAll('.shoppable-images .shoppable-image');
+if (shoppableItems.length) {
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    const shoppableItemsCards = gsap.utils.toArray('.shoppable-images .shoppable-image');
+
+    shoppableItemsCards.forEach((card) => {
+
+      const cardTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        }
       });
-    };
+
+      cardTl.to(card, {
+        y: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: 'sine.out'
+      }, 0);
+
+    });
   });
 }

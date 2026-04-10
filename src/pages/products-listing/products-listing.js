@@ -45,12 +45,12 @@ if (furnitureItems.length) {
       }
     });
 
-    return () => {
+    /*return () => {
       furnitureCards.forEach(card => {
         const trigger = ScrollTrigger.getTriggerById(card);
         trigger?.kill();
       });
-    };
+    };*/
   });
 }
 

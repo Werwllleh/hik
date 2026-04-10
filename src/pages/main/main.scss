@@ -25,6 +25,12 @@
 
     .shoppable-image {
 
+      @include tablet {
+        will-change: transform, opacity;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
       .shoppable-image__src {
         height: 100%;
       }
@@ -132,6 +138,12 @@
       .shoppable-image {
         aspect-ratio: 16/9;
         max-height: 74rem;
+      }
+
+      @include mobile {
+        .row-mobile-items {
+          grid-column: 1 / span 1;
+        }
       }
     }
 

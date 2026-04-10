@@ -5,6 +5,10 @@
 .page-index {
   padding-bottom: 15rem;
 
+  h1 {
+    font-size: 3rem;
+  }
+
   &__list {
     margin-top: 2.8rem;
     display: flex;
@@ -17,6 +21,14 @@
 
     li {
 
+      a {
+        font-size: 1.8rem;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

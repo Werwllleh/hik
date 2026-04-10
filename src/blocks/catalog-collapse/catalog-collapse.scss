@@ -18,15 +18,15 @@
         display: block;
         width: 1.6rem;
         height: 0.1rem;
-        background-color: $black;
+        background-color: var(--black);
       }
 
       &__link {
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
 
       &__separator {
@@ -37,11 +37,11 @@
       }
 
       &__counter {
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
     }
 
@@ -57,11 +57,11 @@
         li {
 
           a {
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
-            color: $black;
+            color: var(--black);
           }
         }
       }

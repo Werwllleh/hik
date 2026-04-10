@@ -23,7 +23,7 @@
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity $transition-default, visibility $transition-default;
+  transition: opacity var(--transition-default), visibility var(--transition-default);
 
   @include w1280 {
     width: 7.2rem;

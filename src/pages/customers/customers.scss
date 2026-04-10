@@ -40,7 +40,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: opacity $transition-default6;
+      transition: opacity var(--transition-default6);
 
       @include w1280 {
         display: none;
@@ -62,7 +62,7 @@
       svg {
         height: 1.8rem;
         width: .9rem;
-        color: $black;
+        color: var(--black);
       }
     }
 
@@ -92,7 +92,7 @@
         font-size: 1.2rem;
         line-height: 1.33;
         text-transform: lowercase;
-        color: $black;
+        color: var(--black);
         position: relative;
         max-width: 14.2rem;
         text-align: center;
@@ -110,10 +110,10 @@
           bottom: 0;
           width: 100%;
           height: 1px;
-          background-color: $black;
+          background-color: var(--black);
           transform: scaleX(0);
           transform-origin: right;
-          transition: transform $transition-default6;
+          transition: transform var(--transition-default6);
         }
 
         &:hover,
@@ -175,12 +175,12 @@
     }
 
     &__title {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 2.4rem;
       line-height: 1.125;
       text-transform: uppercase;
-      color: $black;
+      color: var(--black);
 
       @include w1280 {
         font-size: 3.2rem;
@@ -193,11 +193,11 @@
     }
 
     &__description {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33;
-      color: $black;
+      color: var(--black);
 
       @include semiDesktop {
         max-width: 50.6rem;
@@ -212,7 +212,7 @@
           list-style-position: outside;
 
           &::marker {
-            color: $black;
+            color: var(--black);
           }
         }
 
@@ -262,12 +262,12 @@
 
       &__title {
         grid-area: title;
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 2.4rem;
         line-height: 1.125;
         text-transform: uppercase;
-        color: $black;
+        color: var(--black);
 
         @include w1280 {
           font-size: 3.2rem;
@@ -299,20 +299,20 @@
             gap: .8rem 0;
 
             span {
-              font-family: $font-family;
+              font-family: var(--font-family);
               font-weight: 400;
               font-size: 1.2rem;
               line-height: 1.33;
-              color: rgba($black, 0.4);
+              color: rgba(var(--black-rgb), 0.4);
             }
 
             a,
             p {
-              font-family: $font-family;
+              font-family: var(--font-family);
               font-weight: 400;
               font-size: 1.2rem;
               line-height: 1.33;
-              color: $black;
+              color: var(--black);
             }
           }
         }
@@ -334,12 +334,12 @@
         }
 
         .address {
-          font-family: $font-family;
+          font-family: var(--font-family);
           font-weight: 400;
           font-size: 2.4rem;
           line-height: 1.125;
           text-transform: uppercase;
-          color: $black;
+          color: var(--black);
 
           @include w1280 {
             font-size: 3.2rem;
@@ -363,11 +363,11 @@
           }
 
           p {
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 600;
             font-size: 1.2rem;
             line-height: 1.33;
-            color: $black;
+            color: var(--black);
             white-space: nowrap;
           }
         }
@@ -424,7 +424,7 @@
         font-weight: 600;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
 
       ul {
@@ -439,15 +439,15 @@
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
-            color: rgba($black, 0.4);
+            color: rgba(var(--black-rgb), 0.4);
           }
 
           a {
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
-            color: $black;
+            color: var(--black);
           }
         }
 
@@ -465,11 +465,11 @@
       }
 
       p {
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
 
       button {
@@ -532,7 +532,7 @@
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
     }
   }

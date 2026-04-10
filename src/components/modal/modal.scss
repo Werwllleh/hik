@@ -13,8 +13,8 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background: rgba($black, 0.1);
-	transition: opacity $transition-default;
+	background: rgba(var(--black-rgb), 0.1);
+	transition: opacity var(--transition-default);
 
 	@include mobile {
 		//overflow-y: auto;
@@ -33,7 +33,7 @@
 		background-color: #fff;
 		overflow: hidden;
 		margin-inline: auto;
-		transition: opacity $transition-default, transform $transition-default, border-radius $transition-default;
+		transition: opacity var(--transition-default), transform var(--transition-default), border-radius var(--transition-default);
 
 		.modal--show & {
 			opacity: 1;
@@ -48,7 +48,7 @@
 		line-height: 1.1;
 		font-weight: 500;
 		letter-spacing: -0.01em;
-		color: $black;
+		color: var(--black);
 
 		@include desktop {
 			margin-bottom: 20px;

@@ -65,7 +65,7 @@
       bottom: 1.2rem;
       top: auto;
       padding-inline: 1.2rem;
-      transition: transform $transition-default;
+      transition: transform var(--transition-default);
 
       @include w1280 {
         padding-inline: 2rem;
@@ -79,11 +79,11 @@
         height: 0.2rem;
         background-color: #d4d4d4;
         border-radius: 0;
-        transition: background-color $transition-default6;
+        transition: background-color var(--transition-default6);
       }
 
       .swiper-pagination-bullet-active {
-        background-color: $black;
+        background-color: var(--black);
       }
     }
 
@@ -99,7 +99,7 @@
       width: 3.6rem;
       height: 3.6rem;
       opacity: 0;
-      transition: opacity $transition-default6, transform $transition-default;
+      transition: opacity var(--transition-default6), transform var(--transition-default);
 
       &.swiper-button-disabled {
         pointer-events: none;
@@ -112,7 +112,7 @@
       svg {
         height: 1.8rem;
         width: .9rem;
-        color: $black;
+        color: var(--black);
       }
     }
 
@@ -166,7 +166,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(20%) scale(.7);
-  transition: opacity $transition-default6, visibility $transition-default6, transform $transition-default6;
+  transition: opacity var(--transition-default6), visibility var(--transition-default6), transform var(--transition-default6);
 
   &.active {
     transform: translateY(0) scale(1);
@@ -212,7 +212,7 @@
     svg {
       width: 2.4rem;
       height: 2.4rem;
-      color: $black;
+      color: var(--black);
     }
 
     @include tablet {
@@ -279,7 +279,7 @@
       svg {
         width: 2.4rem;
         height: 2.4rem;
-        color: $black;
+        color: var(--black);
       }
 
       @include tablet {
@@ -324,11 +324,11 @@
         background-color: #d4d4d4;
         border-radius: 0;
         margin: 0 !important;
-        transition: background-color $transition-default6;
+        transition: background-color var(--transition-default6);
       }
 
       .swiper-pagination-bullet-active {
-        background-color: $black;
+        background-color: var(--black);
       }
     }
   }

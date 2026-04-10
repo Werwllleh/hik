@@ -31,7 +31,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0 1rem;
-    border-bottom: 0.1rem solid rgba($black, 0.2);
+    border-bottom: 0.1rem solid rgba(var(--black-rgb), 0.2);
 
     @include tablet {
       padding-block: 2.4rem;
@@ -71,11 +71,11 @@
     &__item {
 
       a {
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
         white-space: nowrap;
       }
     }
@@ -91,7 +91,7 @@
     height: 1.6rem;
 
     .logo-element {
-      color: $black;
+      color: var(--black);
     }
 
     .separator {
@@ -131,7 +131,7 @@
     justify-content: center;
     width: 1.6rem;
     height: 1.6rem;
-    color: $black;
+    color: var(--black);
 
     @include w1280 {
       width: 2.4rem;
@@ -189,11 +189,11 @@
     display: block;
     width: 1.3rem;
     height: 1px;
-    background-color: $black;
+    background-color: var(--black);
     border-radius: 4rem;
     transition:
             top .3s .15s ease-in-out,
-            opacity $transition-default6,
+            opacity var(--transition-default6),
             transform .3s ease-in-out;
 
     &:nth-child(1) {
@@ -219,8 +219,8 @@
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
-  background: rgba($black, 0.1);
-  transition: opacity $transition-default, visibility $transition-default;
+  background: rgba(var(--black-rgb), 0.1);
+  transition: opacity var(--transition-default), visibility var(--transition-default);
 
   &__inner {
     height: 100%;
@@ -228,7 +228,7 @@
     backdrop-filter: blur(4rem);
     background: rgba(255, 255, 255, 0.8);
     transform: translateX(-100%);
-    transition: transform $transition-default12, box-shadow $transition-default12;
+    transition: transform var(--transition-default12), box-shadow var(--transition-default12);
 
     @include tablet {
       max-width: 38rem;
@@ -263,7 +263,7 @@
 
     a {
       display: none;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33333;
@@ -299,11 +299,11 @@
       li {
 
         a {
-          font-family: $font-family;
+          font-family: var(--font-family);
           font-weight: 400;
           font-size: 1.2rem;
           line-height: 1.33;
-          color: $black;
+          color: var(--black);
         }
       }
     }
@@ -321,8 +321,8 @@
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
-  background: rgba($black, 0.1);
-  transition: opacity $transition-default, visibility $transition-default;
+  background: rgba(var(--black-rgb), 0.1);
+  transition: opacity var(--transition-default), visibility var(--transition-default);
 
   &__inner {
     height: 100%;
@@ -331,7 +331,7 @@
     background: rgba(255, 255, 255, 0.8);
     transform: translateX(100%);
     margin-left: auto;
-    transition: transform $transition-default12, box-shadow $transition-default12;
+    transition: transform var(--transition-default12), box-shadow var(--transition-default12);
 
     @include tablet {
       max-width: 38rem;
@@ -393,7 +393,7 @@
       svg {
         width: 100%;
         height: 100%;
-        color: $black;
+        color: var(--black);
       }
     }
   }
@@ -403,7 +403,7 @@
   }
 
   &__message {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.33;
@@ -454,7 +454,7 @@
       &:hover {
         .search-history-item__icon svg,
         .search-history-item__value {
-          color: $black;
+          color: var(--black);
         }
       }
 
@@ -477,7 +477,7 @@
         font-size: 1.2rem;
         line-height: 1.33333;
         color: #909090;
-        transition: color $transition-default;
+        transition: color var(--transition-default);
       }
     }
   }
@@ -506,7 +506,7 @@
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 1.33;
-    color: $black;
+    color: var(--black);
   }
 
   .header-search-product {
@@ -537,7 +537,7 @@
       color: #909090;
 
       mark {
-        color: $black;
+        color: var(--black);
         background: none;
       }
     }
@@ -575,7 +575,7 @@
       &:hover {
         .header-search-hint__icon svg,
         .header-search-hint__value {
-          color: $black;
+          color: var(--black);
         }
       }
 
@@ -598,10 +598,10 @@
         font-size: 1.2rem;
         line-height: 1.33333;
         color: #909090;
-        transition: color $transition-default;
+        transition: color var(--transition-default);
 
         mark {
-          color: $black;
+          color: var(--black);
           background: none;
         }
       }
@@ -629,7 +629,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: $black;
+        background-color: var(--black);
       }
 
       ul li:nth-child(n+6) {

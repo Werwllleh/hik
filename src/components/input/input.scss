@@ -20,9 +20,9 @@
     font-size: 1.6rem;
     line-height: 1.75;
     letter-spacing: -0.02em;
-    color: $black;
+    color: var(--black);
     width: 100%;
-    transition: border-color $transition;
+    transition: border-color var(--transition);
 
     &[required=""] + .input-field__placeholder {
       span {
@@ -66,13 +66,13 @@
     font-size: 1.6rem;
     line-height: 1.75;
     letter-spacing: -0.02em;
-    color: $black;
+    color: var(--black);
     pointer-events: none;
     display: flex;
     align-items: center;
     opacity: 1;
     visibility: visible;
-    transition: all $transition;
+    transition: all var(--transition);
 
     span {
       color: #ff2525;
@@ -91,7 +91,7 @@
     z-index: 1;
     opacity: 0;
     visibility: hidden;
-    transition: visibility $transition, opacity $transition;
+    transition: visibility var(--transition), opacity var(--transition);
 
     @include mobile {
       font-size: 1.4rem;

@@ -37,12 +37,12 @@
   }
 
   &__title {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 2.4rem;
     line-height: 1.25;
     text-transform: uppercase;
-    color: $black;
+    color: var(--black);
     margin-bottom: 2rem;
     will-change: transform, opacity;
 
@@ -96,11 +96,11 @@
 
     p {
       flex: 0 0 auto;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 600;
       font-size: 1.2rem;
       line-height: 1.33;
-      color: $black;
+      color: var(--black);
       white-space: nowrap;
     }
   }

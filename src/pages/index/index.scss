@@ -11,9 +11,14 @@
 
   &__list {
     margin-top: 2.8rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 100%;
     gap: 20px;
+
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      gap: 40px 20px;
+    }
 
     @include desktop {
       margin-top: 5.6rem;

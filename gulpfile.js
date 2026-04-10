@@ -10,6 +10,8 @@ import browserSyncPkg from 'browser-sync';
 import {deleteAsync} from 'del';
 import { exec } from 'child_process';
 import through from 'through2';
+import postcss from 'gulp-postcss';
+import sortMediaQueries from 'postcss-sort-media-queries';
 
 const sass = gulpSass(dartSass);
 const browserSync = browserSyncPkg.create();
@@ -86,6 +88,9 @@ export const html = () =>
 export const stylesApp = () =>
   gulp.src('src/app/scss/index.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      sortMediaQueries({ sort: 'mobile-first' })
+    ]))
     .pipe(rename('app.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
@@ -94,6 +99,9 @@ export const stylesApp = () =>
 export const stylesPages = () =>
   gulp.src('src/pages/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      sortMediaQueries({ sort: 'mobile-first' })
+    ]))
     .pipe(splitByPages(''))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());

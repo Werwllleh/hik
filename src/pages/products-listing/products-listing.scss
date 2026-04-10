@@ -16,10 +16,10 @@
   &__breadcrumbs {}
 
   &__title {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     text-align: center;
-    color: $black;
+    color: var(--black);
     font-size: 3.2rem;
     line-height: 1.125;
 
@@ -60,7 +60,7 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: opacity $transition-default, visibility $transition-default;
+    transition: opacity var(--transition-default), visibility var(--transition-default);
   }
 
   &__pagination {}

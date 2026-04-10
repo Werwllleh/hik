@@ -29,7 +29,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: none;
-    transition: opacity $transition-default, visibility $transition-default;
+    transition: opacity var(--transition-default), visibility var(--transition-default);
 
     img {
       width: 100%;
@@ -67,7 +67,7 @@
     padding-inline: 2.4rem 0.4rem;
     opacity: 1;
     visibility: visible;
-    transition: opacity $transition-default, visibility $transition-default;
+    transition: opacity var(--transition-default), visibility var(--transition-default);
 
     &:hover {
       svg {
@@ -76,7 +76,7 @@
     }
 
     p {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 600;
       font-size: 1.2rem;
       line-height: 1.33;
@@ -97,7 +97,7 @@
       svg {
         width: 1.8rem;
         height: 1.8rem;
-        color: $white;
+        color: var(--white);
         transform: translateX(.2rem);
       }
     }

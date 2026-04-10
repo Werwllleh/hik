@@ -20,8 +20,8 @@
         border: 1px solid #d4d4d4;
         width: 1.8rem;
         height: 1.8rem;
-        background-color: $white;
-        transition: background-color $transition-default, border-color $transition-default;
+        background-color: var(--white);
+        transition: background-color var(--transition-default), border-color var(--transition-default);
 
         &::before {
             content: '';
@@ -32,20 +32,20 @@
             background-position: center;
             background-size: 1rem .8rem;
             opacity: 0;
-            transition: opacity $transition-default;
+            transition: opacity var(--transition-default);
         }
     }
 
     &__label {
         position: relative;
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
         cursor: pointer;
         user-select: none;
-        transition: color $transition-default;
+        transition: color var(--transition-default);
 
         @include tablet {
             font-size: 1.4rem;
@@ -59,13 +59,13 @@
 
     &:hover {
         .checkbox__icon {
-            border-color: $black;
+            border-color: var(--black);
         }
     }
 
     .checkbox__input:checked + .checkbox__icon {
-        background-color: $black;
-        border-color: $black;
+        background-color: var(--black);
+        border-color: var(--black);
 
         &::before {
             opacity: 1;

@@ -6,11 +6,11 @@
   padding-bottom: 12rem;
 
   &__title {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 3.2rem;
     line-height: 1.25;
-    color: $black;
+    color: var(--black);
 
     @include w1280 {
       font-size: 4.8rem;
@@ -18,11 +18,11 @@
   }
 
   &__price {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 1.4;
-    color: $black;
+    color: var(--black);
 
     @include w1280 {
       font-size: 2rem;
@@ -31,7 +31,7 @@
 
   &__description {
     margin-top: 1.2rem;
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.33;
@@ -316,7 +316,7 @@
     .product-detail__breadcrumbs .breadcrumbs__link,
     .product-detail__breadcrumbs .breadcrumbs__current,
     .product-detail__title {
-      color: $white;
+      color: var(--white);
     }
   }
 }
@@ -371,7 +371,7 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-        transition: transform $transition-default6;
+        transition: transform var(--transition-default6);
       }
 
       @include mobile {

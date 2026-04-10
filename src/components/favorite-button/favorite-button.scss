@@ -5,7 +5,7 @@
 .favorite-button {
   position: relative;
   display: inline-flex;
-  transition: opacity $transition-default6, visibility $transition-default, transform $transition-default;
+  transition: opacity var(--transition-default6), visibility var(--transition-default), transform var(--transition-default);
 
   &:hover {
     @include w1280 {
@@ -72,7 +72,7 @@
       &:nth-child(3) {
         position: absolute;
         inset: 0;
-        color: $black;
+        color: var(--black);
         opacity: 0;
       }
     }
@@ -86,9 +86,9 @@
     overflow: hidden;
     height: 3.2rem;
     z-index: 1;
-    transition: transform $transition-default, max-width $transition-default;
+    transition: transform var(--transition-default), max-width var(--transition-default);
     pointer-events: none;
-    background-color: $black;
+    background-color: var(--black);
   }
 
   &__text {
@@ -100,10 +100,10 @@
     align-items: center;
 
     p {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
-      color: $white;
+      color: var(--white);
       white-space: nowrap;
     }
   }
@@ -127,7 +127,7 @@
   transform: translateX(-50%) translateY(2rem);
   bottom: 0;
   z-index: 5;
-  transition: transform $transition-default6, opacity $transition-default, visibility $transition-default;
+  transition: transform var(--transition-default6), opacity var(--transition-default), visibility var(--transition-default);
 
   @include tablet {
     gap: 0 1.5rem;
@@ -140,7 +140,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(-2rem);
-    transition: transform $transition-default, opacity $transition-default6, visibility $transition-default6;
+    transition: transform var(--transition-default), opacity var(--transition-default6), visibility var(--transition-default6);
   }
 
   &__icon {
@@ -149,12 +149,12 @@
     svg {
       width: 2.4rem;
       height: 2.4rem;
-      color: $black;
+      color: var(--black);
     }
   }
 
   &__text {
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 1.15rem;
     line-height: 1.33;
@@ -179,7 +179,7 @@
     svg {
       width: 2.4rem;
       height: 2.4rem;
-      color: $black;
+      color: var(--black);
     }
   }
 }

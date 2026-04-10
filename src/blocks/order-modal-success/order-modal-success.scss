@@ -38,7 +38,7 @@
     svg {
       width: 3.2rem;
       height: 3.2rem;
-      color: $white;
+      color: var(--white);
     }
   }
 
@@ -47,12 +47,12 @@
     max-width: 20rem;
 
     h6 {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 600;
       font-size: 1.6rem;
       line-height: 1.5;
       text-align: center;
-      color: $black;
+      color: var(--black);
 
       @include w1280 {
         font-size: 2rem;
@@ -62,12 +62,12 @@
 
     p {
       margin-top: 1.2rem;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.5;
       text-align: center;
-      color: $black;
+      color: var(--black);
     }
   }
 }

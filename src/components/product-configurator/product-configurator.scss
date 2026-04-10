@@ -53,11 +53,11 @@
     gap: .8rem;
 
     &__name {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 600;
       font-size: 1.2rem;
       line-height: 1.33;
-      color: $black;
+      color: var(--black);
       white-space: nowrap;
     }
 
@@ -78,7 +78,7 @@
       svg {
         width: 1rem;
         height: .7rem;
-        color: $black;
+        color: var(--black);
       }
     }
   }
@@ -107,17 +107,17 @@
 
         p {
           grid-area: p;
-          font-family: $font-family;
+          font-family: var(--font-family);
           font-weight: 400;
           font-size: 1.2rem;
           line-height: 1.33;
-          color: $black;
+          color: var(--black);
         }
 
         span {
           grid-area: span;
           margin-top: .4rem;
-          font-family: $font-family;
+          font-family: var(--font-family);
           font-weight: 400;
           font-size: 1.2rem;
           line-height: 1.33;
@@ -152,11 +152,11 @@
     .group {
 
       &__name {
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
 
       &__list {
@@ -170,17 +170,17 @@
 
         p {
           margin-top: .8rem;
-          font-family: $font-family;
+          font-family: var(--font-family);
           font-weight: 400;
           font-size: 1.2rem;
           line-height: 1.33;
-          color: $black;
+          color: var(--black);
         }
 
         span {
           display: block;
           margin-top: .4rem;
-          font-family: $font-family;
+          font-family: var(--font-family);
           font-weight: 400;
           font-size: 1.2rem;
           line-height: 1.33;
@@ -235,7 +235,7 @@
     &__top {}
 
     &__title {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33;
@@ -262,19 +262,19 @@
           svg {
             width: 2.4rem;
             height: 2.4rem;
-            color: $black;
+            color: var(--black);
           }
 
           p {
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
-            color: $black;
+            color: var(--black);
           }
 
           span {
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
@@ -291,7 +291,7 @@
 
     &__bottom {
       margin-top: auto;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33;
@@ -321,11 +321,11 @@
     }
 
     &__description {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33;
-      color: $black;
+      color: var(--black);
     }
 
     &__contacts {
@@ -335,7 +335,7 @@
         li {
 
           p {
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
@@ -347,11 +347,11 @@
             display: flex;
             align-items: center;
             gap: 0 .4rem;
-            font-family: $font-family;
+            font-family: var(--font-family);
             font-weight: 400;
             font-size: 1.2rem;
             line-height: 1.33;
-            color: $black;
+            color: var(--black);
 
             svg {
               width: 1.6rem;
@@ -372,7 +372,7 @@
 
       span {
         display: block;
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
@@ -382,11 +382,11 @@
       a {
         margin-top: .4rem;
         display: block;
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
     }
 
@@ -410,7 +410,7 @@
         margin: auto;
 
         svg {
-          color: $black;
+          color: var(--black);
         }
       }
     }

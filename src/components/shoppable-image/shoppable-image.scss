@@ -27,7 +27,7 @@
     border-radius: 50%;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    transition: background-color $transition-default, transform $transition-default;
+    transition: background-color var(--transition-default), transform var(--transition-default);
     z-index: 1;
 
     @include w1280 {
@@ -36,23 +36,23 @@
 
     &:hover {
       .shoppable-image__icon {
-        background-color: $black;
-        border-color: $black;
+        background-color: var(--black);
+        border-color: var(--black);
 
         svg {
-          color: $white;
+          color: var(--white);
         }
       }
     }
 
     &.active {
       .shoppable-image__icon {
-        background-color: $black;
-        border-color: $black;
+        background-color: var(--black);
+        border-color: var(--black);
         transform: rotate(45deg);
 
         svg {
-          color: $white;
+          color: var(--white);
         }
       }
     }
@@ -69,13 +69,13 @@
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #fff;
-    transition: color $transition-default, transform $transition-default, background-color $transition-default, border-color $transition-default;
+    transition: color var(--transition-default), transform var(--transition-default), background-color var(--transition-default), border-color var(--transition-default);
 
     svg {
       flex: 0 0 auto;
       width: 2.4rem;
       height: 2.4rem;
-      color: $black;
+      color: var(--black);
     }
   }
 }

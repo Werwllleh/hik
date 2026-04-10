@@ -17,11 +17,11 @@
     gap: 0 .5rem;
     padding-block: 0.4rem;
     padding-inline: 1.2rem;
-    font-family: $font-family;
+    font-family: var(--font-family);
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.33;
-    color: $black;
+    color: var(--black);
     background-color: #f4f4f4;
     height: 3.2rem;
 
@@ -32,7 +32,7 @@
     svg {
       width: 1.6rem;
       height: 1.6rem;
-      color: $black;
+      color: var(--black);
     }
   }
 }
@@ -55,14 +55,14 @@
     display: grid;
     align-items: center;
     grid-template-columns: calc(100% - 2.2rem) 1.6rem;
-    background-color: $white;
+    background-color: var(--white);
     gap: 0 .6rem;
     border: 1px solid #d4d4d4;
     padding-block: 0.4rem;
     padding-inline: 1.2rem;
     cursor: pointer;
     height: 3.2rem;
-    transition: background-color $transition-default, border-color $transition-default;
+    transition: background-color var(--transition-default), border-color var(--transition-default);
 
     @include w1280 {
       height: 4rem;
@@ -89,12 +89,12 @@
       pointer-events: none;
       opacity: 1;
       visibility: visible;
-      transition: opacity $transition-default, visibility $transition-default, transform $transition-default;
+      transition: opacity var(--transition-default), visibility var(--transition-default), transform var(--transition-default);
 
       svg {
         width: 1rem;
         height: 1rem;
-        color: $black;
+        color: var(--black);
       }
     }
   }
@@ -115,17 +115,17 @@
       svg {
         width: 100%;
         height: 100%;
-        color: $black;
+        color: var(--black);
       }
     }
 
     .title {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33333;
       color: #272724;
-      transition: color $transition-default;
+      transition: color var(--transition-default);
     }
   }
 
@@ -135,11 +135,11 @@
     gap: 0 .5rem;
 
     span {
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33;
-      color: $white;
+      color: var(--white);
 
       &:nth-child(1) {
         opacity: .6;
@@ -168,12 +168,12 @@
     height: 1.6rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity $transition-default, visibility $transition-default;
+    transition: opacity var(--transition-default), visibility var(--transition-default);
 
     svg {
       width: 100%;
       height: 100%;
-      color: $white;
+      color: var(--white);
     }
   }
 
@@ -195,7 +195,7 @@
     gap: 2rem 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity $transition-default, visibility $transition-default;
+    transition: opacity var(--transition-default), visibility var(--transition-default);
 
     @include semiDesktop {
       position: absolute;
@@ -214,11 +214,11 @@
       gap: 0 2rem;
 
       p {
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 600;
         font-size: 1.2rem;
         line-height: 1.33;
-        color: $black;
+        color: var(--black);
       }
 
       button {
@@ -231,7 +231,7 @@
         svg {
           width: 100%;
           height: 100%;
-          color: $black;
+          color: var(--black);
         }
 
         @include semiDesktop {
@@ -283,8 +283,8 @@
 
   &.selected {
     .filter-button {
-      background-color: $black;
-      border-color: $black;
+      background-color: var(--black);
+      border-color: var(--black);
     }
     .filter-button-default {
       display: none;
@@ -321,7 +321,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        font-family: $font-family;
+        font-family: var(--font-family);
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.33333;
@@ -335,7 +335,7 @@
           width: 0;
           background: #272724;
           margin-right: 0;
-          transition: width $transition-default12, margin-right $transition-default;
+          transition: width var(--transition-default12), margin-right var(--transition-default);
         }
 
         &.active,
@@ -368,7 +368,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $black;
+      background-color: var(--black);
     }
 
     ul {
@@ -418,12 +418,12 @@
       position: relative;
       display: block;
       max-width: max-content;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 1.2rem;
       line-height: 1.33;
-      color: $black;
-      border-bottom: 1px dotted $black;
+      color: var(--black);
+      border-bottom: 1px dotted var(--black);
       cursor: pointer;
     }
   }

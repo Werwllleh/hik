@@ -1,0 +1,42 @@
+:root {
+  /* Fonts */
+  --font-family: "Montserrat", sans-serif;
+  --third-family: "Roboto", sans-serif;
+
+  /* Transitions */
+  --transition-default: .3s ease-in-out;
+  --transition-default6: .6s ease-in-out;
+  --transition-default12: 1.2s;
+  --transition: .3s ease-in-out;
+  --transition2: .6s ease-in-out;
+
+  /* Colors */
+  --primary: #272724;
+  --primary-hover: #c90d5c;
+  --primary-active: #a60e4c;
+  --white: #fff;
+  --black: #272724;
+
+  /* Colors as RGB triplets for use in rgba() */
+  --primary-rgb: 39, 39, 36;
+  --primary-hover-rgb: 201, 13, 92;
+  --primary-active-rgb: 166, 14, 76;
+  --white-rgb: 255, 255, 255;
+  --black-rgb: 39, 39, 36;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Breakpoints */
+  --breakpoint-w1600: 1600px;
+  --breakpoint-laptop: 1440px;
+  --breakpoint-w1280: 1280px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-semiDesktop: 992px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-w650: 650px;
+  --breakpoint-mobile: 550px;
+  --breakpoint-small: 480px;
+}

@@ -24,7 +24,7 @@
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transition: height $transition-default6, opacity $transition-default, visibility $transition-default;
+    transition: height var(--transition-default6), opacity var(--transition-default), visibility var(--transition-default);
   }
 
   .collapse-data {

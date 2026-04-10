@@ -92,7 +92,7 @@
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transition: opacity $transition-default12, visibility $transition-default12, transform $transition-default12;
+      transition: opacity var(--transition-default12), visibility var(--transition-default12), transform var(--transition-default12);
     }
   }
 
@@ -127,7 +127,7 @@
         }
         p,
         .counter {
-          color: $black;
+          color: var(--black);
         }
       }
     }
@@ -147,8 +147,8 @@
       display: none;
       height: .1rem;
       width: 0;
-      background-color: $black;
-      transition: width $transition-default12;
+      background-color: var(--black);
+      transition: width var(--transition-default12);
 
       @include tablet {
         display: block;
@@ -157,14 +157,14 @@
 
     p {
       flex: 0 0 auto;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 2rem;
       line-height: 1.125;
       text-align: center;
-      color: $black;
+      color: var(--black);
       white-space: nowrap;
-      transition: color $transition-default12;
+      transition: color var(--transition-default12);
 
       @include tablet {
         color: #929292;
@@ -178,13 +178,13 @@
     .counter {
       flex: 0 0 auto;
       display: block;
-      font-family: $font-family;
+      font-family: var(--font-family);
       font-weight: 400;
       font-size: 2rem;
       line-height: 1.33;
       text-align: center;
       color: #929292;
-      transition: color $transition-default12;
+      transition: color var(--transition-default12);
 
       @include w1280 {
         font-size: 2.4rem;

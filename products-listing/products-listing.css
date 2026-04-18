@@ -1,0 +1,164 @@
+.products-listing__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem 0;
+}
+.products-listing__title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  text-align: center;
+  color: var(--black);
+  font-size: 3.2rem;
+  line-height: 1.125;
+}
+.products-listing__filters {
+  margin-top: 3.2rem;
+}
+.products-listing__content {
+  position: relative;
+  margin-top: 3.2rem;
+}
+.products-listing__loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity var(--transition-default), visibility var(--transition-default);
+}
+.products-furniture__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem 0;
+}
+.products-furniture .row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.products-furniture .row .hover-slider {
+  flex: 1 1 100%;
+}
+.products-furniture .row2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.products-furniture .row2 .hover-slider {
+  z-index: 1;
+}
+.products-furniture .row2__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  width: 100vw;
+  height: 100%;
+  display: none;
+  align-items: stretch;
+  gap: 0 0.8rem;
+}
+.products-furniture .row2__bg img {
+  flex: 1 1 calc(50% - 0.8rem);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+}
+
+.products-kitchens__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem 0;
+}
+.products-kitchens .kitchen-slider {
+  will-change: transform, opacity;
+}
+@media (min-width: 550px) {
+  .products-furniture .row .hover-slider {
+    flex: 1 1 calc(50% - 0.8rem);
+  }
+  .products-furniture .row .hover-slider:nth-child(1n+3) {
+    flex: 1 1 100%;
+  }
+  .products-furniture .row .hover-slider:nth-child(1n+4), .products-furniture .row .hover-slider:nth-child(1n+5) {
+    flex: 1 1 calc(50% - 0.8rem);
+  }
+}
+@media (min-width: 768px) {
+  .products-furniture__list .hover-slider {
+    will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .products-furniture__list .hover-slider__name,
+  .products-furniture__list .hover-slider__price {
+    transform: translateY(20px);
+  }
+  .products-furniture__list .hover-slider__price {
+    opacity: 0;
+  }
+  .products-furniture .row .hover-slider {
+    flex: 1 1 calc(33.33% - 1.6rem);
+  }
+  .products-furniture .row2 {
+    padding-block: 6.7rem;
+  }
+  .products-furniture .row2 .hover-slider {
+    max-width: 23.7rem;
+  }
+  .products-furniture .row2__bg {
+    display: flex;
+  }
+  .products-kitchens .kitchen-slider {
+    opacity: 0;
+  }
+  .products-kitchens .kitchen-slider:first-child {
+    transform: scale(0.8);
+  }
+}
+@media (min-width: 1280px) {
+  .products-listing__title {
+    font-size: 4.8rem;
+    line-height: 1.25;
+  }
+  .products-listing__filters {
+    margin-top: 4rem;
+  }
+  .products-listing__content {
+    margin-top: 4rem;
+  }
+  .products-furniture .row .hover-slider:nth-child(1n+3) {
+    flex: 1 1 calc(33.33% - 1.6rem);
+  }
+  .products-furniture .row2 {
+    padding-block: 18.5rem;
+  }
+  .products-furniture .row2 .hover-slider {
+    max-width: 30.2rem;
+  }
+  .products-furniture .hover-slider:hover {
+    background-color: #f4f4f4;
+  }
+}
+@media (min-width: 1600px) {
+  .products-furniture .row2 {
+    padding-block: 24rem;
+  }
+  .products-furniture .row2 .hover-slider {
+    max-width: 37.8rem;
+  }
+}

@@ -1,0 +1,16 @@
+.page-ui__hover-sliders {
+  margin-block: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .page-ui__hover-sliders {
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  }
+}
+@media (min-width: 1280px) {
+  .page-ui__hover-sliders {
+    grid-template-columns: repeat(auto-fill, minmax(55rem, 1fr));
+  }
+}

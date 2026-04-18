@@ -1,0 +1,16 @@
+.page-catalog__list .catalog-card {
+  will-change: transform, opacity;
+}
+.page-catalog__list .catalog-card + .catalog-card {
+  margin-top: 0.8rem;
+}
+@media (min-width: 768px) {
+  .page-catalog__list .catalog-card {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  .page-catalog__list .catalog-card .catalog-card__title {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}

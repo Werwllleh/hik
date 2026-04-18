@@ -95,11 +95,26 @@ function showModal(name) {
 
   blockWrap(true)
 
-  modal.style.display = 'flex'
+  modal.style.display = 'flex';
 
   setTimeout(() => {
     modal.classList.add('modal--show')
   }, 50)
+
+  const modalWindow = modal.querySelector(`.modal__window`);
+  if (modalWindow) {
+    const firstInput = modal.querySelectorAll('.form__input')[0];
+    modalWindow.addEventListener("transitionend", (event) => {
+      if (event.target === modalWindow && event.propertyName === "transform") {
+
+        if (firstInput) {
+          setTimeout(() => {
+            firstInput.focus()
+          }, 50)
+        }
+      }
+    })
+  }
 
 }
 

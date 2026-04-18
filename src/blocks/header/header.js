@@ -7,7 +7,6 @@ const burgerButtons = document.querySelectorAll('.burger-btn');
 const searchBlock = document.querySelector('.header-search');
 const searchButton = document.querySelector('.search-btn');
 const searchCloseButton = document.querySelector('.header-search-close');
-const headerCatalogInner = document.querySelector('.header-catalog__inner');
 
 if (header && burgerButtons.length && searchButton) {
 
@@ -42,6 +41,20 @@ if (header && burgerButtons.length && searchButton) {
 
     if (body.classList.contains('search-show')) {
       blockWrap(true)
+      if (searchBlock) {
+        const searchBlockInner = searchBlock.querySelector('.header-search__inner');
+        const searchInput = searchBlock.querySelector('.header-search__form .form__input');
+
+        if (searchBlockInner && searchInput) {
+          searchBlockInner.addEventListener("transitionend", (event) => {
+            if (event.target === searchBlockInner && event.propertyName === "transform") {
+              setTimeout(() => {
+                searchInput.focus()
+              }, 50)
+            }
+          })
+        }
+      }
     } else {
       blockWrap(false)
     }
@@ -158,13 +171,3 @@ if (searchBlock) {
   })
 
 }
-
-
-/*overlay.addEventListener('click', () => {
-  if (header) {
-    header.classList.remove('catalog-show');
-  }
-
-  overlay.classList.remove('active');
-  blockWrap(false)
-})*/

@@ -1,84 +1,4 @@
-/*
 const filterBlocks = document.querySelectorAll('.filters');
-if (filterBlocks.length) {
-  filterBlocks.forEach((filterBlock) => {
-
-    const filterItems = filterBlock.querySelectorAll('.filter');
-    if (filterItems.length) {
-      filterItems.forEach((filter) => {
-        initFilters(filter)
-      })
-    }
-
-  })
-}
-
-function initFilters(filter) {
-  const filterForm = filter.querySelector('.filter-form');
-  if (!filterForm) return;
-
-  const filterType = filterForm.dataset.filter;
-  const filterTitle = filterForm.dataset.title;
-
-  const button = filter.querySelector('.filter-button');
-
-  button.addEventListener('click', (e) => {
-    if (!filter.classList.contains('active')) {
-      closeAllFilters()
-      filter.classList.add('active')
-    } else {
-      filter.classList.remove('active')
-    }
-  })
-
-  if (filterType === 'sort') {
-    const values = filterForm.querySelectorAll("button[data-sort]");
-    const input = filterForm.querySelector('input[data-name="sort"]');
-
-    if (!values.length || !input) return;
-
-    values.forEach(value => {
-      value.addEventListener('click', (e) => {
-        values.forEach(v => v.classList.remove('active'));
-
-        input.value = value.dataset.sort;
-        filterForm.submit();
-        value.classList.add('active');
-      })
-    })
-
-  } else {
-    console.log('eef')
-  }
-
-  console.log(filterType)
-
-  filterForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-
-    const formData = new FormData(filterForm);
-    console.log(Array.from(formData));
-
-  })
-
-}
-
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.filter')) {
-    closeAllFilters()
-  }
-})
-
-function closeAllFilters() {
-  const filters = document.querySelectorAll('.filter');
-  if (filters.length) {
-    filters.forEach(filter => filter.classList.remove('active'))
-  }
-}
-*/
-
-const filterBlocks = document.querySelectorAll('.filters');
-const productsListWrap = document.querySelectorAll('.products-listing__content');
 
 if (filterBlocks.length) {
   filterBlocks.forEach((filterBlock) => {
@@ -125,6 +45,11 @@ if (filterBlocks.length) {
 }
 
 document.addEventListener('click', (e) => {
+
+  const activeFilters = document.querySelectorAll('.filter.active');
+
+  if (!activeFilters.length) return;
+
   if (!e.target.closest('.filter')) {
     closeAllFilters();
   }
@@ -216,6 +141,8 @@ function initFilter(filter) {
 
 function closeAllFilters() {
   const filters = document.querySelectorAll('.filter');
+
+
   filters.forEach(f => {
     f.classList.remove('active');
 
@@ -300,7 +227,7 @@ function submitAllFiltersData(filterBlock) {
   }, 1500)
 
   console.log('All filters data:', allData);
-  // TODO: Здесь fetch/axios запрос
+  // TODO: Здесь fetch запрос
 }
 
 function initSortFilter(filter, form) {
@@ -520,16 +447,13 @@ function submitFilterData(form) {
 
   getLoader(true)
 
-  console.log(Array.from(formData));
-  console.log(data)
-
   setTimeout(() => {
     getLoader(false)
     overlay.classList.remove('active');
     blockWrap(false);
   }, 1500)
 
-  // TODO: Здесь fetch/axios запрос
+  // TODO: Здесь fetch запрос
 }
 
 function getLoader(status) {

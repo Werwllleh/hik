@@ -5,7 +5,7 @@ mixin videoComponent(source = '', poster = '')
         .video-component__wrap
             .video-component__poster
                 img(src=poster, alt="Постер к видео")
-            video(poster=poster data-src=source).video-component__video
+            video(poster=poster data-src=source, playsinline).video-component__video
                 p Ваш браузер не поддерживает встроенные видео.
             button.video-component__button
                 p смотреть видео

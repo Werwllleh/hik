@@ -37,7 +37,7 @@
   &__input {
     font-family: $font-family;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     line-height: 1.33;
     color: $black;
     width: 100%;
@@ -48,6 +48,10 @@
 
     @include w1280 {
       padding-block: 2.2rem 1rem;
+    }
+
+    @include tablet {
+      font-size: 1.2rem;
     }
 
     &::placeholder {
